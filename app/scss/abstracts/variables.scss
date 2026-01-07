@@ -1,0 +1,38 @@
+@use '../util' as *;
+
+:root {
+  --bs-primary: #c5050c;
+  // --bs-secondary: #777777;
+  --bs-secondary: #585858;
+  --bs-warning: #ffae00;
+  --bs-success: #5cb85c;
+  --bs-gray: #6e6e6e;
+  --clr-dark-gray-100: #5b646b;
+  --clr-dark-gray: #818181;
+  --bs-white: #fefefe;
+  --bs-gray-dark: #646464;
+
+  --clr-light-gray: #f3f3f3;
+  --clr-light-gray-2: #dddddd;
+  --clr-light-gray-3: #f1f1f1;
+  --clr-medium-gray: #cacaca;
+  --clr-medium-gray-2: #e1e1e1;
+  --clr-medium-gray-3: #b7b7b7;
+  // --clr-dark-gray: #818181;
+  --clr-disabled: #969696;
+
+  // Font-family
+  --ff-primary: 'Red Hat Display', sans-serif;
+  --ff-secondary: 'Red Hat Text', sans-serif;
+
+  --fs-default: #{rem(16)};
+  --default-page-width: #{rem(1320)};
+
+  @media (prefers-reduced-motion: no-preference) {
+    --transition: all 0.3s ease-in-out;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    --transition: none;
+  }
+}

@@ -1,0 +1,86 @@
+@use '../util' as *;
+
+.navbar {
+  &-toggler {
+    padding: rem(10);
+
+    .icon-bar {
+      display: block;
+      width: rem(20);
+      height: rem(2);
+      border-radius: rem(1);
+      background-color: var(--bs-gray-dark);
+      transition: var(--transition);
+
+      + .icon-bar {
+        margin-top: rem(4);
+      }
+    }
+
+    .top-bar {
+      transform: rotate(45deg);
+      transform-origin: 10% 10%;
+    }
+
+    .middle-bar {
+      opacity: 0;
+    }
+
+    .bottom-bar {
+      transform: rotate(-45deg);
+      transform-origin: 10% 90%;
+    }
+
+    &.collapsed {
+      .top-bar,
+      .bottom-bar {
+        transform: rotate(0);
+      }
+
+      .middle-bar {
+        opacity: 1;
+      }
+    }
+  }
+
+  &-brand {
+    display: flex;
+    align-items: center;
+    height: rem(65);
+
+    img {
+      height: rem(65);
+    }
+
+    &-name {
+      text-align: center;
+      font-size: rem(20);
+      margin: 0;
+      margin-inline-start: rem(8);
+
+      span {
+        display: block;
+      }
+    }
+  }
+
+  .nav-link {
+    color: var(--bs-gray-dark);
+    transition: var(--transition);
+
+    &:hover {
+      text-decoration: none;
+      color: var(--bs-primary);
+    }
+
+    &::after {
+      color: var(--bs-gray-dark);
+    }
+  }
+
+  @include breakpoint(medium) {
+    > .container {
+      align-items: flex-end;
+    }
+  }
+}

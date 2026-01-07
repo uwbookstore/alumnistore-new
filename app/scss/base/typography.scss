@@ -1,0 +1,45 @@
+@use '../util' as *;
+
+/* prettier-ignore */
+h1, h2, h3, h4, h5, h6 {
+  font-family: inherit;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.022em;
+  margin: 0;
+  margin-bottom: rem(20);
+}
+
+/* prettier-ignore */
+h1 { font-size: rem(36); }
+
+/* prettier-ignore */
+h2 { font-size: rem(30); }
+
+/* prettier-ignore */
+h3 { font-size: rem(24); }
+
+/* prettier-ignore */
+h4 { font-size: rem(18); }
+
+/* prettier-ignore */
+h5 { font-size: rem(14); }
+
+/* prettier-ignore */
+h6 { font-size: rem(12); }
+
+a {
+  color: var(--bs-primary);
+  &:link,
+  &:visited,
+  &:focus,
+  &:active {
+    color: var(--bs-primary);
+    text-decoration: none;
+    transition: var(--transition);
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

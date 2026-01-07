@@ -1,0 +1,21 @@
+@use '../util' as *;
+
+.dropdown {
+  @include breakpoint(medium) {
+    &:last-child {
+      .dropdown-toggle {
+        &::after {
+          content: '';
+        }
+      }
+    }
+    &-toggle {
+      &::after {
+        content: '/';
+        border: none;
+        vertical-align: initial;
+        margin-left: rem(15);
+      }
+    }
+  }
+}

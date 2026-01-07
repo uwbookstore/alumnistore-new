@@ -1,0 +1,108 @@
+@use '../util' as *;
+
+.row {
+  display: grid;
+  column-gap: 1em;
+
+  @include breakpoint(medium) {
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 1fr auto;
+  }
+}
+
+@include breakpoint(medium) {
+  // SIMPLE COLUMNS - FRACTIONS
+  .col-fourth {
+    grid-column: auto / span 3;
+  }
+
+  .col-third {
+    grid-column: auto / span 4;
+  }
+
+  .col-two-thirds {
+    grid-column: auto / span 8;
+  }
+
+  .col-half {
+    grid-column: auto / span 6;
+  }
+
+  .col-three-fourths {
+    grid-column: auto / span 9;
+  }
+
+  // ROBUST COLUMNS
+  .col-1 {
+    grid-column: auto / span 1;
+  }
+
+  .col-2 {
+    grid-column: auto / span 2;
+  }
+
+  .col-3 {
+    grid-column: auto / span 3;
+  }
+
+  .col-4 {
+    grid-column: auto / span 4;
+  }
+
+  .col-5 {
+    grid-column: auto / span 5;
+  }
+
+  .col-6 {
+    grid-column: auto / span 6;
+  }
+
+  .col-7 {
+    grid-column: auto / span 7;
+  }
+
+  .col-8 {
+    grid-column: auto / span 8;
+  }
+
+  .col-9 {
+    grid-column: auto / span 9;
+  }
+
+  .col-10 {
+    grid-column: auto / span 10;
+  }
+
+  .col-11 {
+    grid-column: auto / span 11;
+  }
+
+  // CONTROL WHERE ITEMS START
+  [class*='col-start-'] {
+    grid-row-start: 1;
+  }
+
+  .col-start-first {
+    grid-column-start: 1;
+  }
+
+  .col-start-fourth {
+    grid-column-start: 4;
+  }
+
+  .col-start-third {
+    grid-column-start: 5;
+  }
+
+  .col-start-half {
+    grid-column-start: 7;
+  }
+
+  .col-start-two-thirds {
+    grid-column-start: 9;
+  }
+
+  .col-start-three-fourths {
+    grid-column-start: 10;
+  }
+}
