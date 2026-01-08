@@ -98,6 +98,7 @@
   }
 
   @include breakpoint(medium) {
+    border-top: rem(1) solid var(--clr-medium-gray);
     &__image {
       height: rem(600);
       overflow: clip;
@@ -126,9 +127,12 @@
   font-family: inherit;
   text-align: center;
   margin: rem(30) auto;
+  padding-inline: rem(10);
   font-style: italic;
   color: var(--bs-gray-dark);
   text-transform: uppercase;
   font-size: rem(24);
   font-weight: 500;
+  text-wrap: balance;
+  letter-spacing: rem(0.75);
 }

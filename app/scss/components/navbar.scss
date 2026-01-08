@@ -10,12 +10,13 @@
 .navbar {
   border-bottom: rem(1) solid var(--bs-secondary);
 
-  .container {
+  .container,
+  .container-fluid {
     padding: 0;
   }
 
   &-toggler {
-    margin-inline-end: rem(16);
+    margin-inline-end: rem(8);
     padding: rem(10);
 
     .icon-bar {
@@ -62,10 +63,11 @@
     top: rem(90);
     width: 100%;
     left: 0;
+    z-index: 10;
   }
 
   &-brand {
-    margin-inline-start: rem(16);
+    margin-inline-start: rem(8);
     margin-inline-end: auto;
     margin-block-end: rem(8);
     padding: 0;

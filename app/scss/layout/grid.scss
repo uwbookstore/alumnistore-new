@@ -70,6 +70,7 @@
 
     @include breakpoint(medium) {
       grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(2, auto);
     }
   }
 }
