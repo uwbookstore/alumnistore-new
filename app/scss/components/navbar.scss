@@ -13,6 +13,7 @@
   .container {
     padding: 0;
   }
+
   &-toggler {
     margin-inline-end: rem(16);
     padding: rem(10);
@@ -115,6 +116,7 @@
     padding: rem(10) rem(15);
     border-bottom: rem(1) solid var(--clr-medium-gray);
     justify-content: flex-start;
+    text-transform: uppercase;
 
     svg {
       display: none;
@@ -150,6 +152,10 @@
     &-collapse {
       position: initial;
       width: auto;
+    }
+
+    &-brand {
+      margin-inline-end: rem(32);
     }
 
     .nav-link {
