@@ -4,7 +4,7 @@
   position: relative;
   width: 100%;
   margin-inline: auto;
-  max-width: var(--default-page-width);
+  // max-width: var(--default-page-width);
   min-height: rem(175);
 
   &__image {
@@ -99,7 +99,7 @@
 
   @include breakpoint(medium) {
     &__image {
-      height: rem(500);
+      height: rem(600);
       overflow: clip;
     }
 
@@ -120,4 +120,15 @@
       }
     }
   }
+}
+
+.tagline {
+  font-family: inherit;
+  text-align: center;
+  margin: rem(30) auto;
+  font-style: italic;
+  color: var(--bs-gray-dark);
+  text-transform: uppercase;
+  font-size: rem(24);
+  font-weight: 500;
 }

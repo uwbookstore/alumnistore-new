@@ -1,0 +1,54 @@
+@use '../util' as *;
+
+.footer {
+  background-color: var(--bs-primary);
+  color: var(--bs-white);
+
+  &__banner {
+    &:link,
+    &:visited {
+      display: block;
+      margin: rem(25) 0;
+      padding: rem(25);
+      background: var(--clr-medium-gray-2);
+      text-align: center;
+      text-transform: uppercase;
+      font-style: italic;
+      font-weight: 500;
+      color: var(--clr-dark-gray-100);
+      line-height: rem(12);
+    }
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  &__membership {
+    margin-bottom: rem(25);
+    font-style: italic;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 500;
+
+    &-link {
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__inner {
+    max-width: rem(972);
+    margin: 0 auto;
+    padding: rem(36) rem(36) 0;
+  }
+
+  @include breakpoint(xsmall) {
+    &__membership {
+      br {
+        display: none;
+      }
+    }
+  }
+}
