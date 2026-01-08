@@ -114,6 +114,7 @@
     transition: var(--transition);
     padding: rem(10) rem(15);
     border-bottom: rem(1) solid var(--clr-medium-gray);
+    justify-content: flex-start;
 
     svg {
       display: none;

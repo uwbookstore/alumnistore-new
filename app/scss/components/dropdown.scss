@@ -13,6 +13,10 @@
     &[data-bs-popper] {
       margin: 0;
     }
+
+    [class^='col-'] {
+      padding: 0;
+    }
   }
 
   &-header {
@@ -78,6 +82,7 @@
 
       .nav-link {
         padding: rem(5) 0 !important;
+        font-size: rem(16);
 
         &.show-all {
           border-top: rem(1) solid var(--clr-medium-gray);
@@ -92,4 +97,14 @@
 // prettier-ignore
 .dropdown, .dropdown-center, .dropend, .dropstart, .dropup, .dropup-center {
   position: static;
+}
+
+/* ============ mobile view ============ */
+@include breakpoint(medium) {
+  .dropdown:hover > .dropdown-menu {
+    display: none;
+  }
+  .dropdown:hover > .dropdown-menu.show {
+    display: block;
+  }
 }
