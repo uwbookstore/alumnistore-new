@@ -23,13 +23,47 @@
 <body>
   <div id="topSection">
     <header>
+      <div class="search__overlay open" id="search-overlay">
+
+        <div class="search__form-wrapper">
+          <div class="search__form">
+            <button class="btn close" id="close-search">
+              <span class="sr-only">Close Search</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="47.99" height="48" viewBox="0 0 47.99 48"
+                class="close-icon">
+                <path
+                  d="M26.83,24l18.2-18.2a3.5,3.5,0,0,0-4.95-4.95L21.88,19.05,3.68.83A3.5,3.5,0,1,0,.73,5.78L18.91,24,.73,42.2a3.5,3.5,0,1,0,4.95,4.95L21.88,28.95l18.2,18.2a3.5,3.5,0,1,0,4.95-4.95Z"
+                  transform="translate(0 -0.01)" stroke-miterlimit="10" stroke-width="2"></path>
+              </svg>
+            </button>
+            <div class="search__form-input">
+              <label class="sr-only" for="searchinput">
+                Search
+              </label>
+              <input id="searchinput" type="search" class="search-field form-control" placeholder="Search...">
+              <button class="search-icon">
+                <svg xmlns="https://www.w3.org/2000/svg" width="69.76" height="117.91" viewBox="0 0 69.76 117.91"
+                  class="search__icon">
+                  <path
+                    d="M46,3.51a34,34,0,0,0-22.46,64l-2.44,7.92-1.72-.53a3.65,3.65,0,0,0-4.55,2.41L5.08,109.49a3.65,3.65,0,0,0,2.4,4.57h0l6.62,2a3.65,3.65,0,0,0,4.55-2.41l9.72-32.14A3.65,3.65,0,0,0,26,77l-1.18-.36,2.41-7.84A34,34,0,0,0,46,3.51ZM63.22,44.36A28.5,28.5,0,1,1,44.36,8.73,28.51,28.51,0,0,1,63.22,44.36Z"
+                    transform="translate(-1.02 -0.3)" stroke-miterlimit="10" stroke-width="4"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
       <div id="waa-nav" class="container">
         <nav class="navbar navbar-expand-lg">
           <div class="container-fluid">
+
             <a class="navbar-brand" href="https://www.uwalumnistore.com/home">
               <img src="./img/shield-logo.svg" alt="" role="presentation" class="waa-logo">
               <h1 class="navbar-brand-name">UW Alumni <span>Store</span></h1>
             </a>
+
             <a class="cart" href="https://www.uwalumnistore.com/shoppingcart">
               <svg xmlns="https://www.w3.org/2000/svg" width="117" height="88.17" viewBox="0 0 117 88.17"
                 class="cart--icon">
@@ -44,9 +78,10 @@
               </svg>
               <span class="sr-only">Shopping Cart</span>
             </a>
-            <a class="search" href="#">
+
+            <button class="search search-btn" id="open-search">
               <span class="sr-only">Search</span>
-            </a>
+            </button>
             <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
               data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
               aria-label="Toggle navigation">
@@ -55,7 +90,9 @@
               <span class="icon-bar middle-bar"></span>
               <span class="icon-bar bottom-bar"></span>
             </button>
+
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
               <ul class="navbar-nav me-auto navbar-left">
                 <!-- ********************************************* -->
                 <!-- ****************** Womens ******************* -->
@@ -195,6 +232,7 @@
                     </div>
                   </div>
                 </li>
+
                 <!-- ********************************************* -->
                 <!-- ******************* Mens ******************** -->
                 <!-- ********************************************* -->
@@ -328,6 +366,7 @@
                     </div>
                   </div>
                 </li>
+
                 <!-- ********************************************* -->
                 <!-- ******************* Kids ******************** -->
                 <!-- ********************************************* -->
@@ -419,6 +458,7 @@
                     </div>
                   </div>
                 </li>
+
                 <!-- ********************************************* -->
                 <!-- ******************* Gift ******************** -->
                 <!-- ********************************************* -->
@@ -572,6 +612,7 @@
                   </div>
                 </li>
               </ul>
+
               <ul class="navbar-nav navbar-right">
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle  account-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -624,12 +665,6 @@
           <img src="https://i.univbkstr.com/uwalumnistore/images/home/homepage_hero-mobile.jpg" width="640" height="447"
             alt="" role="presentation">
         </picture>
-        <!-- <picture>
-          <source media="(min-width: 48em)"
-            srcset="https://i.univbkstr.com/uwalumnistore/images/home/homepage_hero.jpg">
-          <img src="https://i.univbkstr.com/uwalumnistore/images/home/homepage_hero-mobile.jpg" alt=""
-            role="presentation">
-        </picture> -->
       </div>
 
       <div class="hero__body home">
@@ -927,6 +962,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.2/js/bootstrap.min.js"
     integrity="sha512-5BqtYqlWfJemW5+v+TZUs22uigI8tXeVah5S/1Z6qBLVO7gakAOtkOzUtgq6dsIo5c0NJdmGPs0H9I+2OHUHVQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="./dist/script.js"></script>
 </body>
 
 </html>
