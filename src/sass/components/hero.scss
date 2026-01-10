@@ -7,6 +7,10 @@
   // max-width: var(--default-page-width);
   min-height: rem(175);
 
+  &:has(.home) {
+    margin-block-start: rem(-30);
+  }
+
   &__image {
     img {
       margin-inline: auto;

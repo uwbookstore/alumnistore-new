@@ -43,3 +43,29 @@ a {
     text-decoration: underline;
   }
 }
+
+.heading {
+  &__line {
+    display: grid;
+    grid-template-columns: rem(10) max-content 1fr;
+    gap: rem(10);
+    align-items: center;
+    border: none;
+    padding-block-end: 0;
+    padding-inline-start: 0;
+    background: none;
+    margin: 0;
+    margin-block-end: rem(25);
+    width: 100%;
+    font-size: inherit;
+    color: var(--bs-gray-dark);
+
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      height: rem(1);
+      background-color: currentColor;
+    }
+  }
+}
