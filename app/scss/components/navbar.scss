@@ -89,6 +89,11 @@
         display: block;
       }
     }
+
+    &:hover {
+      text-decoration: none;
+      color: var(--bs-primary);
+    }
   }
 
   &-left {
