@@ -9,3 +9,16 @@ openSearchBtn.addEventListener('click', () => {
 closeSearchBtn.addEventListener('click', () => {
   searchOverlay.classList.remove('open');
 });
+
+searchOverlay.addEventListener('click', (event) => {
+  if (event.target === searchOverlay) {
+    searchOverlay.classList.remove('open');
+  }
+});
+
+// Close overlay on escape key press
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') {
+    searchOverlay.classList.remove('open');
+  }
+});
