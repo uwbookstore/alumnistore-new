@@ -1,0 +1,14 @@
+@use '../util' as *;
+
+.pageHelp,
+.merchTop,
+.viewfiltersDiv,
+.bottomButtons,
+.searchCatWrap,
+.sortCatWrap {
+  display: none;
+}
+
+.sortCatWrap {
+  width: 100%;
+}

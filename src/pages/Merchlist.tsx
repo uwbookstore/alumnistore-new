@@ -104,7 +104,7 @@ const Merchlist = () => {
                 <div className='col-md-2 col-sm-0 col-0 padding0 no_show_small'>
                   <div
                     className='displayib largeSwitch listSwitch'
-                    data-className=''
+                    data-class=''
                     aria-label='Display Large'
                     role='button'>
                     <span className='fa fa-2x fa-th-large switchIcon'></span>
@@ -147,6 +147,7 @@ const Merchlist = () => {
                     id='filterButton1'
                     className='btn btn-primary top5 wauto filterButton filterButtonDisplay'
                     value='Apply'
+                    readOnly
                   />
                 </div>
               </div>
@@ -177,6 +178,7 @@ const Merchlist = () => {
                         placeholder='Min'
                         type='number'
                         value='0'
+                        readOnly
                       />
                       <span className='input-group-text'>to</span>
                       <input
@@ -189,6 +191,7 @@ const Merchlist = () => {
                         placeholder='Max'
                         type='number'
                         value='1000000'
+                        readOnly
                       />
                     </div>
                     <div className='filterOption top10 filterSaleOption'>
@@ -202,11 +205,13 @@ const Merchlist = () => {
                           name='merchFilterOnSale'
                           type='checkbox'
                           value='true'
+                          readOnly
                         />
                         <input
                           name='merchFilterOnSale'
                           type='hidden'
                           value='false'
+                          readOnly
                         />
                         <span className='newCheckboxText'> On Sale</span>
                       </div>
@@ -903,7 +908,7 @@ const Merchlist = () => {
                 aria-label='Show number of items per page'
                 id='merchResultsSelectID'
                 className='merchResultsSelect form-control form-select mx-auto'>
-                <option selected={true} value='12' className='subject-option'>
+                <option defaultValue='12' value='12' className='subject-option'>
                   12 Items Per Page
                 </option>
                 <option value='24' className='subject-option'>
