@@ -1,0 +1,13 @@
+@use '../util' as *;
+
+.promo {
+  &-banner {
+    min-height: rem(45);
+    background-color: var(--bs-primary);
+    color: var(--bs-white);
+    text-align: center;
+    font-style: italic;
+    font-size: rem(18);
+    padding-block: rem(8);
+  }
+}
