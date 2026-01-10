@@ -6,6 +6,12 @@
   position: relative;
   overflow: hidden;
 
+  &__top {
+    position: relative;
+    z-index: 30;
+    background-color: var(--bs-white);
+    padding: rem(25) 0;
+  }
   &__banner {
     &:link,
     &:visited {
@@ -27,7 +33,6 @@
   }
 
   &__membership {
-    margin-bottom: rem(25);
     font-style: italic;
     text-align: center;
     text-transform: uppercase;
@@ -76,6 +81,10 @@
         }
       }
     }
+  }
+
+  &__inner {
+    border-bottom: rem(1) solid var(--bs-white);
   }
 
   &__bottom {
@@ -193,7 +202,7 @@
     }
 
     &__inner {
-      padding: rem(60) rem(30) 0;
+      padding: rem(60) rem(20) rem(40);
       position: relative;
       z-index: 20;
     }
