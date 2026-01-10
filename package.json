@@ -2,25 +2,48 @@
   "name": "uw-alumnistore-refactor",
   "version": "1.0.0",
   "description": "Refactor for the UW Alumni Store",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "@babel/core": "^7.14.6",
-    "@babel/preset-env": "^7.14.7",
-    "autoprefixer": "^10.2.6",
-    "browser-sync": "^2.23.7",
-    "cssnano": "^5.0.6",
-    "gulp": "^4.0.2",
-    "gulp-babel": "^8.0.0",
-    "gulp-postcss": "^9.0.0",
-    "gulp-sass": "^5.0.0",
-    "gulp-terser": "^2.0.1",
-    "postcss": "^8.3.5",
-    "sass": "^1.35.2"
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.1",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.18.126",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "react": "^19.2.3",
+    "react-circular-progressbar": "^2.2.0",
+    "react-dom": "^19.2.3",
+    "react-scripts": "5.0.1",
+    "typescript": "^4.9.5",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "ajv": "^8.17.1",
+    "sass": "^1.97.0"
   }
 }
