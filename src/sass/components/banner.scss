@@ -9,5 +9,9 @@
     font-style: italic;
     font-size: rem(18);
     padding-block: rem(8);
+
+    strong {
+      text-transform: uppercase;
+    }
   }
 }

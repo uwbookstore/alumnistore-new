@@ -1,4 +1,4 @@
-import { Hero } from '.';
+import { Hero, Featured } from '.';
 
 const Main = () => {
   return (
@@ -7,6 +7,8 @@ const Main = () => {
       <h3 className='tagline'>
         The official online retailer for UW–Madison alumni
       </h3>
+
+      <Featured />
     </div>
   );
 };

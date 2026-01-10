@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useEscapeKey } from '../hooks';
+import { Button } from '.';
 
 const Search = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,18 +17,18 @@ const Search = () => {
 
   return (
     <>
-      <button
+      <Button
         className='search search-btn'
         id='open-search'
         onClick={handleToggle}>
         <span className='sr-only'>Search</span>
-      </button>
+      </Button>
       <div
         className={`search__overlay${isOpen ? ' open' : ''}`}
         id='search-overlay'>
         <div className='search__form-wrapper'>
           <div className='search__form'>
-            <button
+            <Button
               className='btn btn-close'
               id='close-search'
               onClick={handleToggle}>
@@ -44,7 +45,7 @@ const Search = () => {
                   strokeMiterlimit='10'
                   strokeWidth='2'></path>
               </svg>
-            </button>
+            </Button>
             <div className='search__form-input'>
               <label className='sr-only' htmlFor='searchinput'>
                 Search
@@ -55,9 +56,9 @@ const Search = () => {
                 className='search-field form-control'
                 placeholder='Search...'
               />
-              <button className='search search-btn'>
+              <Button className='search search-btn'>
                 <span className='sr-only'>Search</span>
-              </button>
+              </Button>
             </div>
           </div>
         </div>

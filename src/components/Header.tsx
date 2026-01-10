@@ -1,14 +1,11 @@
 import Logo from '../img/shield-logo.svg';
-import { Search } from '.';
+import { Search, Banner, Button } from '.';
 
 const Header = () => {
   return (
     <div id='topSection'>
       <header>
-        <div id='cyberMondayBanner' className='promo-banner'>
-          Save 25% on your entire purchase — today only! Use promo code:{' '}
-          <strong>UWCYBER25</strong>
-        </div>
+        <Banner />
 
         <div id='waa-nav' className='container'>
           <nav className='navbar navbar-expand-lg'>
@@ -54,7 +51,7 @@ const Header = () => {
 
               <Search />
 
-              <button
+              <Button
                 className='navbar-toggler collapsed'
                 type='button'
                 data-bs-toggle='collapse'
@@ -66,7 +63,7 @@ const Header = () => {
                 <span className='icon-bar top-bar'></span>
                 <span className='icon-bar middle-bar'></span>
                 <span className='icon-bar bottom-bar'></span>
-              </button>
+              </Button>
 
               <div
                 className='collapse navbar-collapse'
