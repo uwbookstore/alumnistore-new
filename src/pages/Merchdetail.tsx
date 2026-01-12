@@ -56,7 +56,7 @@ const Merchdetail = () => {
                 <li>Imported</li>
               </ul>
               <div className='merch__detail-sku'>
-                <strong>Item:</strong> 2079612{' '}
+                <strong>Item:</strong> 2079612
               </div>
             </div>
 
