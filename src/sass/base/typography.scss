@@ -7,7 +7,6 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.15;
   letter-spacing: -0.022em;
   margin: 0;
-  margin-bottom: rem(20);
 }
 
 /* prettier-ignore */
@@ -45,7 +44,8 @@ a {
 }
 
 .heading {
-  &__line {
+  &__line,
+  &__line-center {
     display: grid;
     grid-template-columns: rem(10) max-content 1fr;
     gap: rem(10);
@@ -58,6 +58,7 @@ a {
     margin-block-end: rem(25);
     width: 100%;
     font-size: inherit;
+    font-style: italic;
     color: var(--bs-gray-dark);
 
     &::before,
@@ -65,7 +66,11 @@ a {
       content: '';
       display: block;
       height: rem(1);
-      background-color: currentColor;
+      background-color: var(--clr-light-gray-2);
+    }
+
+    &-center {
+      grid-template-columns: 1fr max-content 1fr;
     }
   }
 }
