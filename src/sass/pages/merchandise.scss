@@ -333,7 +333,6 @@ ul.breadcrumb {
 
 .flexslider {
   margin: rem(10) auto;
-  text-align: center;
   padding-block-end: rem(15);
   border-bottom: rem(1) solid var(--clr-light-gray-2);
 
@@ -360,7 +359,7 @@ ul.breadcrumb {
       li {
         max-width: rem(100);
         aspect-ratio: 1 / 1;
-        margin: 0 rem(10) 0 0;
+        margin: 0;
         padding: 0;
         overflow: hidden;
         position: relative;
@@ -388,12 +387,11 @@ ul.breadcrumb {
         flex: 1 20%;
         height: rem(500);
         margin-block-start: rem(30);
-        flex-direction: column;
         overflow-y: auto;
 
         li {
           margin: 0;
-          margin-inline-end: rem(5);
+          margin-inline: auto;
 
           &:not(:last-child) {
             margin-block-end: rem(15);
