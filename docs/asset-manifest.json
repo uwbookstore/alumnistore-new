@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/static/css/main.6b4f7e24.css",
+    "main.js": "/static/js/main.1f68353e.js",
+    "static/js/453.4903163d.chunk.js": "/static/js/453.4903163d.chunk.js",
+    "static/media/2079612-lg.png": "/static/media/2079612-lg.9efb96dd20822663eef9.png",
+    "static/media/2079612-A.png": "/static/media/2079612-A.710d713447964f604a45.png",
+    "static/media/2079612.png": "/static/media/2079612.f40fe508ea7bd616ee30.png",
+    "static/media/shield-logo.svg": "/static/media/shield-logo.533b50cb00feb2099e43af1506543747.svg",
+    "index.html": "/index.html",
+    "main.6b4f7e24.css.map": "/static/css/main.6b4f7e24.css.map",
+    "main.1f68353e.js.map": "/static/js/main.1f68353e.js.map",
+    "453.4903163d.chunk.js.map": "/static/js/453.4903163d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6b4f7e24.css",
+    "static/js/main.1f68353e.js"
+  ]
+}
