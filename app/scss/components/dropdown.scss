@@ -80,6 +80,11 @@
         padding-inline-start: rem(20);
       }
 
+      top: rem(100) !important;
+      &[data-bs-popper] {
+        top: rem(100);
+      }
+
       .nav-link {
         padding: rem(5) 0 !important;
         font-size: rem(14);
