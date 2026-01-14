@@ -1,6 +1,7 @@
 {
   "name": "uw-alumnistore-refactor",
   "version": "1.0.0",
+  "homepage": "https://uwbookstore.github.io/alumnistore-new/",
   "description": "Refactor for the UW Alumni Store",
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
