@@ -1,0 +1,64 @@
+@use '../util' as *;
+
+.form {
+  &-control {
+    display: flex;
+    align-items: center;
+    padding: 0 rem(15);
+    height: rem(50);
+    border-radius: 0;
+  }
+
+  &-floating {
+    > .form-control {
+      height: auto;
+      line-height: 1;
+      width: 100%;
+
+      &:focus,
+      &:not(:placeholder-shown) {
+        padding-block: rem(25) rem(10);
+      }
+
+      &-plaintext {
+        &:focus,
+        &:not(:placeholder-shown) {
+          padding-block: rem(25) rem(10);
+        }
+      }
+    }
+  }
+
+  @include breakpoint(medium) {
+    &-control {
+      height: rem(40);
+    }
+  }
+}
+
+select,
+select.form-control {
+  appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="32" height="24" viewBox="0 0 32 24"><polygon points="0,0 32,0 16,24" style="fill: rgb%2851, 51, 51%29"></polygon></svg>');
+  background-position: right rem(5) center;
+  background-size: rem(9) rem(6);
+  background-repeat: no-repeat;
+  border: rem(2) solid var(--clr-medium-gray);
+  width: 100%;
+
+  &.dd-hidden {
+    background-image: none;
+    background-color: var(--bs-white);
+    color: currentColor;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    margin-block-start: rem(-10);
+    cursor: text;
+  }
+
+  @include breakpoint(medium) {
+    border-width: rem(1);
+    width: auto;
+  }
+}

@@ -109,9 +109,9 @@
         }
         &-toggle {
           &::after {
-            content: '/';
-            vertical-align: initial;
-            margin-left: rem(15);
+            content: '';
+            // vertical-align: initial;
+            // margin-left: rem(15);
           }
         }
       }

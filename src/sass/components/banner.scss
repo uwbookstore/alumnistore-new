@@ -2,6 +2,7 @@
 
 .promo {
   &-banner {
+    position: relative;
     min-height: rem(45);
     background-color: var(--bs-primary);
     color: var(--bs-white);
@@ -9,9 +10,35 @@
     font-style: italic;
     font-size: rem(18);
     padding-block: rem(8);
+    overflow: clip;
 
     strong {
       text-transform: uppercase;
+    }
+
+    .container-fluid {
+      position: relative;
+      z-index: 2;
+    }
+
+    &::after {
+      position: absolute;
+      bottom: 0px;
+      right: 0;
+      height: rem(200);
+      width: rem(150);
+      content: '';
+      opacity: 0.5;
+      transform: skew(135deg);
+      z-index: 1;
+      background-color: rgb(165 5 10);
+    }
+
+    @include breakpoint(medium) {
+      &::after {
+        right: rem(200);
+        width: rem(200);
+      }
     }
   }
 }

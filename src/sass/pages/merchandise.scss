@@ -501,6 +501,62 @@ ul.breadcrumb {
           color: var(--bs-gray-dark);
         }
       }
+
+      &-picker {
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: rem(20);
+
+        span.btn-default,
+        button.btn-default.typeCodeOption {
+          width: 47%;
+          margin: 0;
+
+          &:hover {
+            border-color: var(--bs-primary);
+            background-color: var(--bs-primary);
+            color: var(--bs-white);
+          }
+        }
+      }
+    }
+
+    &-add {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: rem(30);
+    }
+
+    &-qty {
+      input {
+        width: 100%;
+        text-align: center;
+        font-size: rem(20);
+      }
+    }
+  }
+
+  @include breakpoint(small) {
+    &__detail {
+      &-picker {
+        span.btn-default,
+        button.btn-default.typeCodeOption {
+          width: 24%;
+        }
+      }
+
+      &-add {
+        flex-direction: row;
+        align-items: flex-end;
+        gap: rem(10);
+
+        div {
+          flex: 1 1 47%;
+        }
+      }
     }
   }
 
@@ -546,6 +602,39 @@ ul.breadcrumb {
           &:link,
           &:visited {
             font-size: rem(12);
+          }
+        }
+
+        &-picker {
+          justify-content: flex-start;
+          gap: rem(10);
+
+          span.btn-default,
+          button.btn-default.typeCodeOption {
+            width: rem(50);
+          }
+        }
+      }
+
+      &-add {
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: flex-start;
+        gap: rem(10);
+
+        div {
+          &:nth-child(1) {
+            flex: 1 1 15%;
+          }
+
+          &:nth-child(2) {
+            flex: 1 1 85%;
+          }
+        }
+
+        &-btn {
+          .btn {
+            width: 50%;
           }
         }
       }

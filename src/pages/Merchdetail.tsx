@@ -82,7 +82,7 @@ const Merchdetail = () => {
                 title="Lands' End Size Guide">
                 Size Guide
               </a>
-              <div className='grid merch__detail-size-picker'>
+              <div className='merch__detail-size-picker'>
                 {sizes.map((item) => {
                   const { size, display } = item;
                   return (
@@ -97,7 +97,7 @@ const Merchdetail = () => {
               </div>
             </div>
 
-            <div className='grid merch__detail-add'>
+            <div className='merch__detail-add'>
               <div className='merch__detail-qty'>
                 <label htmlFor='merchQTY'>Quantity: </label>
                 <input
