@@ -1,7 +1,8 @@
 {
-  "name": "sass-starter",
+  "name": "uwalumnistore",
   "version": "1.0.0",
-  "description": "This is a simple Sass starter file for projects. It includes: - a CSS reset (Normalize.css) - Some common breakpoints for media queries - A customized Bootstrap padding/margin utility",
+  "homepage": "https://uwbookstore.github.io/alumnistore-new/",
+  "description": "New layout for UW Alumni Store",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
