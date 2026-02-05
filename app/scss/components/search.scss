@@ -52,7 +52,7 @@
           position: absolute;
           top: 50%;
           transform: translateY(-50%);
-          right: rem(16);
+          left: rem(8);
         }
       }
     }
@@ -61,6 +61,10 @@
     .btn.btn-close:focus-visible {
       box-shadow: none;
       outline: none;
+    }
+
+    .search-field {
+      padding-inline-start: rem(38);
     }
 
     @include breakpoint(small) {
