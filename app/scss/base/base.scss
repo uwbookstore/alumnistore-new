@@ -44,3 +44,8 @@ svg {
   height: auto;
   display: block;
 }
+
+.page-wrapper {
+  margin-inline: auto;
+  max-width: rem(1320);
+}

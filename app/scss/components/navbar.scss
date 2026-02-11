@@ -109,9 +109,12 @@
         }
         &-toggle {
           &::after {
-            content: '';
-            // vertical-align: initial;
-            // margin-left: rem(15);
+            content: '|';
+            font-style: italic;
+            color: var(--bs-primary) !important;
+            vertical-align: initial;
+            margin-left: rem(5);
+            margin-right: rem(-5);
           }
         }
       }
