@@ -1,14 +1,12 @@
 @use '../util' as *;
 
 .footer {
-  background-color: var(--bs-primary);
-  color: var(--bs-white);
   overflow: hidden;
 
   &__top {
     position: relative;
     z-index: 30;
-    background-color: var(--bs-white);
+
     padding: rem(25) 0;
   }
   &__banner {
@@ -73,7 +71,7 @@
         font-size: rem(16);
 
         a {
-          color: var(--bs-white);
+          color: var(--bs-gray-dark);
           padding: 0;
           padding-block: rem(8);
         }
@@ -101,7 +99,7 @@
   }
 
   &__inner {
-    border-bottom: rem(1) solid var(--bs-white);
+    border-bottom: rem(1) solid var(--bs-gray-dark);
   }
 
   &__bottom {
@@ -118,18 +116,18 @@
     text-align: center;
     text-wrap: balance;
 
-    &::after {
-      position: absolute;
-      bottom: 0px;
-      left: rem(1110);
-      height: rem(600);
-      width: rem(200);
-      content: '';
-      opacity: 0.5;
-      transform: skew(135deg);
-      z-index: -1;
-      background-color: rgb(165 5 10);
-    }
+    // &::after {
+    //   position: absolute;
+    //   bottom: 0px;
+    //   left: rem(1110);
+    //   height: rem(600);
+    //   width: rem(200);
+    //   content: '';
+    //   opacity: 0.5;
+    //   transform: skew(135deg);
+    //   z-index: -1;
+    //   background-color: rgb(165 5 10);
+    // }
   }
 
   &__social {
@@ -149,7 +147,7 @@
         display: block;
         width: rem(24);
         height: rem(24);
-        background-color: var(--bs-white);
+        background-color: var(--bs-gray-dark);
         scale: 1;
         transition: var(--transition);
 
@@ -186,7 +184,7 @@
 
   &__logo {
     text-align: center;
-    fill: var(--bs-white);
+    fill: var(--bs-gray-dark);
 
     a {
       display: block;
@@ -249,7 +247,7 @@
 
     &__bottom {
       margin-block-end: 0;
-      padding-block: rem(30);
+      padding: rem(30) rem(20);
       flex-direction: row;
       justify-content: space-between;
     }
