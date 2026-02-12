@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 rem(12);
+  padding: 0 rem(16);
   border: rem(2) solid transparent;
   border-radius: 0;
   font-weight: 500;
@@ -13,25 +13,32 @@
   transition: var(--transition);
 
   &-primary {
-    background-color: transparent;
+    background-color: var(--bs-primary);
     border-color: var(--bs-primary);
-    color: var(--bs-primary);
+    color: var(--bs-white);
 
     &:hover,
     &:active,
     &:active:hover,
     &:focus,
-    &:active:focus,
-    &-inverted {
-      border-color: var(--bs-primary);
-      background-color: var(--bs-primary);
+    &:active:focus {
+      background-color: hsl(from var(--bs-primary) h s 33%);
+      border-color: hsl(from var(--bs-primary) h s 33%);
+    }
+
+    &:visited {
       color: var(--bs-white);
     }
 
-    &-inverted {
+    &-outline {
+      background-color: transparent;
+      border-color: var(--bs-primary);
+      color: var(--bs-primary);
+
       &:hover,
-      &:active,
-      &:focus {
+      &:focus-visible {
+        background-color: var(--bs-primary);
+        border-color: var(--bs-primary);
         color: var(--bs-white);
       }
     }

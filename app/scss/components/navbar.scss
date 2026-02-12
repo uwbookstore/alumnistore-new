@@ -73,15 +73,15 @@
     padding: 0;
     display: flex;
     align-items: center;
-    height: rem(65);
+    height: rem(45);
 
     img {
-      height: rem(65);
+      height: rem(45);
     }
 
     &-name {
       text-align: center;
-      font-size: rem(20);
+      font-size: rem(16);
       margin: 0;
       margin-inline-start: rem(8);
 
@@ -132,6 +132,23 @@
       padding: rem(14);
       border-bottom: rem(1) solid var(--clr-medium-gray);
       transition: var(--transition);
+    }
+  }
+
+  @include breakpoint(xsmall) {
+    &-brand {
+      height: rem(65);
+
+      img {
+        height: rem(65);
+      }
+      &-name {
+        font-size: rem(20);
+
+        br {
+          display: none;
+        }
+      }
     }
   }
 

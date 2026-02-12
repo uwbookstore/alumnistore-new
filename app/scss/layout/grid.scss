@@ -29,7 +29,7 @@
       }
 
       p {
-        margin-block-end: rem(25);
+        margin-block-end: rem(15);
         font-size: rem(16);
       }
 
@@ -42,8 +42,33 @@
         }
 
         .card-body {
-          .btn {
-            width: 100%;
+          &-link {
+            color: var(--bs-gray-dark);
+            position: relative;
+            text-decoration: none;
+            transition: var(--transition);
+
+            &::after {
+              position: absolute;
+              display: block;
+              content: '';
+              height: rem(1);
+              background: hsl(from var(--bs-gray-dark) h s l / 0.65);
+              width: 115%;
+              left: 50%;
+              transform: translateX(-50%);
+              bottom: rem(-5);
+              transition: var(--transition);
+            }
+
+            &:hover {
+              text-decoration: none;
+              color: var(--bs-primary);
+
+              &::after {
+                background: var(--bs-primary);
+              }
+            }
           }
         }
       }
@@ -66,12 +91,6 @@
           }
         }
       }
-    }
-
-    @include breakpoint(medium) {
-      padding-inline: rem(20);
-      grid-template-columns: repeat(4, 1fr);
-      grid-template-rows: repeat(2, auto);
     }
   }
 }
