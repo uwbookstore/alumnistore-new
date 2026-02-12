@@ -12,3 +12,10 @@
 .sortCatWrap {
   width: 100%;
 }
+
+#ContainDiv.contain.container {
+  width: 100%;
+  max-width: var(--default-page-width);
+  margin-inline: auto;
+  padding: 0;
+}

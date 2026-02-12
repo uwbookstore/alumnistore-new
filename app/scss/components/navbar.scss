@@ -155,11 +155,6 @@
   @include breakpoint(medium) {
     border: none;
 
-    > .container,
-    > .container-fluid {
-      align-items: flex-end;
-    }
-
     &-collapse {
       position: initial;
       width: auto;
@@ -224,7 +219,7 @@
   @include breakpoint(medium) {
     order: 1;
     align-self: center;
-    margin-block-start: rem(30);
+    // margin-block-start: rem(30);
   }
 }
 
@@ -238,7 +233,7 @@
 
   @include breakpoint(medium) {
     align-self: center;
-    margin-block-start: rem(30);
+    // margin-block-start: rem(30);
     order: 1;
   }
 }
