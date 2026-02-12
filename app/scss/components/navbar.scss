@@ -9,7 +9,6 @@
 
 .navbar {
   border-bottom: rem(1) solid var(--bs-secondary);
-  margin-block-end: rem(40);
 
   .container,
   .container-fluid {
@@ -98,27 +97,11 @@
   }
 
   &-left {
-    .dropdown {
-      @include breakpoint(medium) {
-        &:last-child {
-          .dropdown-toggle {
-            &::after {
-              content: '';
-            }
-          }
-        }
-        &-toggle {
-          &::after {
-            content: '|';
-            font-style: italic;
-            color: var(--bs-primary) !important;
-            vertical-align: initial;
-            margin-left: rem(5);
-            margin-right: rem(-5);
-          }
-        }
-      }
-    }
+    margin-inline-start: auto;
+  }
+
+  .nav-item {
+    background-color: var(--clr-light-gray-3);
   }
 
   .nav-link {
@@ -169,6 +152,10 @@
       margin-inline-end: rem(32);
     }
 
+    .nav-item {
+      background: none;
+    }
+
     .nav-link {
       border: none;
 
@@ -182,6 +169,27 @@
         }
         span {
           display: none;
+        }
+      }
+    }
+
+    &-left {
+      .nav-item {
+        &:last-child {
+          .nav-link::after {
+            content: '';
+          }
+        }
+
+        .nav-link {
+          &::after {
+            content: '|';
+            font-style: italic;
+            color: var(--bs-primary) !important;
+            vertical-align: initial;
+            margin-left: rem(5);
+            margin-right: rem(-5);
+          }
         }
       }
     }
