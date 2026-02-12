@@ -29,3 +29,9 @@ document.addEventListener('keydown', (e) => {
     closeSearchOverlay();
   }
 });
+
+// Footer copyright info
+const d = new Date();
+const copyYear = d.getFullYear();
+const footerCopyright = document.getElementById('footer-copyright');
+footerCopyright.innerHTML = `&copy; Copyright ${copyYear}`;

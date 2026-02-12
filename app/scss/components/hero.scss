@@ -15,76 +15,37 @@
   }
 
   &__body {
-    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     padding: rem(10);
-    top: initial;
-    bottom: rem(5);
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: transparent;
-    text-align: initial;
-    width: 100%;
-    padding: 0;
-    box-shadow: none;
-
-    br {
-      display: none;
-    }
-
-    span {
-      display: flex;
-      align-items: center;
-      font-weight: 500;
-      padding-inline: rem(10);
-      height: rem(45);
-      letter-spacing: rem(-0.5);
-      background-color: var(--bs-white);
-      width: 90%;
-      margin: 0 auto;
-      font-size: rem(28);
-
-      &:not(:last-child) {
-        margin-block-end: rem(5);
-      }
-    }
+    color: var(--bs-primary);
+    margin: 0 auto;
+    width: 90%;
 
     &--header {
-      font-family: inherit;
-      color: var(--bs-primary);
-      text-transform: uppercase;
-      font-weight: 700;
-      letter-spacing: rem(1);
-      font-style: italic;
+      font-weight: 500;
+      letter-spacing: rem(-0.5);
+      font-size: rem(28);
+      text-wrap: balance;
+      margin-block-end: rem(20);
     }
 
-    &--text {
-      margin: rem(10) 0 0;
-      line-height: rem(20);
+    p {
+      margin-block-end: rem(20);
     }
   }
 
   @include breakpoint(small) {
     &__body {
-      left: rem(60);
-      top: 65%;
-      width: auto;
-      transform: translate(0);
-
-      br {
-        display: block;
+      &--header {
+        font-size: rem(35);
+        margin-block-end: rem(15);
       }
 
-      span {
-        display: inline-flex;
-        width: auto;
-        height: rem(60);
-        font-size: rem(30);
-        letter-spacing: normal;
-        padding-inline: rem(25);
-
-        &:not(:last-child) {
-          margin-block-end: rem(15);
-        }
+      p {
+        margin-block-end: rem(15);
       }
     }
   }
@@ -110,13 +71,18 @@
 .tagline {
   font-family: inherit;
   text-align: center;
-  margin: rem(30) auto;
-  padding-inline: rem(10);
+  margin: 0;
+  background-color: var(--clr-medium-gray);
+  color: var(--bs-primary);
+  padding: rem(10);
   font-style: italic;
-  color: var(--bs-gray-dark);
   text-transform: uppercase;
-  font-size: rem(24);
+  font-size: rem(18);
   font-weight: 500;
   text-wrap: balance;
   letter-spacing: rem(0.75);
+
+  @include breakpoint(small) {
+    font-size: rem(22);
+  }
 }
