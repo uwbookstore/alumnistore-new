@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="./css/libraries/bootstrap_v5_2_custom.css">
   <link rel="stylesheet" href="./css/libraries/MasterCSS.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
-  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./dist/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -695,133 +695,8 @@
   </div>
 
   <footer class='footer'>
+
     <div class='footer__top'>
-      <a href='https://www.uwalumnistore.com/StoreAbout.aspx' class='footer__banner'>
-        Your purchase helps to strengthen alumni connections to the university
-        <em>&gt;</em>
-      </a>
-      <div class='footer__membership'>
-        <a href='https://www.uwalumni.com/membership/' class='footer__membership-link' target='_blank'
-          rel='noreferrer noopener' title='Become a WAA member'>
-          Become a WAA member –<br />
-          be where Badgers belong&nbsp;<em>&gt;</em>
-        </a>
-      </div>
-    </div>
-    <div class='footer__inner'>
-      <div class='footer__links'>
-        <div class='footer__column'>
-          <nav class='footer-menu'>
-            <h2 class='footer-menu__title'>Our Store</h2>
-            <ul>
-              <li>
-                <a class='footer-menu__link' href='https://www.uwalumnistore.com/StoreAbout'>
-                  About Us
-                </a>
-              </li>
-              <li>
-                <a class='footer-menu__link' href='https://www.uwalumnistore.com/contact'>
-                  Contact Us
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-
-        <div class='footer__column'>
-          <nav class='footer-menu'>
-            <h2 class='footer-menu__title'>Help</h2>
-            <ul>
-              <li>
-                <a class='footer-menu__link' href='https://www.uwalumnistore.com/Customer-Help'>
-                  Customer Service
-                </a>
-              </li>
-              <li>For help call:</li>
-              <li>
-                <a href='tel:+18009932665' class='phone'>
-                  (800) 993-2665
-                </a>
-                x1848
-              </li>
-            </ul>
-          </nav>
-        </div>
-
-        <div class='footer__column'>
-          <nav class='footer-menu'>
-            <h2 class='footer-menu__title'>Shipping And Returns</h2>
-            <ul>
-              <li>
-                <a class='footer-menu__link' href='https://www.uwalumnistore.com/Shipping-Policy'>
-                  Shipping Rates &amp; Info
-                </a>
-              </li>
-              <li>
-                <a class='footer-menu__link' href='https://www.uwalumnistore.com/Customer-Help#return'>
-                  Exchanges/Returns
-                </a>
-              </li>
-              <li>
-                <a class='footer-menu__link' href='https://www.uwalumnistore.com/Customer-Help#clearance'>
-                  Clearance Item Policy
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </div>
-    <div class='footer__bottom'>
-      <div class='footer__copy'>
-        <span id="footer-copyright" class='footer__copy-date'></span>
-        Wisconsin Alumni Association<span class='reg'></span>. All rights
-        reserved.
-      </div>
-
-      <ul class='footer__social'>
-        <li>
-          <a class='fb' title='Follow WAA on Facebook' href='https://www.facebook.com/wisalumni' target='_blank'
-            rel='noreferrer'>
-            &nbsp;
-          </a>
-        </li>
-
-        <li>
-          <a class='tw' title='Follow WAA on Twitter' href='https://www.twitter.com/wisalumni' target='_blank'
-            rel='noreferrer'>
-            <!-- --> &nbsp;
-          </a>
-        </li>
-
-        <li>
-          <a class='ig' title='Follow WAA on Instagram' href='https://www.instagram.com/wisalumni' target='_blank'
-            rel='noreferrer'>
-            &nbsp;
-          </a>
-        </li>
-
-        <li>
-          <a class='yt' title='Follow WAA on YouTube' href='https://www.youtube.com/wisconsinalumniassociation'
-            target='_blank' rel='noreferrer'>
-            &nbsp;
-          </a>
-        </li>
-
-        <li>
-          <a class='wc' title='Learn more about following WAA on WeChat' href='/about/wechat'>
-            &nbsp;
-          </a>
-        </li>
-
-        <li>
-          <a class='li' title='Follow WAA on LinkedIn'
-            href='https://www.linkedin.com/company/wisconsin-alumni-association' target='_blank' rel='noreferrer'>
-            &nbsp;
-          </a>
-        </li>
-      </ul>
-
       <div class='footer__logo'>
         <a href='https://www.uwalumni.com' title='Wisconsin Alumni Association'>
           <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 112 55' class='footer__logo--img img-fluid'>
@@ -879,6 +754,102 @@
           </svg>
         </a>
       </div>
+
+      <div class='footer__membership'>
+        <a href='https://www.uwalumni.com/membership/' class='footer__membership-link' target='_blank'
+          rel='noreferrer noopener' title='Become a WAA member'>
+          <span>Become a WAA member –</span>
+          be where Badgers belong&nbsp;<em>&gt;</em>
+        </a>
+      </div>
+    </div>
+
+    <div class='footer__inner'>
+      <div class='footer__column'>
+        <nav class='footer-menu'>
+          <h2>Our Store</h2>
+          <ul>
+            <li>
+              <a class='footer-menu__link' href='https://www.uwalumnistore.com/StoreAbout'>
+                About Us
+              </a>
+            </li>
+            <li>
+              <a class='footer-menu__link' href='https://www.uwalumnistore.com/contact'>
+                Contact Us
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class='footer__column'>
+        <nav class='footer-menu'>
+          <h2>Help</h2>
+          <ul>
+            <li>
+              <a class='footer-menu__link' href='https://www.uwalumnistore.com/Customer-Help'>
+                Customer Service
+              </a>
+            </li>
+            <li>For help call:</li>
+            <li>
+              <a href='tel:+18009932665' class='phone'>
+                (800) 993-2665 x1848
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class='footer__column'>
+        <nav class='footer-menu'>
+          <h2>Shipping &amp; Returns</h2>
+          <ul>
+            <li>
+              <a class='footer-menu__link' href='https://www.uwalumnistore.com/Shipping-Policy'>
+                Shipping Rates &amp; Info
+              </a>
+            </li>
+            <li>
+              <a class='footer-menu__link' href='https://www.uwalumnistore.com/Customer-Help#return'>
+                Exchanges/Returns
+              </a>
+            </li>
+            <li>
+              <a class='footer-menu__link' href='https://www.uwalumnistore.com/Customer-Help#clearance'>
+                Clearance Item Policy
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <div class='footer__bottom'>
+
+      <ul class='footer__social'>
+        <li>
+          <a class='fb' title='Follow WAA on Facebook' href='https://www.facebook.com/wisalumni' target='_blank'
+            rel='noreferrer'>
+            &nbsp;
+          </a>
+        </li>
+
+        <li>
+          <a class='ig' title='Follow WAA on Instagram' href='https://www.instagram.com/wisalumni' target='_blank'
+            rel='noreferrer'>
+            &nbsp;
+          </a>
+        </li>
+      </ul>
+
+      <div class='footer__copy'>
+        <span id="footer-copyright" class='footer__copy-date'></span>
+        Wisconsin Alumni Association<span class='reg'></span>.<br> All rights
+        reserved.
+      </div>
+
     </div>
   </footer>
 
