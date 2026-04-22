@@ -1,10 +1,10 @@
 @use 'sass:map';
 
-// 450px, 768px, 992px, 1366px, 1920px, 2560px
+// 450px, 768px, 1024px, 1366px, 1920px, 2560px
 $breakpoints-up: (
   'xsmall': '28.125em',
   'small': '48em',
-  'medium': '62em',
+  'medium': '64em',
   'large': '85.375em',
   'xlarge': '120em',
   'xxlarge': 160em,

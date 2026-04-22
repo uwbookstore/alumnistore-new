@@ -16,7 +16,7 @@
 
 a.merchLink {
   p.merchTitle {
-    color: var(--bs-gray-dark);
+    color: var(--bs-secondary);
   }
 }
 
@@ -117,8 +117,8 @@ p.merchPrice.red {
     .merchDesc {
       margin: rem(15) auto;
       padding: rem(10) 0 rem(20);
-      border-top: rem(1) solid var(--bs-gray-dark);
-      border-bottom: rem(1) solid var(--bs-gray-dark);
+      border-top: rem(1) solid var(--bs-secondary);
+      border-bottom: rem(1) solid var(--bs-secondary);
       position: relative;
       line-height: 1.6;
     }
@@ -141,7 +141,7 @@ p.merchPrice.red {
   .lcsSizeWrapper,
   .lcsLogoWrapper {
     padding-block-end: rem(10);
-    border-bottom: rem(1) solid var(--bs-gray-dark);
+    border-bottom: rem(1) solid var(--bs-secondary);
   }
 
   .lcsSizeWrapper {
@@ -163,7 +163,7 @@ p.merchPrice.red {
   width: 100%;
   height: rem(200);
   max-width: rem(600);
-  color: var(--bs-gray-dark);
+  color: var(--bs-secondary);
   position: relative;
 
   @include breakpoint(medium) {
@@ -260,7 +260,7 @@ li.attribute {
   margin: 0 0 rem(25);
   width: 100%;
   padding-bottom: rem(10);
-  border-bottom: rem(1) solid var(--bs-gray-dark);
+  border-bottom: rem(1) solid var(--bs-secondary);
   display: block;
   text-align: center;
 
@@ -369,7 +369,7 @@ ul.breadcrumb {
         img {
           cursor: pointer;
           opacity: 0.5;
-          border: rem(1) solid var(--clr-medium-gray);
+          border: rem(1) solid var(--clr-gray-200);
           padding: rem(3);
 
           &.flex-active {
@@ -476,8 +476,8 @@ ul.breadcrumb {
       position: relative;
       margin: rem(15) auto;
       padding: rem(10) 0 rem(20);
-      border-top: rem(1) solid var(--bs-gray-dark);
-      border-bottom: rem(1) solid var(--bs-gray-dark);
+      border-top: rem(1) solid var(--bs-secondary);
+      border-bottom: rem(1) solid var(--bs-secondary);
       line-height: 1.6;
     }
 
@@ -485,7 +485,7 @@ ul.breadcrumb {
       position: relative;
       margin: rem(15) auto;
       padding: 0 0 rem(15);
-      border-bottom: rem(1) solid var(--bs-gray-dark);
+      border-bottom: rem(1) solid var(--bs-secondary);
 
       &-label {
         margin-block-end: rem(20);
@@ -498,7 +498,7 @@ ul.breadcrumb {
           font-size: rem(16);
           text-transform: lowercase;
           margin-inline-start: rem(5);
-          color: var(--bs-gray-dark);
+          color: var(--bs-secondary);
         }
       }
 

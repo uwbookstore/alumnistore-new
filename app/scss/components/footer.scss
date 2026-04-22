@@ -1,12 +1,34 @@
 @use '../util' as *;
 
 .footer {
-  background-color: hsl(from var(--bs-primary) h s l);
-  color: hsl(from var(--bs-white) h s l);
-  padding: rem(64) rem(20);
-  text-transform: uppercase;
-  font-family: var(--ff-secondary);
-  font-size: rem(16);
+  &__banner {
+    margin-block: rem(72);
+    margin-inline: auto;
+    padding-inline: rem(20);
+    max-width: rem(1300);
+
+    &-link {
+      display: block;
+      font-size: rem(12);
+      font-weight: 700;
+      letter-spacing: 5%;
+      text-transform: uppercase;
+      text-wrap: balance;
+      text-align: center;
+      padding: rem(20);
+      border-top: rem(2) solid var(--clr-gray-200);
+      border-bottom: rem(2) solid var(--clr-gray-200);
+    }
+  }
+
+  &__wrapper {
+    background-color: hsl(from var(--bs-primary) h s l);
+    color: hsl(from var(--bs-white) h s l);
+    padding: rem(64) rem(20);
+    text-transform: uppercase;
+    font-family: var(--ff-secondary);
+    font-size: rem(16);
+  }
 
   &__top {
     display: flex;
@@ -146,8 +168,10 @@
   }
 
   @include breakpoint(small) {
-    padding: rem(48) rem(42);
-    font-size: rem(12);
+    &__wrapper {
+      padding: rem(48) rem(42);
+      font-size: rem(12);
+    }
 
     &__membership {
       a span {
@@ -196,8 +220,10 @@
   }
 
   @include breakpoint(medium) {
-    font-size: rem(14);
-    padding-block: rem(72);
+    &__wrapper {
+      font-size: rem(14);
+      padding-block: rem(72);
+    }
 
     &__inner {
       gap: rem(50);

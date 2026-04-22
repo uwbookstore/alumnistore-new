@@ -19,7 +19,7 @@ body {
   box-sizing: border-box;
   height: 100%;
   background: var(--bs-white);
-  color: var(--bs-gray-dark);
+  color: var(--bs-secondary);
   font-family: var(--ff-primary);
 }
 
@@ -47,5 +47,5 @@ svg {
 
 .page-wrapper {
   margin-inline: auto;
-  max-width: rem(1320);
+  max-width: var(--default-page-width);
 }

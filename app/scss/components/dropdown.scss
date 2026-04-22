@@ -22,7 +22,7 @@
     padding: rem(14);
     font-weight: 600;
     font-family: var(--ff-secondary);
-    color: var(--bs-gray-dark);
+    color: var(--bs-secondary);
     text-transform: uppercase;
     font-size: rem(14);
   }
@@ -59,7 +59,7 @@
 
     &-menu {
       a {
-        color: var(--bs-gray-dark);
+        color: var(--bs-secondary);
         text-decoration: none;
         transition: var(--transition);
 
@@ -98,7 +98,7 @@
         font-size: rem(14);
 
         &.show-all {
-          border-top: rem(1) solid var(--clr-medium-gray);
+          border-top: rem(1) solid var(--clr-gray-200);
           padding: rem(14) 0 !important;
           margin-block-start: rem(30);
         }

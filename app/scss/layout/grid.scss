@@ -43,7 +43,7 @@
 
         .card-body {
           &-link {
-            color: var(--bs-gray-dark);
+            color: var(--bs-secondary);
             position: relative;
             text-decoration: none;
             transition: var(--transition);
@@ -53,7 +53,7 @@
               display: block;
               content: '';
               height: rem(1);
-              background: hsl(from var(--bs-gray-dark) h s l / 0.65);
+              background: hsl(from var(--bs-secondary) h s l / 0.65);
               width: 115%;
               left: 50%;
               transform: translateX(-50%);
