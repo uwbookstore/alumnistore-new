@@ -4,70 +4,73 @@
   display: grid;
 
   &.home {
-    margin-block: rem(30);
-    gap: rem(30);
+    margin-block-end: rem(30);
+    padding-inline: rem(20);
+    gap: rem(48);
 
     .grid__item {
       text-align: center;
+    }
+
+    .feature {
+      display: flex;
+      flex-direction: column;
+      gap: rem(32);
 
       img {
         opacity: 1;
         transition: var(--transition);
+        width: 100%;
+        margin-inline: auto;
 
         &:hover {
           opacity: 0.75;
         }
       }
 
-      h3 {
-        font-family: inherit;
-        margin-block-end: rem(16);
-        font-style: italic;
-        font-size: rem(18);
-        line-height: 1;
-        text-transform: uppercase;
-      }
+      .feature-body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: rem(24);
 
-      p {
-        margin-block-end: rem(15);
-        font-size: rem(16);
-      }
-
-      &.card {
-        border: none;
-        border-radius: 0;
-
-        [class^='card-img-'] {
-          border-radius: 0;
+        h3 {
+          font-family: var(--ff-primary);
+          margin: 0;
+          margin-block-end: rem(8);
+          font-weight: 700;
+          font-size: rem(20);
+          line-height: 1;
+          text-transform: uppercase;
         }
 
-        .card-body {
-          &-link {
-            color: var(--bs-secondary);
-            position: relative;
+        p {
+          font-family: var(--ff-secondary);
+          margin: 0;
+          font-size: rem(14);
+        }
+
+        &-link {
+          text-transform: uppercase;
+          font-size: rem(14);
+          font-weight: 500;
+          color: hsl(from var(--bs-secondary) h s l);
+          transition: var(--transition);
+
+          &::after {
+            display: block;
+            content: '';
+            height: rem(2);
+            width: 100%;
+            background-color: currentColor;
+          }
+
+          &:hover {
             text-decoration: none;
-            transition: var(--transition);
+            opacity: 0.75;
 
             &::after {
-              position: absolute;
-              display: block;
-              content: '';
-              height: rem(1);
-              background: hsl(from var(--bs-secondary) h s l / 0.65);
-              width: 115%;
-              left: 50%;
-              transform: translateX(-50%);
-              bottom: rem(-5);
-              transition: var(--transition);
-            }
-
-            &:hover {
-              text-decoration: none;
-              color: var(--bs-primary);
-
-              &::after {
-                background: var(--bs-primary);
-              }
+              opacity: 0.75;
             }
           }
         }
@@ -77,17 +80,45 @@
     @include breakpoint(small) {
       grid-template-columns: repeat(2, 1fr);
 
-      .grid__item {
-        &.card {
-          .card-body {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
+      &.home {
+        padding-inline: rem(42);
+        gap: rem(14);
+      }
 
-            .btn {
-              width: rem(200);
-            }
+      &.feature {
+        gap: rem(24);
+      }
+    }
+
+    @include breakpoint(medium) {
+      &.home {
+        padding-inline: rem(72);
+        gap: rem(24);
+      }
+      .feature {
+        .feature-body {
+          h3 {
+            font-size: rem(24);
+          }
+
+          p,
+          &-link {
+            font-size: rem(16);
+          }
+        }
+      }
+    }
+
+    @include breakpoint(large) {
+      .feature {
+        .feature-body {
+          h3 {
+            font-size: rem(32);
+          }
+
+          p,
+          &-link {
+            font-size: rem(20);
           }
         }
       }
