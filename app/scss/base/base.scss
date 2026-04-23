@@ -48,4 +48,5 @@ svg {
 .page-wrapper {
   margin-inline: auto;
   max-width: var(--default-page-width);
+  margin-block-start: rem(30);
 }

@@ -52,6 +52,7 @@
 
   @include breakpoint(medium) {
     border-top: rem(1) solid var(--clr-gray-200);
+    margin-block-start: rem(-30);
 
     &__body {
       padding: rem(15) rem(5) rem(20);
