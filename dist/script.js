@@ -1,0 +1,2 @@
+"use strict";var d=new Date,copyYear=d.getFullYear(),footerCopyright=document.getElementById("footer-copyright");footerCopyright.innerHTML="&copy; Copyright ".concat(copyYear);
+//# sourceMappingURL=script.js.map
