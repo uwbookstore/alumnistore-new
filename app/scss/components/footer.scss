@@ -282,6 +282,18 @@
       text-align: initial;
     }
 
+    &__social {
+      li {
+        height: rem(25);
+        width: rem(25);
+
+        a {
+          height: rem(25);
+          width: rem(25);
+        }
+      }
+    }
+
     &__copy {
       order: -1;
 
@@ -308,6 +320,18 @@
 
     &__bottom {
       max-width: rem(652);
+    }
+
+    &__social {
+      li {
+        height: rem(20);
+        width: rem(20);
+
+        a {
+          height: rem(20);
+          width: rem(20);
+        }
+      }
     }
   }
 
