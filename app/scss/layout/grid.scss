@@ -39,7 +39,7 @@
           margin: 0;
           margin-block-end: rem(8);
           font-weight: 700;
-          font-size: rem(20);
+          font-size: clamp(1.25rem, 0.9459rem + 1.2973vw, 2rem);
           line-height: 1;
           text-transform: uppercase;
         }
@@ -47,12 +47,12 @@
         p {
           font-family: var(--ff-secondary);
           margin: 0;
-          font-size: rem(14);
+          font-size: clamp(0.875rem, 0.723rem + 0.6486vw, 1.25rem);
         }
 
         &-link {
           text-transform: uppercase;
-          font-size: rem(14);
+          font-size: inherit;
           font-weight: 500;
           color: hsl(from var(--bs-secondary) h s l);
           transition: var(--transition);
@@ -94,33 +94,6 @@
       &.home {
         padding-inline: rem(72);
         gap: rem(24);
-      }
-      .feature {
-        .feature-body {
-          h3 {
-            font-size: rem(24);
-          }
-
-          p,
-          &-link {
-            font-size: rem(16);
-          }
-        }
-      }
-    }
-
-    @include breakpoint(large) {
-      .feature {
-        .feature-body {
-          h3 {
-            font-size: rem(32);
-          }
-
-          p,
-          &-link {
-            font-size: rem(20);
-          }
-        }
       }
     }
   }
