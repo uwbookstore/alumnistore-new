@@ -1,5 +1,9 @@
 @use '../util' as *;
 
+#merch-main {
+  padding-block-start: rem(30);
+}
+
 .merchColumn {
   display: flex;
   flex-wrap: wrap;
