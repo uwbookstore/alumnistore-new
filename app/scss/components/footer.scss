@@ -47,7 +47,7 @@
     padding: rem(64) rem(20);
     text-transform: uppercase;
     font-family: var(--ff-secondary);
-    font-size: rem(16);
+    font-size: rem(18);
   }
 
   &__top {
@@ -83,6 +83,7 @@
       display: inline-block;
       color: hsl(from var(--bs-white) h s l);
       font-size: inherit;
+
       span {
         font-weight: 700;
         display: block;
@@ -122,7 +123,7 @@
       font-size: inherit;
       font-weight: 700;
       margin: 0;
-      margin-block-end: rem(6);
+      margin-block-end: rem(15);
     }
 
     ul {
@@ -132,7 +133,7 @@
 
       display: flex;
       flex-direction: column;
-      gap: rem(6);
+      gap: rem(12);
     }
 
     a {
@@ -165,7 +166,7 @@
   }
 
   &__copy {
-    font-size: rem(10);
+    font-size: clamp(rem(12), 0.6055rem + 0.6163vw, rem(16));
     text-transform: none;
   }
 
@@ -174,19 +175,19 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: rem(8);
+    gap: rem(16);
     margin: 0;
     padding: 0;
 
     li {
       display: block;
-      width: rem(15);
-      height: rem(15);
+      width: rem(30);
+      height: rem(30);
 
       a {
         display: block;
-        width: rem(15);
-        height: rem(15);
+        width: rem(30);
+        height: rem(30);
         background-color: hsl(from var(--bs-white) h s l);
         scale: 1;
         transition: var(--transition);
@@ -208,7 +209,6 @@
   @include breakpoint(small) {
     &__wrapper {
       padding: rem(48) rem(42);
-      font-size: rem(12);
     }
 
     &__membership {
@@ -225,7 +225,7 @@
 
     nav.footer-menu {
       text-align: left;
-      width: rem(151);
+      width: rem(179);
 
       .footer-menu__link {
         position: relative;
@@ -304,6 +304,7 @@
 
     nav.footer-menu {
       width: rem(179);
+      font-size: rem(14);
     }
 
     &__bottom {
