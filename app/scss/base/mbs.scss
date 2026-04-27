@@ -1,21 +1,210 @@
 @use '../util' as *;
 
-.pageHelp,
-.merchTop,
-.viewfiltersDiv,
-.bottomButtons,
-.searchCatWrap,
-.sortCatWrap {
+// Create some space under the
+// iCM editor menu since we use
+// a negative top margin on the
+// hero images.
+#modMenu {
+  margin-bottom: rem(50);
+}
+
+#dv_Logo input#imgLogo {
+  max-width: rem(200);
+}
+
+#ContainDiv {
+  margin: rem(40) 0 0;
+  padding: 0 rem(10);
+
+  @include breakpoint(small) {
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+#dv_Logo {
+  #imgLogo {
+    max-width: rem(300);
+    display: block;
+    margin: auto;
+  }
+}
+
+#hScript,
+#fScript {
+  font-family: Monaco, monospace;
+  font-size: rem(14);
+  width: 100%;
+}
+
+body header:first-of-type,
+#leftSection {
   display: none;
 }
 
-.sortCatWrap {
+#contentSection {
   width: 100%;
 }
 
-#ContainDiv.contain.container {
-  width: 100%;
-  max-width: var(--default-page-width);
-  margin-inline: auto;
-  padding: 0;
+.promo {
+  &-hidden {
+    display: none !important;
+  }
+
+  &-banner {
+    line-height: rem(45);
+    min-height: rem(45);
+    background: var(--bs-primary);
+    color: #fff;
+    text-align: center;
+    font-style: italic;
+    font-size: rem(18);
+    display: block;
+
+    span {
+      font-size: rem(14);
+    }
+
+    a {
+      &:link {
+        color: #fff;
+        text-decoration: underline;
+        font-weight: 500;
+        text-underline-offset: rem(4);
+        font-style: normal;
+      }
+
+      &:hover {
+        opacity: 0.85;
+      }
+    }
+
+    &:hover,
+    &:visited {
+      text-decoration: none;
+    }
+
+    strong {
+      font-weight: 600;
+    }
+  }
+}
+
+a.promo-banner {
+  text-decoration: none;
+  color: #fff;
+}
+
+// HIDE ALL UNNECESSARY MBS ELEMENTS
+#h_nav,
+#Cart,
+#div_privacy,
+.firstBackward,
+.lastForward,
+.help.textr,
+.prev_link,
+.custLogoutHelpWrapper,
+.lostPasswordHelp,
+#Server,
+#custBillMI,
+#custShipMiddle,
+a#goToTop,
+.disco,
+.hide,
+footer:not(.footer) {
+  display: none !important;
+}
+
+// MBS apparently thinks folks will
+// only want to use the colors MBS
+// chooses.
+
+/*.radioButton,*/
+input[class^='radio'] {
+  & + span {
+    &::before {
+      width: rem(12);
+      height: rem(12);
+      vertical-align: 0;
+    }
+  }
+
+  &:checked {
+    & + span {
+      &::before {
+        background-color: var(--bs-primary);
+      }
+    }
+  }
+}
+
+#success-msg,
+#error-msg {
+  display: none;
+}
+
+.skip {
+  position: absolute;
+  left: rem(-10000);
+  top: auto;
+  width: rem(1);
+  height: rem(1);
+  overflow: hidden;
+  font-size: rem(15);
+  padding: rem(5);
+}
+
+#promo-toggle-wrapper {
+  display: none;
+}
+
+#promo-content {
+  display: flex !important;
+}
+
+.rem1 {
+  font-size: var(--fs-default);
+}
+
+.req-astrisk {
+  float: left;
+  margin-right: rem(5);
+}
+
+.coExistingAddressText p {
+  margin-bottom: rem(5);
+}
+
+#cart-rightCard .sticky-top {
+  z-index: 0;
+}
+
+.rem1_2 {
+  font-size: rem(19.2);
+}
+
+.rem1_5 {
+  font-size: rem(24);
+}
+
+.rem2 {
+  font-size: rem(32);
+}
+
+.rem3 {
+  font-size: rem(48);
+}
+
+.rem4 {
+  font-size: rem(64);
+}
+
+.merchDiscount.red.top5.bold,
+.merch-gm.bold.red {
+  display: none;
+}
+
+#waa-header {
+  display: block;
 }
