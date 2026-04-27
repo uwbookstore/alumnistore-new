@@ -201,7 +201,7 @@
 
       .account {
         &-toggle {
-          position: relative;
+          position: static;
         }
 
         &-img {
@@ -451,6 +451,12 @@
               content: none !important;
             }
           }
+        }
+
+        &.my-account {
+          max-width: rem(300);
+          left: initial;
+          padding-block-end: rem(15);
         }
       }
 
