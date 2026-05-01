@@ -20,7 +20,10 @@
     position: absolute;
     bottom: rem(28);
     width: 100%;
+    max-width: rem(240);
     text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
 
     h2 {
       font-family: var(--ff-primary);
@@ -30,7 +33,6 @@
       font-size: clamp(1.25rem, 0.7432rem + 2.1622vw, 2.5rem);
       line-height: 130%;
       letter-spacing: 2%;
-      max-width: rem(240);
       margin-inline: auto;
     }
 
@@ -54,11 +56,13 @@
       left: rem(42);
       bottom: rem(42);
       text-align: left;
+      max-width: rem(345);
+      transform: translateX(0);
 
       h2 {
-        max-width: rem(345);
+        width: 100%;
         margin-inline-start: initial;
-        margin-inline-end: auto;
+        margin-inline-end: 0;
       }
     }
   }
@@ -69,8 +73,8 @@
     &__body {
       left: rem(72);
       bottom: rem(72);
+      max-width: rem(400);
       h2 {
-        max-width: rem(400);
         text-wrap: initial;
       }
 
@@ -82,9 +86,7 @@
 
   @include breakpoint(large) {
     &__body {
-      h2 {
-        max-width: rem(450);
-      }
+      max-width: rem(450);
 
       .btn {
         height: rem(41);
@@ -97,20 +99,32 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: rem(10);
+  gap: rem(5);
   font-family: inherit;
   text-align: center;
   text-transform: uppercase;
   font-size: clamp(0.875rem, 0.723rem + 0.6486vw, 1.25rem);
   font-weight: 700;
-  text-wrap: balance;
+  // text-wrap: balance;
   letter-spacing: 5%;
   margin: 0;
   padding: rem(40) rem(45);
   color: hsl(from var(--bs-primary) h s l);
 
-  img {
-    width: rem(9.85);
+  svg {
+    // width: rem(9.85);
     height: rem(20);
+  }
+
+  @include breakpoint(small) {
+    padding-block: rem(42);
+  }
+
+  @include breakpoint(medium) {
+    padding-block: rem(48);
+  }
+
+  @include breakpoint(large) {
+    padding-block: rem(72);
   }
 }

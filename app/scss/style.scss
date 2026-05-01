@@ -18,3 +18,23 @@ Sass Boilerplate for projects
 
 // https://medium.com/wayfair-design/more-padding-please-b95e19422acc
 // More Padding, Please!
+
+.scroll-watcher {
+  height: 10px;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  background-color: goldenrod;
+  width: 100%;
+  scale: 0 1;
+  transform-origin: left;
+  animation: scroll-watcher linear;
+  animation-timeline: scroll();
+}
+
+@keyframes scroll-watcher {
+  to {
+    scale: 1 1;
+  }
+}
+// https://www.youtube.com/watch?v=UmzFk68Bwdk&t=1822s
