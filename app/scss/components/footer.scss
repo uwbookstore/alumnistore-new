@@ -147,7 +147,8 @@
       color: inherit;
 
       &.phone {
-        background-color: hsl(from var(--bs-success) h s 35%);
+        background-color: var(--bs-white);
+        color: hsl(from var(--bs-primary) h s l);
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -318,6 +319,13 @@
 
     &__membership {
       padding-block: rem(24);
+    }
+
+    &__logo {
+      a {
+        width: rem(145);
+        height: rem(69.83);
+      }
     }
 
     &__wrapper {
