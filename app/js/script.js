@@ -30,6 +30,14 @@
 //   }
 // });
 
+// Navbar Toggle
+const navbarToggle = document.getElementById('nav-toggle');
+const primaryNav = document.getElementById('waa-nav');
+
+navbarToggle.addEventListener('click', () => {
+  primaryNav.classList.toggle('open');
+});
+
 // Footer copyright info
 const d = new Date();
 const copyYear = d.getFullYear();

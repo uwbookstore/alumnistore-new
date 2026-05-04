@@ -29,61 +29,79 @@
         </div>
       </div>
 
-      <div id="waa-nav">
-        <div class="navigation__wrapper">
-          <nav class="navigation__left">
-            <ul>
-              <li><a href="/">New Arrivals</a></li>
-              <li><a href="/">Womens</a></li>
-              <li><a href="/">Mens</a></li>
-              <li><a href="/">Kids</a></li>
-              <li><a href="/">Gift &amp; Accessories</a></li>
-            </ul>
-          </nav>
-          <div class="navigation__brand">
-            <a href="/" class="navigation__brand-link">
+      <nav id="waa-nav" class="primary-navigation" aria-label="Primary">
+        <button type="button" id="nav-toggle" class="primary-navigation-toggler">
+          <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 31 31">
+            <defs>
+              <style>
+                .st0 {
+                  fill: none;
+                  stroke: #4d4d4d;
+                  stroke-linecap: round;
+                  stroke-linejoin: round;
+                  stroke-width: 3px;
+                }
+              </style>
+            </defs>
+            <line class="st0" x1="1.95" y1="6.03" x2="29.05" y2="6.03" />
+            <line class="st0" x1="1.95" y1="15.5" x2="29.05" y2="15.5" />
+            <line class="st0" x1="1.95" y1="24.97" x2="29.05" y2="24.97" />
+          </svg>
+        </button>
+        <div class="primary-navigation__wrapper">
+          <ul class="primary-navigation__left">
+            <li><a href="/">New Arrivals</a></li>
+            <li><a href="/">Womens</a></li>
+            <li><a href="/">Mens</a></li>
+            <li><a href="/">Kids</a></li>
+            <li><a href="/">Gift &amp; Accessories</a></li>
+          </ul>
+          <div class="primary-navigation__brand">
+            <a href="/" class="primary-navigation__brand-link">
               <img src="https://i.univbkstr.com/uwalumnistore/img/logos/logo.svg" alt="" role="presentation"
                 class="waa-logo">
+              <span class="sr-only">UW Alumni Store</span>
             </a>
           </div>
-          <nav class="navigation__right">
-            <ul>
-              <li>
-                <a href="/">
-                  <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 31 31"
-                    class="icon-search">
-                    <circle class="st1" cx="13.1" cy="13.13" r="11.12" />
-                    <line class="st0" x1="20.95" y1="21" x2="29.01" y2="28.96" />
-                  </svg>
-                </a>
-              </li>
+          <ul class="primary-navigation__right">
+            <li>
+              <a href="/">
+                <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 31 31"
+                  class="icon-search">
+                  <circle class="st1" cx="13.1" cy="13.13" r="11.12" />
+                  <line class="st0" x1="20.95" y1="21" x2="29.01" y2="28.96" />
+                </svg>
+                <span class="sr-only">Search</span>
+              </a>
+            </li>
 
-              <li>
-                <a href="/">
-                  <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 31 31"
-                    class="icon-account">
-                    <circle class="st1" cx="15.5" cy="8.77" r="6.73" />
-                    <polyline class="st0" points="26.65 28.97 22.71 20.41 8.29 20.41 4.35 28.97" />
-                  </svg>
-                </a>
-              </li>
+            <li>
+              <a href="/">
+                <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 31 31"
+                  class="icon-account">
+                  <circle class="st1" cx="15.5" cy="8.77" r="6.73" />
+                  <polyline class="st0" points="26.65 28.97 22.71 20.41 8.29 20.41 4.35 28.97" />
+                </svg>
+                <span class="sr-only">Account</span>
+              </a>
+            </li>
 
-              <li>
-                <a href="/">
-                  <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 40 31"
-                    class="icon-cart">
-                    <polyline class="st0" points="1.7 2 6.56 2.04 14.97 23.86 33.41 23.86" />
-                    <polyline class="st0" points="12.52 4.47 38.21 4.47 34.21 17.21 12.8 17.21" />
-                    <circle class="st1" cx="17.25" cy="28.41" r="2.06" />
-                    <circle class="st1" cx="30.96" cy="28.41" r="2.06" />
-                  </svg>
-                </a>
-              </li>
-            </ul>
-          </nav>
+            <li>
+              <a href="/">
+                <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 40 31"
+                  class="icon-cart">
+                  <polyline class="st0" points="1.7 2 6.56 2.04 14.97 23.86 33.41 23.86" />
+                  <polyline class="st0" points="12.52 4.47 38.21 4.47 34.21 17.21 12.8 17.21" />
+                  <circle class="st1" cx="17.25" cy="28.41" r="2.06" />
+                  <circle class="st1" cx="30.96" cy="28.41" r="2.06" />
+                </svg>
+                <span class="sr-only">Shopping Cart</span>
+              </a>
+            </li>
+          </ul>
         </div>
-        <h2 class="navigation__title">UW Alumni Store</h2>
-      </div>
+        <h2 class="primary-navigation__title">UW Alumni Store</h2>
+      </nav>
     </header>
   </div>
 
