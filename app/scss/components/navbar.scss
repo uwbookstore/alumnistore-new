@@ -2,6 +2,7 @@
 
 #waa-nav {
   position: relative;
+  overflow-x: clip;
   display: flex;
   align-items: center;
   height: rem(150);
@@ -213,6 +214,121 @@
           }
         }
       }
+    }
+  }
+}
+
+.search {
+  &-overlay {
+    position: absolute;
+    right: -100%;
+
+    &.open {
+      background-color: #fff;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .search-close {
+        position: absolute;
+        inset: 0;
+        z-index: 20;
+        justify-self: flex-end;
+      }
+
+      > div {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .search-wrapper {
+          position: relative;
+        }
+
+        .search-input {
+          display: block;
+          font-family: inherit;
+          text-transform: uppercase;
+          border: 1px solid currentColor;
+          border-radius: 0;
+          height: rem(40);
+          width: rem(330);
+          padding-inline: rem(10);
+        }
+
+        .search-submit {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          right: rem(10);
+          height: rem(30);
+          width: rem(30);
+          padding: 0;
+          transition: none;
+        }
+      }
+    }
+  }
+
+  &-input {
+    display: none;
+  }
+
+  &-submit,
+  &-toggle,
+  &-close {
+    svg {
+      height: rem(20);
+      stroke: var(--bs-secondary);
+      stroke-width: rem(3);
+      fill: none;
+      transition: var(--transition);
+    }
+
+    &:hover {
+      svg {
+        stroke: hsl(from var(--bs-primary) h s l);
+        stroke-width: rem(3);
+        fill: none;
+      }
+    }
+  }
+
+  @include breakpoint(large) {
+    &-toggle,
+    &-close {
+      display: none;
+    }
+
+    &-overlay {
+      position: initial;
+
+      > div {
+        position: relative;
+      }
+    }
+
+    &-input {
+      display: block;
+      font-family: inherit;
+      text-transform: uppercase;
+      border: 1px solid currentColor;
+      border-radius: 0;
+      height: rem(40);
+      width: rem(330);
+      padding-inline: rem(10);
+    }
+
+    &-submit {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: rem(10);
+      height: rem(30);
+      width: rem(30);
+      padding: 0;
     }
   }
 }

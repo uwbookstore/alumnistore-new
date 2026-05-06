@@ -45,6 +45,7 @@
             <li><a href="/">Kids</a></li>
             <li><a href="/">Gift &amp; Accessories</a></li>
           </ul>
+
           <div class="primary-navigation__brand">
             <a href="/" class="primary-navigation__brand-link">
               <img src="https://i.univbkstr.com/uwalumnistore/img/logos/logo.svg" alt="" role="presentation"
@@ -52,16 +53,38 @@
               <span class="sr-only">UW Alumni Store</span>
             </a>
           </div>
+
           <ul class="primary-navigation__right">
-            <li>
-              <a href="/">
+            <li class="search">
+              <button id="open-search" type="button" class="search-toggle btn">
                 <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 31 31"
                   class="icon-search">
                   <circle class="st1" cx="13.1" cy="13.13" r="11.12" />
                   <line class="st0" x1="20.95" y1="21" x2="29.01" y2="28.96" />
                 </svg>
-                <span class="sr-only">Search</span>
-              </a>
+                <span class="sr-only">Open Search bar</span>
+              </button>
+
+              <div id="search-overlay" class="search-overlay">
+                <button type="button" class="btn search-close" id="close-search">
+                  <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 31 31">
+                    <line class="st0" x1="2.06" y1="28.94" x2="28.94" y2="2.06" />
+                    <line class="st0" x1="2.06" y1="2.06" x2="28.94" y2="28.94" />
+                  </svg>
+                </button>
+                <div>
+                  <input type="text" name="search" id="search" class="search-input" placeholder="Search">
+                  <button type="submit" class="search-submit btn">
+                    <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 31 31"
+                      class="icon-search">
+                      <circle class="st1" cx="13.1" cy="13.13" r="11.12" />
+                      <line class="st0" x1="20.95" y1="21" x2="29.01" y2="28.96" />
+                    </svg>
+                    <span class="sr-only">Search</span>
+                  </button>
+                </div>
+              </div>
+
             </li>
 
             <li>
