@@ -22,7 +22,7 @@ a.icm-controls-text {
 }
 
 #dv_Logo input#imgLogo {
-  max-width: rem(200);
+  max-inline-size: rem(200);
 }
 
 #ContainDiv {
@@ -38,7 +38,7 @@ a.icm-controls-text {
 
 #dv_Logo {
   #imgLogo {
-    max-width: rem(300);
+    max-inline-size: rem(300);
     display: block;
     margin: auto;
   }
@@ -48,7 +48,7 @@ a.icm-controls-text {
 #fScript {
   font-family: Monaco, monospace;
   font-size: rem(14);
-  width: 100%;
+  inline-size: 100%;
 }
 
 body header:first-of-type,
@@ -57,7 +57,7 @@ body header:first-of-type,
 }
 
 #contentSection {
-  width: 100%;
+  inline-size: 100%;
 }
 
 .promo {
@@ -67,7 +67,7 @@ body header:first-of-type,
 
   &-banner {
     line-height: rem(45);
-    min-height: rem(45);
+    min-block-size: rem(45);
     background: var(--bs-primary);
     color: #fff;
     text-align: center;
@@ -137,8 +137,8 @@ footer:not(.footer) {
 input[class^='radio'] {
   & + span {
     &::before {
-      width: rem(12);
-      height: rem(12);
+      inline-size: rem(12);
+      block-size: rem(12);
       vertical-align: 0;
     }
   }
@@ -161,8 +161,8 @@ input[class^='radio'] {
   position: absolute;
   left: rem(-10000);
   top: auto;
-  width: rem(1);
-  height: rem(1);
+  inline-size: rem(1);
+  block-size: rem(1);
   overflow: hidden;
   font-size: rem(15);
   padding: rem(5);
@@ -223,5 +223,5 @@ input[class^='radio'] {
 }
 
 #ContainDiv {
-  max-width: var(--default-page-width);
+  max-inline-size: var(--default-page-width);
 }

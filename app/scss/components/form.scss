@@ -5,15 +5,15 @@
     display: flex;
     align-items: center;
     padding: 0 rem(15);
-    height: rem(50);
+    block-size: rem(50);
     border-radius: 0;
   }
 
   &-floating {
     > .form-control {
-      height: auto;
+      block-size: auto;
       line-height: 1;
-      width: 100%;
+      inline-size: 100%;
 
       &:focus,
       &:not(:placeholder-shown) {
@@ -31,7 +31,7 @@
 
   @include breakpoint(medium) {
     &-control {
-      height: rem(40);
+      block-size: rem(40);
     }
   }
 }
@@ -44,7 +44,7 @@ select.form-control {
   background-size: rem(9) rem(6);
   background-repeat: no-repeat;
   border: rem(2) solid var(--clr-gray-200);
-  width: 100%;
+  inline-size: 100%;
 
   &.dd-hidden {
     background-image: none;
@@ -59,6 +59,6 @@ select.form-control {
 
   @include breakpoint(medium) {
     border-width: rem(1);
-    width: auto;
+    inline-size: auto;
   }
 }

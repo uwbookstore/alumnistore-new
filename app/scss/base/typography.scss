@@ -31,7 +31,7 @@ a {
     background: none;
     margin: 0;
     margin-block-end: rem(25);
-    width: 100%;
+    inline-size: 100%;
     font-size: inherit;
     font-style: italic;
     color: var(--bs-secondary);
@@ -40,7 +40,7 @@ a {
     &::after {
       content: '';
       display: block;
-      height: rem(1);
+      block-size: rem(1);
       background-color: var(--clr-light-gray-2);
     }
 

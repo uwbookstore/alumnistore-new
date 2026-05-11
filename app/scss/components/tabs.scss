@@ -10,7 +10,7 @@
   &__nav {
     display: table;
     text-align: center;
-    width: 100%;
+    inline-size: 100%;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -21,7 +21,7 @@
 
     @include breakpoint(small) {
       display: inline-block;
-      width: auto;
+      inline-size: auto;
 
       &:not(:last-child) {
         margin-right: rem(15);
@@ -33,7 +33,7 @@
     &:link,
     &:visited {
       display: block;
-      width: 100%;
+      inline-size: 100%;
       font-size: rem(12);
       background-color: #ddd;
       border-bottom: rem(4) solid transparent;
@@ -43,7 +43,7 @@
       position: relative;
       text-align: center;
       color: var(--bs-secondary);
-      height: rem(60);
+      block-size: rem(60);
       transition: var(--transition);
     }
 
@@ -69,7 +69,7 @@
       &:visited {
         background: transparent;
         padding: rem(10);
-        height: auto;
+        block-size: auto;
       }
 
       &:hover,
@@ -103,14 +103,14 @@
 
         @include breakpoint(small) {
           margin: rem(10) auto;
-          width: 75%;
+          inline-size: 75%;
         }
       }
     }
 
     #shipping {
       @include breakpoint(medium) {
-        height: rem(300);
+        block-size: rem(300);
         overflow-y: scroll;
       }
     }
@@ -129,7 +129,7 @@
       [role='tablist'] {
         display: table;
         text-align: center;
-        width: 100%;
+        inline-size: 100%;
         list-style: none;
         padding: 0;
 
@@ -149,7 +149,7 @@
           &:link,
           &:visited {
             display: block;
-            width: 100%;
+            inline-size: 100%;
             font-size: rem(12);
             background: var(--bs-gray-100);
             border-bottom: rem(4) solid transparent;
@@ -157,7 +157,7 @@
             text-transform: uppercase;
             padding: rem(20);
             color: var(--bs-secondary);
-            height: rem(60);
+            block-size: rem(60);
             transition: var(--transition);
             text-decoration: none;
           }
@@ -178,7 +178,7 @@
         &#disco,
         &#discontinued,
         &#shipping {
-          max-width: rem(750);
+          max-inline-size: rem(750);
         }
 
         span {
@@ -191,7 +191,7 @@
 
           @include breakpoint(small) {
             margin: rem(10) auto;
-            width: 75%;
+            inline-size: 75%;
           }
         }
       }
@@ -203,14 +203,14 @@
         [role='tablist'] {
           li {
             display: inline-block;
-            width: auto;
+            inline-size: auto;
           }
 
           a {
             &:link,
             &:visited {
               background-color: transparent;
-              height: auto;
+              block-size: auto;
               padding: rem(10);
             }
           }
@@ -239,7 +239,7 @@
           flex: 0 0 48%;
 
           a {
-            width: 100%;
+            inline-size: 100%;
           }
         }
 
@@ -247,7 +247,7 @@
           li {
             flex: initial;
             a {
-              width: auto;
+              inline-size: auto;
             }
           }
         }

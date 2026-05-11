@@ -15,9 +15,9 @@ html {
 html,
 body {
   margin: 0 auto;
-  width: 100%;
+  inline-size: 100%;
   box-sizing: border-box;
-  height: 100%;
+  block-size: 100%;
   background: var(--bs-white);
   color: var(--bs-secondary);
   font-family: var(--ff-primary);
@@ -31,22 +31,22 @@ body {
 .sr-only {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
-  height: 1px;
+  block-size: 1px;
   overflow: hidden;
   position: absolute;
   white-space: nowrap;
-  width: 1px;
+  inline-size: 1px;
 }
 
 img,
 svg {
-  max-width: 100%;
-  height: auto;
+  max-inline-size: 100%;
+  block-size: auto;
   display: block;
 }
 
 .page-wrapper {
   margin-inline: auto;
-  max-width: var(--default-page-width);
+  max-inline-size: var(--default-page-width);
   margin-block-start: rem(30);
 }

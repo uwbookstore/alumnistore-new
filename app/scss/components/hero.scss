@@ -2,16 +2,16 @@
 
 .hero {
   position: relative;
-  width: 100%;
+  inline-size: 100%;
   margin-inline: auto;
   margin-block-start: rem(-30);
-  max-width: var(--default-page-width);
-  min-height: rem(175);
+  max-inline-size: var(--default-page-width);
+  min-block-size: rem(175);
 
   &__image {
     img {
       margin-inline: auto;
-      width: 100%;
+      inline-size: 100%;
       box-shadow: 0 3px 3px 3px hsl(from var(--bs-black) h s 55%);
     }
   }
@@ -19,8 +19,8 @@
   &__body {
     position: absolute;
     bottom: rem(28);
-    width: 100%;
-    max-width: rem(240);
+    inline-size: 100%;
+    max-inline-size: rem(240);
     text-align: center;
     left: 50%;
     transform: translateX(-50%);
@@ -38,7 +38,7 @@
 
     .btn {
       text-transform: uppercase;
-      height: rem(36);
+      block-size: rem(36);
       letter-spacing: 2%;
       font-weight: 700;
       font-size: clamp(0.75rem, 0.6486rem + 0.4324vw, 1rem);
@@ -56,11 +56,11 @@
       left: rem(42);
       bottom: rem(42);
       text-align: left;
-      max-width: rem(345);
+      max-inline-size: rem(345);
       transform: translateX(0);
 
       h2 {
-        width: 100%;
+        inline-size: 100%;
         margin-inline-start: initial;
         margin-inline-end: 0;
       }
@@ -73,23 +73,23 @@
     &__body {
       left: rem(72);
       bottom: rem(72);
-      max-width: rem(400);
+      max-inline-size: rem(400);
       h2 {
         text-wrap: initial;
       }
 
       .btn {
-        height: rem(39);
+        block-size: rem(39);
       }
     }
   }
 
   @include breakpoint(large) {
     &__body {
-      max-width: rem(450);
+      max-inline-size: rem(450);
 
       .btn {
-        height: rem(41);
+        block-size: rem(41);
       }
     }
   }
@@ -112,8 +112,8 @@
   color: hsl(from var(--bs-primary) h s l);
 
   svg {
-    // width: rem(9.85);
-    height: rem(20);
+    // inline-size: rem(9.85);
+    block-size: rem(20);
   }
 
   @include breakpoint(small) {

@@ -20,7 +20,7 @@
       img {
         opacity: 1;
         transition: var(--transition);
-        width: 100%;
+        inline-size: 100%;
         margin-inline: auto;
 
         &:hover {
@@ -60,8 +60,8 @@
           &::after {
             display: block;
             content: '';
-            height: rem(2);
-            width: 100%;
+            block-size: rem(2);
+            inline-size: 100%;
             background-color: currentColor;
           }
 

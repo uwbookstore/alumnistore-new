@@ -164,14 +164,14 @@ p.merchPrice.red {
 .img-empty {
   background-color: var(--clr-light-gray);
   border: rem(1) solid var(--clr-light-gray-3);
-  width: 100%;
-  height: rem(200);
-  max-width: rem(600);
+  inline-size: 100%;
+  block-size: rem(200);
+  max-inline-size: rem(600);
   color: var(--bs-secondary);
   position: relative;
 
   @include breakpoint(medium) {
-    height: rem(600);
+    block-size: rem(600);
   }
 
   p {
@@ -262,7 +262,7 @@ li.attribute {
 .card.checkoutDynamic .card-header {
   font-size: rem(25);
   margin: 0 0 rem(25);
-  width: 100%;
+  inline-size: 100%;
   padding-bottom: rem(10);
   border-bottom: rem(1) solid var(--bs-secondary);
   display: block;
@@ -293,7 +293,7 @@ li.attribute {
     &::before,
     &::after {
       content: '';
-      height: rem(1);
+      block-size: rem(1);
       display: block;
       background-color: currentColor;
     }
@@ -303,7 +303,7 @@ li.attribute {
 .card.previousDynamic,
 .card.featuredDynamic,
 .card.checkoutDynamic {
-  max-width: rem(1170);
+  max-inline-size: rem(1170);
   margin: rem(20) auto 0;
   border: none;
 }
@@ -362,7 +362,7 @@ ul.breadcrumb {
       margin-block-start: rem(15);
 
       li {
-        max-width: rem(100);
+        max-inline-size: rem(100);
         aspect-ratio: 1 / 1;
         margin: 0;
         padding: 0;
@@ -390,7 +390,7 @@ ul.breadcrumb {
       &-nav {
         display: block;
         flex: 1 20%;
-        height: rem(500);
+        block-size: rem(500);
         margin-block-start: rem(30);
         overflow-y: auto;
 
@@ -404,7 +404,7 @@ ul.breadcrumb {
         }
 
         &::-webkit-scrollbar {
-          width: rem(8);
+          inline-size: rem(8);
           border-radius: 0;
           border: none;
 
@@ -439,8 +439,8 @@ ul.breadcrumb {
     }
 
     &-img {
-      width: 100%;
-      max-width: rem(600);
+      inline-size: 100%;
+      max-inline-size: rem(600);
     }
 
     &-info {
@@ -515,7 +515,7 @@ ul.breadcrumb {
 
         span.btn-default,
         button.btn-default.typeCodeOption {
-          width: 47%;
+          inline-size: 47%;
           margin: 0;
 
           &:hover {
@@ -536,7 +536,7 @@ ul.breadcrumb {
 
     &-qty {
       input {
-        width: 100%;
+        inline-size: 100%;
         text-align: center;
         font-size: rem(20);
       }
@@ -548,7 +548,7 @@ ul.breadcrumb {
       &-picker {
         span.btn-default,
         button.btn-default.typeCodeOption {
-          width: 24%;
+          inline-size: 24%;
         }
       }
 
@@ -570,7 +570,7 @@ ul.breadcrumb {
       padding: 0;
 
       &-images {
-        width: auto;
+        inline-size: auto;
         flex: 1 60%;
       }
 
@@ -615,7 +615,7 @@ ul.breadcrumb {
 
           span.btn-default,
           button.btn-default.typeCodeOption {
-            width: rem(50);
+            inline-size: rem(50);
           }
         }
       }
@@ -638,7 +638,7 @@ ul.breadcrumb {
 
         &-btn {
           .btn {
-            width: 50%;
+            inline-size: 50%;
           }
         }
       }

@@ -5,7 +5,7 @@
     display: flex;
     align-items: center;
     position: relative;
-    min-height: rem(45);
+    min-block-size: rem(45);
     background-color: var(--bs-primary);
     color: var(--bs-white);
     text-align: center;
@@ -27,8 +27,8 @@
     //   position: absolute;
     //   bottom: 0px;
     //   right: 0;
-    //   height: rem(200);
-    //   width: rem(150);
+    //   block-size: rem(200);
+    //   inline-size: rem(150);
     //   content: '';
     //   opacity: 0.5;
     //   transform: skew(135deg);
@@ -39,7 +39,7 @@
     // @include breakpoint(medium) {
     //   &::after {
     //     right: rem(200);
-    //     width: rem(200);
+    //     inline-size: rem(200);
     //   }
     // }
   }
