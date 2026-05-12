@@ -77,7 +77,6 @@
     position: relative;
     block-size: 100%;
     padding: 0;
-    padding-inline: rem(22);
 
     &-toggler {
       border-color: #ddd;
@@ -186,7 +185,7 @@
 
     &-collapse {
       position: absolute;
-      top: rem(131);
+      top: rem(130);
       inline-size: 100%;
       z-index: 10;
     }
@@ -325,6 +324,28 @@
 
         &::after {
           content: none !important;
+        }
+      }
+    }
+
+    @include breakpoint(small) {
+      &-collapse {
+        top: rem(126);
+      }
+    }
+
+    @include breakpoint(bootstrap) {
+      &-toggler {
+        display: block;
+      }
+
+      &-expand-lg {
+        .navbar-collapse {
+          display: none !important;
+
+          &.show {
+            display: block !important;
+          }
         }
       }
     }
@@ -485,6 +506,26 @@
 
   // Dropdown menus
   .dropdown {
+    &-toggle {
+      &::before {
+        position: absolute;
+        content: '';
+        right: rem(20);
+        top: 50%;
+        transform: translateY(-50%);
+        display: inline-block;
+        margin-inline-end: rem(3.75);
+        vertical-align: rem(3.75);
+        border-top: 0.3em solid;
+        border-right: 0.3em solid transparent;
+        border-bottom: none;
+        border-left: 0.3em solid transparent;
+      }
+      &::after {
+        display: none;
+      }
+    }
+
     &-menu {
       position: static;
       margin: 0;
