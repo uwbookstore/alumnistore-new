@@ -366,10 +366,17 @@
         display: none;
       }
 
-      &-collapse {
-        align-items: center;
-        position: initial;
-        z-index: initial;
+      .cart-mobile {
+        display: none;
+      }
+
+      &-expand-lg {
+        .navbar-collapse {
+          display: flex !important;
+          align-items: center;
+          position: initial;
+          z-index: initial;
+        }
       }
 
       &-left,
@@ -484,7 +491,6 @@
       }
 
       &-right {
-        margin-inline-end: rem(-15);
         .search {
           &-field {
             inline-size: rem(300);
@@ -562,11 +568,23 @@
     }
 
     @include breakpoint(medium) {
+      &-toggle {
+        &::before {
+          display: none;
+        }
+
+        &::after {
+          display: block;
+        }
+      }
+    }
+
+    @include breakpoint(large) {
       &-menu {
         position: absolute;
         background-color: var(--clr-gray-50);
         padding: rem(25) rem(10) 0;
-        top: rem(65) !important;
+        top: rem(165) !important;
         left: 0;
         right: 0;
 
