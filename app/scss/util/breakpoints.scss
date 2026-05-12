@@ -1,23 +1,26 @@
 @use 'sass:map';
 
 // 450px, 768px, 1024px, 1366px, 1920px, 2560px
+// prettier-ignore
 $breakpoints-up: (
-  'xsmall': '28.125em',
-  'small': '48em',
-  'medium': '64em',
-  'large': '82.72em',
-  'xlarge': '120em',
-  'xxlarge': 160em,
+  'xsmall': '28.125em', // 450px
+  'small': '48em', // 768px
+  'bootstrap': '62em', // 992px
+  'medium': '64em', // 1024px
+  'large': '82.8125em', // 1325px
+  'xlarge': '120em', // 1920px
+  'xxlarge': 160em, // 2560px
 );
 
 // 449px, 767px, 991px, 1365px, 1919px, 2559px
+// prettier-ignore
 $breakpoints-down: (
-  'xsmall': '28.0625em',
-  'small': '47.9375em',
-  'medium': '61.9375em',
-  'large': '85.3125em',
-  'xlarge': '119.9375em',
-  'xxlarge': 159.9375em,
+  'xsmall': '28.0625em', // 449px
+  'small': '47.9375em', // 767
+  'medium': '61.9375em', // 1024px
+  'large': '82.75em', // 1324
+  'xlarge': '119.9375em', // 1919
+  'xxlarge': 159.9375em, // 2559
 );
 
 @mixin breakpoint($size) {

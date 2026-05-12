@@ -1,13 +1,15 @@
 @use '../util' as *;
 
 #waa-nav {
-  block-size: rem(150);
+  block-size: rem(148);
   background-color: transparent;
   max-inline-size: rem(1325);
   margin-inline: auto;
   position: relative;
 
-  h2.store-name a {
+  h2.store-name {
+    margin: 0;
+    padding: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -15,56 +17,67 @@
     z-index: 5;
     left: 50%;
     transform: translateX(-50%);
+    bottom: rem(-17);
 
     inline-size: rem(206);
     block-size: rem(34);
-
-    font-size: rem(20);
-    font-weight: 700;
-    text-transform: uppercase;
-
-    margin: 0;
-    padding: 0;
-    bottom: rem(-17);
     background-color: var(--bs-primary);
     color: var(--bs-white);
 
     &:hover {
-      text-decoration: none;
       background: hsl(from var(--bs-primary) h s 35%);
     }
+  }
+
+  h2.store-name a {
+    font-size: rem(20);
+    font-weight: 600;
+    text-transform: uppercase;
+    color: inherit;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  @include breakpoint(small) {
+    block-size: rem(144);
   }
 
   @include breakpoint(medium) {
     block-size: rem(165);
 
-    h2.store-name a {
+    h2.store-name {
       inline-size: rem(243);
       block-size: rem(40);
-
-      font-size: rem(24);
       bottom: rem(-20);
+    }
+
+    h2.store-name a {
+      font-size: rem(24);
     }
   }
 
   @include breakpoint(large) {
-    h2.store-name a {
+    h2.store-name {
       inline-size: rem(306);
       block-size: rem(48);
+      bottom: rem(-24);
+    }
 
-      font-size: rem(30);
-
+    h2.store-name a {
       bottom: rem(-24);
     }
   }
 
   .navbar {
-    border-color: #e7e7e7;
+    border: none;
     text-transform: uppercase;
     color: var(--bs-secondary);
     position: relative;
     block-size: 100%;
     padding: 0;
+    padding-inline: rem(22);
 
     &-toggler {
       border-color: #ddd;
@@ -79,44 +92,6 @@
       img {
         block-size: rem(20);
         inline-size: rem(20);
-      }
-
-      .icon-bar {
-        display: block;
-        inline-size: rem(20);
-        block-size: rem(2);
-        border-radius: rem(1);
-        background-color: var(--bs-secondary);
-        transition: var(--transition);
-
-        + .icon-bar {
-          margin-top: rem(4);
-        }
-      }
-
-      .top-bar {
-        transform: rotate(45deg);
-        transform-origin: 10% 10%;
-      }
-
-      .middle-bar {
-        opacity: 0;
-      }
-
-      .bottom-bar {
-        transform: rotate(-45deg);
-        transform-origin: 10% 90%;
-      }
-
-      &.collapsed {
-        .top-bar,
-        .bottom-bar {
-          transform: rotate(0);
-        }
-
-        .middle-bar {
-          opacity: 1;
-        }
       }
     }
 
@@ -166,7 +141,7 @@
     .cart {
       &-mobile {
         position: absolute;
-        right: 0;
+        right: rem(22);
         block-size: 100%;
         display: flex;
         align-items: center;
@@ -180,7 +155,17 @@
           }
 
           svg {
-            fill: #777;
+            .st0 {
+              fill: none;
+              stroke: var(--bs-secondary);
+              stroke-linecap: round;
+              stroke-linejoin: round;
+              stroke-width: 3px;
+            }
+
+            .st1 {
+              fill: var(--bs-secondary);
+            }
             inline-size: rem(26.5);
             block-size: rem(20);
             transition: var(--transition);
@@ -201,7 +186,7 @@
 
     &-collapse {
       position: absolute;
-      top: rem(133);
+      top: rem(131);
       inline-size: 100%;
       z-index: 10;
     }
@@ -211,59 +196,103 @@
       display: flex;
       flex-direction: column;
 
+      li:last-child {
+        a {
+          border-bottom: none;
+        }
+      }
+
       li a {
         justify-content: flex-start;
+        letter-spacing: 2%;
 
-        &.dropdown-toggle::after {
-          position: absolute;
-          top: 50%;
-          right: rem(20);
-        }
+        // &.dropdown-toggle::after {
+        //   position: absolute;
+        //   top: 50%;
+        //   right: rem(20);
+        // }
       }
     }
 
     &-right {
       .search {
         position: relative;
-        block-size: rem(50);
 
         &-field {
-          display: flex;
-          align-items: center;
-          inline-size: 100%;
-          block-size: 100%;
-          margin: 0;
-          padding-block: 0;
-          padding-inline-start: rem(10);
-          padding-inline-end: rem(40);
-          background: none;
-          background-color: var(--clr-gray-50);
-          box-shadow: none;
-          font-size: inherit;
-          font-weight: 100;
-          border-color: hsl(from var(--bs-secondary) h s l);
+          display: block;
+          text-transform: uppercase;
+          background: transparent;
+          border-radius: 0;
+          font-weight: 400;
+          font-size: rem(14);
+          font-family: inherit;
+          padding-inline-start: rem(40);
+
+          &::placeholder {
+            font-size: rem(14);
+            font-family: inherit;
+            font-weight: 400;
+          }
         }
 
-        &__icon {
+        &-submit {
           position: absolute;
           top: 50%;
           transform: translateY(-50%);
-          right: rem(27);
-          block-size: rem(20);
-          inline-size: rem(20);
+          left: 0;
+
           cursor: pointer;
           transition: var(--transition);
+
+          svg {
+            fill: var(--bs-secondary);
+            block-size: rem(20);
+            inline-size: rem(20);
+            .st0 {
+              stroke-linecap: round;
+            }
+
+            .st0,
+            .st1 {
+              fill: none;
+              stroke: var(--bs-secondary);
+              stroke-miterlimit: 10;
+              stroke-width: rem(3);
+            }
+          }
         }
       }
 
       .account {
         &-toggle {
           position: static;
+
+          a {
+            display: flex;
+            align-items: center;
+            gap: rem(16);
+          }
         }
 
         &-img {
           block-size: rem(20);
+          inline-size: auto;
           transition: var(--transition);
+          .st0 {
+            stroke-linecap: round;
+            stroke-linejoin: round;
+          }
+
+          .st0,
+          .st1 {
+            fill: none;
+            stroke: var(--bs-secondary);
+            stroke-width: rem(3);
+          }
+
+          .st1 {
+            stroke-miterlimit: 10;
+          }
         }
       }
     }
@@ -300,42 +329,7 @@
       }
     }
 
-    @include breakpoint(small) {
-      &-brand {
-        inline-size: rem(243);
-
-        .waa-logo {
-          inline-size: rem(45);
-          block-size: rem(70.68);
-        }
-      }
-    }
-
     @include breakpoint(medium) {
-      border: none;
-      position: relative;
-
-      // &::after {
-      //   position: absolute;
-      //   content: '';
-      //   block-size: rem(1);
-      //   inline-size: 100%;
-      //   background-color: var(--bs-secondary);
-      // }
-
-      &-nav {
-        z-index: 10;
-        background-color: var(--bs-white);
-      }
-
-      .cart-mobile {
-        display: none;
-      }
-
-      &-toggler {
-        display: none;
-      }
-
       &-brand {
         inline-size: rem(243);
         .waa-logo {
@@ -343,12 +337,12 @@
           block-size: rem(70.68);
           top: rem(42);
         }
+      }
+    } // end breakpoint medium
 
-        span {
-          block-size: rem(40);
-          top: initial;
-          bottom: rem(-20);
-        }
+    @include breakpoint(large) {
+      &-toggler {
+        display: none;
       }
 
       &-collapse {
@@ -366,7 +360,7 @@
       &-left {
         padding-inline-start: rem(15);
         .nav-item {
-          margin-inline-end: rem(22);
+          margin-inline-end: rem(16);
 
           a {
             border-bottom: none;
@@ -390,12 +384,10 @@
         }
         .nav-item:not(:last-child) {
           a::after {
-            content: '|';
+            content: '/';
             position: absolute;
             right: rem(-12.5);
-            top: rem(8.5);
-            transform: translateY(-50%);
-            font-style: italic;
+            top: rem(-1);
             color: hsl(from var(--bs-primary) h s l);
           }
         }
@@ -405,7 +397,7 @@
         padding-inline-start: rem(20);
 
         .search {
-          block-size: rem(30);
+          block-size: rem(40);
 
           &-field {
             inline-size: rem(200);
@@ -442,7 +434,17 @@
         }
 
         .cart--icon {
-          fill: var(--bs-secondary);
+          .st0 {
+            fill: none;
+            stroke: var(--bs-secondary);
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-width: 3px;
+          }
+
+          .st1 {
+            fill: var(--bs-secondary);
+          }
           inline-size: rem(26.5);
           block-size: rem(20);
           transition: var(--transition);
@@ -452,20 +454,33 @@
       li {
         background-color: transparent;
       }
-    }
 
-    @include breakpoint(medium) {
       &-left {
+        padding-inline-start: 0;
         .nav-item a {
           font-size: rem(14);
         }
       }
+
       &-right {
-        .search-field {
-          inline-size: rem(300);
+        margin-inline-end: rem(-15);
+        .search {
+          &-field {
+            inline-size: rem(300);
+            border-color: var(--bs-secondary);
+            padding-inline-start: rem(10);
+          }
+
+          &-submit {
+            left: initial;
+            right: rem(10);
+
+            cursor: pointer;
+            transition: var(--transition);
+          }
         }
       }
-    } // end breakpoint medium
+    }
   } //end .navbar
 
   // Dropdown menus

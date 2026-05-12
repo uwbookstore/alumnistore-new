@@ -103,7 +103,7 @@
   font-family: inherit;
   text-align: center;
   text-transform: uppercase;
-  font-size: clamp(0.875rem, 0.723rem + 0.6486vw, 1.25rem);
+  font-size: rem(14);
   font-weight: 700;
   // text-wrap: balance;
   letter-spacing: 5%;
@@ -122,9 +122,11 @@
 
   @include breakpoint(medium) {
     padding-block: rem(48);
+    font-size: rem(16);
   }
 
   @include breakpoint(large) {
     padding-block: rem(72);
+    font-size: rem(20);
   }
 }
