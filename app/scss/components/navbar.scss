@@ -2,19 +2,18 @@
 
 #waa-nav {
   block-size: rem(148);
-  background-color: transparent;
-  max-inline-size: rem(1325);
-  margin-inline: auto;
   position: relative;
+  inline-size: min(1440px, 100%);
+  margin-inline: auto;
 
   h2.store-name {
-    margin: 0;
-    padding: 0;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 0;
+
     position: absolute;
-    z-index: 5;
+    z-index: 1;
     left: 50%;
     transform: translateX(-50%);
     bottom: rem(-17);
@@ -23,50 +22,21 @@
     block-size: rem(34);
     background-color: var(--bs-primary);
     color: var(--bs-white);
+    transition: var(--transition);
 
     &:hover {
       background: hsl(from var(--bs-primary) h s 35%);
     }
-  }
 
-  h2.store-name a {
-    font-size: rem(20);
-    font-weight: 600;
-    text-transform: uppercase;
-    color: inherit;
+    a {
+      font-size: rem(20);
+      font-weight: 600;
+      text-transform: uppercase;
+      color: inherit;
 
-    &:hover {
-      text-decoration: none;
-    }
-  }
-
-  @include breakpoint(small) {
-    block-size: rem(144);
-  }
-
-  @include breakpoint(medium) {
-    block-size: rem(165);
-
-    h2.store-name {
-      inline-size: rem(243);
-      block-size: rem(40);
-      bottom: rem(-20);
-    }
-
-    h2.store-name a {
-      font-size: rem(24);
-    }
-  }
-
-  @include breakpoint(large) {
-    h2.store-name {
-      inline-size: rem(306);
-      block-size: rem(48);
-      bottom: rem(-24);
-    }
-
-    h2.store-name a {
-      bottom: rem(-24);
+      &:hover {
+        text-decoration: none;
+      }
     }
   }
 
@@ -75,7 +45,7 @@
     text-transform: uppercase;
     color: var(--bs-secondary);
     position: relative;
-    block-size: 100%;
+    block-size: rem(130);
     padding: 0;
 
     &-toggler {
@@ -327,14 +297,190 @@
         }
       }
     }
+  } //end .navbar
 
-    @include breakpoint(small) {
+  // Dropdown menus
+  .dropdown {
+    &-toggle {
+      &::before {
+        position: absolute;
+        content: '';
+        right: rem(20);
+        top: 50%;
+        transform: translateY(-50%);
+        display: inline-block;
+        margin-inline-end: rem(3.75);
+        vertical-align: rem(3.75);
+        border-top: 0.3em solid;
+        border-right: 0.3em solid transparent;
+        border-bottom: none;
+        border-left: 0.3em solid transparent;
+      }
+      &::after {
+        display: none;
+      }
+    }
+
+    &-menu {
+      position: static;
+      margin: 0;
+      padding: 0;
+      background-color: var(--clr-light-gray-2);
+      font-size: rem(12);
+      inline-size: 100%;
+      border: none;
+      border-radius: 0;
+      box-shadow: 0 rem(3) rem(4) rem(1) rgb(0 0 0 / 0.25);
+
+      [class^='col'] {
+        padding: 0;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+      li {
+        background-color: var(--clr-light-gray-2);
+      }
+    }
+
+    &-header {
+      position: relative;
+      border-bottom: rem(1) solid var(--clr-gray-200);
+      padding: rem(14);
+      font-size: rem(14);
+      color: var(--bs-secondary);
+      display: block;
+      inline-size: 100%;
+      font-weight: 600;
+    }
+  }
+} /* end #waa-nav */
+
+.backtotop {
+  display: none;
+  position: fixed;
+  z-index: 9999999999999;
+  bottom: rem(20);
+  right: rem(20);
+  inline-size: rem(50);
+  block-size: rem(50);
+
+  a {
+    &:link,
+    &:visited {
+      display: block;
+      opacity: 1;
+      inline-size: rem(50);
+      block-size: rem(50);
+      background-color: rgba(#c0c0c0, 0.7);
+      border: rem(2) solid rgba(#c0c0c0, 0.8);
+      border-radius: rem(4);
+      position: absolute;
+      transition: all 0.2s ease;
+    }
+
+    &:hover {
+      transform: translateY(rem(-3));
+      background-color: rgba(#c0c0c0, 0.8);
+      border-color: #c0c0c0;
+      box-shadow: 0 rem(1) rem(2) rgba(var(--bs-secondary), 0.6);
+    }
+    &:active {
+      transform: translateY(rem(-1));
+      box-shadow: 0 rem(2) rem(4) rgba(var(--bs-secondary), 0.8);
+    }
+  }
+
+  em {
+    @include absCenter;
+    color: var(--bs-secondary);
+    font-size: rem(20);
+  }
+}
+
+@include breakpoint(small) {
+  #waa-nav {
+    block-size: rem(144);
+
+    .navbar {
+      block-size: rem(126);
       &-collapse {
         top: rem(126);
       }
     }
+  }
 
-    @include breakpoint(bootstrap) {
+  .dropdown:hover > .dropdown-menu {
+    display: none;
+  }
+  .dropdown:hover > .dropdown-menu.show {
+    display: block;
+  }
+}
+
+@include breakpoint(medium) {
+  #waa-nav {
+    block-size: rem(165);
+
+    h2.store-name {
+      inline-size: rem(243);
+      block-size: rem(40);
+      bottom: rem(-20);
+
+      a {
+        font-size: rem(24);
+      }
+    }
+
+    .navbar {
+      block-size: rem(144);
+
+      &-collapse {
+        top: rem(144);
+      }
+
+      &-brand {
+        inline-size: rem(50);
+        .waa-logo {
+          inline-size: rem(45);
+          block-size: rem(70.68);
+          top: rem(42);
+        }
+      }
+    }
+
+    .dropdown {
+      &-toggle {
+        &::before {
+          display: none;
+        }
+
+        &::after {
+          display: block;
+        }
+      }
+    }
+  }
+
+  .backtotop {
+    bottom: rem(60);
+    right: rem(60);
+
+    a {
+      &:link,
+      &:visited {
+        block-size: rem(40);
+        inline-size: rem(40);
+      }
+    }
+  }
+}
+
+@include breakpoint(bootstrap) {
+  #waa-nav {
+    .navbar {
       &-toggler {
         display: block;
       }
@@ -349,19 +495,34 @@
         }
       }
     }
+  }
+}
 
-    @include breakpoint(medium) {
+@include breakpoint(large) {
+  #waa-nav {
+    block-size: rem(174);
+
+    h2.store-name {
+      inline-size: rem(306);
+      block-size: rem(48);
+      bottom: rem(-24);
+
+      a {
+        font-size: rem(30);
+      }
+    }
+
+    .navbar {
       &-brand {
-        inline-size: rem(243);
         .waa-logo {
-          inline-size: rem(45);
-          block-size: rem(70.68);
-          top: rem(42);
+          inline-size: rem(50);
+          block-size: rem(78.54);
+          top: rem(37);
         }
       }
-    } // end breakpoint medium
 
-    @include breakpoint(large) {
+      padding-inline: rem(72);
+
       &-toggler {
         display: none;
       }
@@ -448,7 +609,7 @@
         .account-toggle,
         .cart-toggle {
           a {
-            padding: rem(15);
+            padding: rem(8);
             border-bottom: none;
 
             span {
@@ -458,6 +619,12 @@
             &::after {
               border: none;
             }
+          }
+        }
+
+        .cart-toggle {
+          a {
+            padding-inline-end: 0;
           }
         }
 
@@ -493,9 +660,10 @@
       &-right {
         .search {
           &-field {
-            inline-size: rem(300);
+            inline-size: rem(332);
             border-color: var(--bs-secondary);
             padding-inline-start: rem(10);
+            margin-inline-end: rem(5);
           }
 
           &-submit {
@@ -508,83 +676,14 @@
         }
       }
     }
-  } //end .navbar
 
-  // Dropdown menus
-  .dropdown {
-    &-toggle {
-      &::before {
-        position: absolute;
-        content: '';
-        right: rem(20);
-        top: 50%;
-        transform: translateY(-50%);
-        display: inline-block;
-        margin-inline-end: rem(3.75);
-        vertical-align: rem(3.75);
-        border-top: 0.3em solid;
-        border-right: 0.3em solid transparent;
-        border-bottom: none;
-        border-left: 0.3em solid transparent;
-      }
-      &::after {
-        display: none;
-      }
-    }
-
-    &-menu {
-      position: static;
-      margin: 0;
-      padding: 0;
-      background-color: var(--clr-light-gray-2);
-      font-size: rem(12);
-      inline-size: 100%;
-      border: none;
-      border-radius: 0;
-      box-shadow: 0 rem(3) rem(4) rem(1) rgb(0 0 0 / 0.25);
-
-      [class^='col'] {
-        padding: 0;
-      }
-
-      ul {
-        list-style: none;
-        padding: 0;
-      }
-      li {
-        background-color: var(--clr-light-gray-2);
-      }
-    }
-
-    &-header {
-      position: relative;
-      border-bottom: rem(1) solid var(--clr-gray-200);
-      padding: rem(14);
-      font-size: rem(14);
-      color: var(--bs-secondary);
-      display: block;
-      inline-size: 100%;
-      font-weight: 600;
-    }
-
-    @include breakpoint(medium) {
-      &-toggle {
-        &::before {
-          display: none;
-        }
-
-        &::after {
-          display: block;
-        }
-      }
-    }
-
-    @include breakpoint(large) {
+    .dropdown {
       &-menu {
         position: absolute;
         background-color: var(--clr-gray-50);
+        // background: rgba(255 255 255 / 0.5);
         padding: rem(25) rem(10) 0;
-        top: rem(165) !important;
+        top: rem(150) !important;
         left: 0;
         right: 0;
 
@@ -618,66 +717,4 @@
       }
     }
   }
-} /* end #waa-nav */
-
-/* ============ mobile view ============ */
-@include breakpoint(small) {
-  .dropdown:hover > .dropdown-menu {
-    display: none;
-  }
-  .dropdown:hover > .dropdown-menu.show {
-    display: block;
-  }
-}
-
-.backtotop {
-  display: none;
-  position: fixed;
-  z-index: 9999999999999;
-  bottom: rem(20);
-  right: rem(20);
-  inline-size: rem(50);
-  block-size: rem(50);
-
-  @include breakpoint(medium) {
-    bottom: rem(60);
-    right: rem(60);
-  }
-}
-
-.backtotop a {
-  &:link,
-  &:visited {
-    display: block;
-    opacity: 1;
-    inline-size: rem(50);
-    block-size: rem(50);
-    background-color: rgba(#c0c0c0, 0.7);
-    border: rem(2) solid rgba(#c0c0c0, 0.8);
-    border-radius: rem(4);
-    position: absolute;
-    transition: all 0.2s ease;
-
-    @include breakpoint(medium) {
-      block-size: rem(40);
-      inline-size: rem(40);
-    }
-  }
-
-  &:hover {
-    transform: translateY(rem(-3));
-    background-color: rgba(#c0c0c0, 0.8);
-    border-color: #c0c0c0;
-    box-shadow: 0 rem(1) rem(2) rgba(var(--bs-secondary), 0.6);
-  }
-  &:active {
-    transform: translateY(rem(-1));
-    box-shadow: 0 rem(2) rem(4) rgba(var(--bs-secondary), 0.8);
-  }
-}
-
-.backtotop em {
-  @include absCenter;
-  color: var(--bs-secondary);
-  font-size: rem(20);
 }
