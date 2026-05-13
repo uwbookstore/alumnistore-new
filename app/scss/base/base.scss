@@ -1,15 +1,9 @@
 @use '../util' as *;
 
-*,
-*::after,
-*::before {
-  margin: 0;
-  padding: 0;
-  box-sizing: inherit;
-}
 html {
   font-style: normal;
   font-weight: normal;
+  scrollbar-gutter: stable;
 }
 
 html,
@@ -36,13 +30,6 @@ body {
   position: absolute;
   white-space: nowrap;
   inline-size: 1px;
-}
-
-img,
-svg {
-  max-inline-size: 100%;
-  block-size: auto;
-  display: block;
 }
 
 .page-wrapper {
