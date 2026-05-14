@@ -406,6 +406,14 @@
 
     .navbar {
       block-size: rem(126);
+
+      &-toggler {
+        left: rem(22);
+      }
+
+      .cart-mobile {
+        right: rem(22);
+      }
       &-collapse {
         top: rem(126);
       }

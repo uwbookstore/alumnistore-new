@@ -13,7 +13,7 @@
 
     &-link {
       display: inline-block;
-      font-size: clamp(0.75rem, 0.6486rem + 0.4324vw, 1rem);
+      font-size: rem(12);
       font-weight: 700;
       letter-spacing: 5%;
       text-transform: uppercase;
@@ -215,6 +215,12 @@
   }
 
   @include breakpoint(small) {
+    &__banner {
+      &-container {
+        padding-inline: rem(42);
+      }
+    }
+
     &__wrapper {
       padding: rem(48) rem(42);
     }
@@ -316,6 +322,10 @@
   @include breakpoint(medium) {
     &__banner {
       padding-block: rem(24);
+
+      &-link {
+        font-size: rem(14);
+      }
     }
 
     &__membership {
@@ -349,6 +359,11 @@
   }
 
   @include breakpoint(large) {
+    &__banner {
+      &-link {
+        font-size: rem(16);
+      }
+    }
     &__membership {
       max-inline-size: rem(1296);
     }
