@@ -30,7 +30,7 @@
       margin-bottom: rem(24);
       color: var(--bs-white);
       text-transform: uppercase;
-      font-size: clamp(1.25rem, 0.7432rem + 2.1622vw, 2.5rem);
+      font-size: rem(20);
       line-height: 130%;
       letter-spacing: 2%;
       margin-inline: auto;
@@ -41,7 +41,7 @@
       block-size: rem(36);
       letter-spacing: 2%;
       font-weight: 700;
-      font-size: clamp(0.75rem, 0.6486rem + 0.4324vw, 1rem);
+      font-size: rem(12);
     }
   }
 
@@ -60,6 +60,7 @@
       transform: translateX(0);
 
       h2 {
+        font-size: rem(24);
         inline-size: 100%;
         margin-inline-start: initial;
         margin-inline-end: 0;
@@ -75,10 +76,12 @@
       bottom: rem(72);
       max-inline-size: rem(400);
       h2 {
+        font-size: rem(36);
         text-wrap: initial;
       }
 
       .btn {
+        font-size: rem(14);
         block-size: rem(39);
       }
     }
@@ -88,7 +91,12 @@
     &__body {
       max-inline-size: rem(450);
 
+      h2 {
+        font-size: rem(40);
+      }
+
       .btn {
+        font-size: rem(16);
         block-size: rem(41);
       }
     }
@@ -100,16 +108,17 @@
   align-items: center;
   justify-content: center;
   gap: rem(5);
+
   font-family: inherit;
   text-align: center;
   text-transform: uppercase;
   font-size: rem(14);
   font-weight: 700;
-  // text-wrap: balance;
   letter-spacing: 5%;
+  color: hsl(from var(--bs-primary) h s l);
+
   margin: 0;
   padding: rem(40) rem(45);
-  color: hsl(from var(--bs-primary) h s l);
 
   svg {
     // inline-size: rem(9.85);

@@ -15,7 +15,7 @@
     .feature {
       display: flex;
       flex-direction: column;
-      gap: rem(32);
+      gap: rem(28);
 
       img {
         opacity: 1;
@@ -33,13 +33,16 @@
         flex-direction: column;
         align-items: center;
         gap: rem(24);
+        font-size: rem(14);
+        text-box-trim: trim-both;
+        text-box-edge: cap alphabetic;
 
         h3 {
           font-family: var(--ff-primary);
           margin: 0;
           margin-block-end: rem(8);
           font-weight: 700;
-          font-size: clamp(1.25rem, 0.9459rem + 1.2973vw, 2rem);
+          font-size: rem(20);
           line-height: 1;
           text-transform: uppercase;
         }
@@ -47,7 +50,6 @@
         p {
           font-family: var(--ff-secondary);
           margin: 0;
-          font-size: clamp(0.875rem, 0.723rem + 0.6486vw, 1.25rem);
         }
 
         &-link {
@@ -83,10 +85,10 @@
       &.home {
         padding-inline: rem(42);
         gap: rem(14);
-      }
 
-      &.feature {
-        gap: rem(24);
+        &.feature {
+          gap: rem(24);
+        }
       }
     }
 
@@ -94,6 +96,28 @@
       &.home {
         padding-inline: rem(72);
         gap: rem(24);
+
+        .feature {
+          font-size: rem(16);
+          .feature-body {
+            h3 {
+              font-size: rem(24);
+            }
+          }
+        }
+      }
+    }
+
+    @include breakpoint(large) {
+      &.home {
+        .feature {
+          font-size: rem(20);
+          .feature-body {
+            h3 {
+              font-size: rem(32);
+            }
+          }
+        }
       }
     }
   }
