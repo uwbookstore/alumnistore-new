@@ -4,9 +4,8 @@
   position: relative;
   inline-size: 100%;
   margin-inline: auto;
-  margin-block-start: rem(-30);
+  margin-block-start: rem(-24);
   max-inline-size: var(--default-page-width);
-  min-block-size: rem(175);
 
   &__image {
     img {
