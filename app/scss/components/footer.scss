@@ -2,9 +2,10 @@
 
 .footer {
   &__banner {
+    --inline-padding: #{rem(40)};
     margin-block: rem(72);
     margin-inline: auto;
-    inline-size: calc(100% - rem(40));
+    inline-size: min(rem(1296), calc(100% - var(--inline-padding)));
     text-align: center;
     padding-block: rem(20);
     border-top: rem(2) solid var(--clr-gray-200);
@@ -204,7 +205,7 @@
 
   @include breakpoint(small) {
     &__banner {
-      inline-size: calc(100% - rem(84));
+      --inline-padding: #{rem(84)};
     }
 
     &__wrapper {
@@ -307,7 +308,7 @@
 
   @include breakpoint(medium) {
     &__banner {
-      inline-size: calc(100% - rem(144));
+      --inline-padding: #{rem(144)};
 
       padding-block: rem(24);
 
@@ -348,7 +349,7 @@
 
   @include breakpoint(large) {
     &__banner {
-      inline-size: min(rem(1296), 100%);
+      --inline-padding: 0px;
 
       &-link {
         font-size: rem(16);
