@@ -26,14 +26,12 @@ a.icm-controls-text {
 }
 
 #ContainDiv {
-  // margin: rem(40) 0 0;
+  max-inline-size: var(--default-page-width);
+  margin-block-start: rem(24);
+  margin-left: auto;
+  margin-right: auto;
   padding: 0;
-
-  @include breakpoint(small) {
-    padding: 0;
-    margin-left: auto;
-    margin-right: auto;
-  }
+  padding-block-start: rem(24);
 }
 
 #dv_Logo {
@@ -222,10 +220,4 @@ input[class^='radio'] {
 
 #waa-header {
   display: block;
-}
-
-#ContainDiv {
-  max-inline-size: var(--default-page-width);
-  margin-block-start: rem(24);
-  padding-block-start: rem(24);
 }

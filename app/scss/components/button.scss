@@ -20,7 +20,7 @@
     &:hover,
     &:active,
     &:active:hover,
-    &:focus,
+    &:focus-visible,
     &:active:focus {
       background-color: hsl(from var(--bs-primary) h s 33%);
       border-color: hsl(from var(--bs-primary) h s 33%);
@@ -52,7 +52,7 @@
     &:hover,
     &:active,
     &:active:hover,
-    &:focus,
+    &:focus-visible,
     &:active:focus,
     &-inverted {
       border-color: var(--bs-success);
