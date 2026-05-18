@@ -4,8 +4,7 @@
   &__banner {
     margin-block: rem(72);
     margin-inline: auto;
-    max-inline-size: rem(1296);
-    inline-size: 100%;
+    inline-size: calc(100% - rem(40));
     text-align: center;
     padding-block: rem(20);
     border-top: rem(2) solid var(--clr-gray-200);
@@ -20,27 +19,10 @@
       text-wrap: balance;
       transition: var(--transition);
 
-      // &::after {
-      //   display: block;
-      //   content: '';
-      //   block-size: rem(1);
-      //   inline-size: 100%;
-      //   background-color: transparent;
-      //   transition: var(--transition);
-      // }
-
       &:hover {
         color: hsl(from var(--bs-primary) h s 30%);
         text-decoration: none;
-
-        // &::after {
-        //   background-color: hsl(from var(--bs-primary) h s l);
-        // }
       }
-    }
-
-    &-container {
-      padding-inline: rem(20);
     }
   }
 
@@ -200,8 +182,14 @@
         scale: 1;
         transition: var(--transition);
 
-        &:hover {
+        &:hover,
+        &:focus-visible {
           transform: scale(1.1);
+        }
+
+        &:focus-visible {
+          outline-width: 1px;
+          outline-color: blue;
         }
 
         &.fb {
@@ -216,9 +204,7 @@
 
   @include breakpoint(small) {
     &__banner {
-      &-container {
-        padding-inline: rem(42);
-      }
+      inline-size: calc(100% - rem(84));
     }
 
     &__wrapper {
@@ -321,6 +307,8 @@
 
   @include breakpoint(medium) {
     &__banner {
+      inline-size: calc(100% - rem(144));
+
       padding-block: rem(24);
 
       &-link {
@@ -360,6 +348,8 @@
 
   @include breakpoint(large) {
     &__banner {
+      inline-size: min(rem(1296), 100%);
+
       &-link {
         font-size: rem(16);
       }
