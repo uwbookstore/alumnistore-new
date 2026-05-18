@@ -188,6 +188,7 @@
             fill: var(--bs-secondary);
             block-size: rem(20);
             inline-size: rem(20);
+            transition: var(--transition);
             .st0 {
               stroke-linecap: round;
             }
@@ -198,6 +199,19 @@
               stroke: var(--bs-secondary);
               stroke-miterlimit: 10;
               stroke-width: rem(3);
+              transition: var(--transition);
+            }
+          }
+
+          &:hover,
+          &:focus-visible {
+            svg {
+              fill: var(--bs-primary);
+
+              .st0,
+              .st1 {
+                stroke: var(--bs-primary);
+              }
             }
           }
         }
@@ -228,10 +242,12 @@
             fill: none;
             stroke: var(--bs-secondary);
             stroke-width: rem(3);
+            transition: var(--transition);
           }
 
           .st1 {
             stroke-miterlimit: 10;
+            transition: var(--transition);
           }
         }
       }
@@ -528,9 +544,32 @@
           }
         }
 
+        .account-toggle {
+          a:hover,
+          a:focus-visible {
+            svg {
+              .st0,
+              .st1 {
+                stroke: var(--bs-primary);
+              }
+            }
+          }
+        }
+
         .cart-toggle {
           a {
             padding-inline-end: 0;
+            &:hover,
+            &:focus-visible {
+              svg {
+                fill: var(--bs-primary);
+
+                .st0,
+                .st1 {
+                  stroke: var(--bs-primary);
+                }
+              }
+            }
           }
         }
 
