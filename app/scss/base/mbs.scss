@@ -226,4 +226,6 @@ input[class^='radio'] {
 
 #ContainDiv {
   max-inline-size: var(--default-page-width);
+  margin-block-start: rem(24);
+  padding-block-start: rem(24);
 }
