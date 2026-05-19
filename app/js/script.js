@@ -1,3 +1,33 @@
+// SETUP BACK TO TOP BTN/FUNCTION
+const backToTopBtn = document.querySelector('.backtotop');
+
+// Smooth scroll back to top
+function scrollToTop(e) {
+  e.preventDefault();
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth',
+  });
+}
+
+// Show/Hide Scroll to Top button
+window.onscroll = function () {
+  if (scrollY >= 200) {
+    backToTopBtn.style.display = 'block';
+  } else {
+    backToTopBtn.style.display = 'none';
+  }
+};
+
+/**
+ * Check if back to top button exists
+ * if so, run scrollToTop function
+ */
+if (backToTopBtn) {
+  backToTopBtn.addEventListener('click', scrollToTop);
+}
+// END BACK TO TOP BTN/FUNCTION
+
 // const searchOverlay = document.getElementById('search-overlay');
 // const openSearch = document.getElementById('open-search');
 // const closeSearch = document.getElementById('close-search');
