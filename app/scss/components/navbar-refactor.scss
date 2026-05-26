@@ -1,0 +1,205 @@
+@use '../util' as *;
+
+#page-header {
+  display: block;
+  position: relative;
+  block-size: rem(148);
+  position: relative;
+  inline-size: min(1440px, 100%);
+  margin-inline: auto;
+
+  .header {
+    &__logo {
+      inline-size: rem(80);
+      block-size: 100%;
+      text-align: center;
+      position: absolute;
+      left: 50%;
+      padding: 0;
+      padding-inline: rem(20);
+      margin: 0;
+      transform: translateX(-50%);
+      top: 0;
+      display: block;
+      z-index: 10;
+
+      .waa-logo {
+        inline-size: rem(40);
+        block-size: rem(62.83);
+        margin: auto;
+        position: absolute;
+        top: rem(36);
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+
+  .nav {
+    &__toggle {
+      --button-color: var(--bs-secondary);
+
+      block-size: rem(30);
+      inline-size: rem(30);
+      margin-inline-end: auto;
+      border: 0;
+      background: transparent;
+
+      .line {
+        transition:
+          y 200ms ease-in 200ms,
+          rotate 200ms ease-in,
+          opacity 0ms 200ms;
+        transform-origin: center;
+      }
+    }
+
+    &__toggle[aria-expanded='true'] :is(.top, .bottom) {
+      y: 45;
+    }
+
+    &__toggle[aria-expanded='true'] .line {
+      transition:
+        y 200ms ease-in,
+        rotate 200ms ease-in 200ms,
+        opacity 0ms 200ms;
+    }
+
+    &__toggle[aria-expanded='true'] .line {
+      &.top {
+        rotate: 45deg;
+      }
+
+      &.middle {
+        opacity: 0;
+      }
+
+      &.bottom {
+        rotate: -45deg;
+      }
+    }
+
+    &__links {
+      display: flex;
+      justify-content: space-between;
+      gap: rem(16);
+      padding: rem(15);
+      list-style: none;
+      margin: 0;
+
+      &--link {
+        block-size: rem(30);
+        aspect-ratio: 1 / 1;
+
+        &.toggle {
+          margin-inline-end: auto;
+        }
+      }
+    }
+  }
+
+  #primary-navigation {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: var(--clr-gray-50);
+    &[data-state='closed'] {
+      block-size: 0;
+      opacity: 0;
+      transition: var(--transition);
+    }
+
+    &[data-state='opened'] {
+      block-size: auto;
+      opacity: 1;
+      transition: var(--transition);
+    }
+  }
+
+  a.store-name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: rem(-17);
+
+    inline-size: rem(206);
+    block-size: rem(34);
+    background-color: var(--bs-primary);
+    transition: var(--transition);
+
+    font-size: rem(20);
+    font-weight: 600;
+    text-transform: uppercase;
+    color: inherit;
+
+    &:link,
+    &:visited {
+      color: var(--bs-white);
+    }
+
+    &:hover {
+      background: hsl(from var(--bs-primary) h s 35%);
+      text-decoration: none;
+    }
+  }
+}
+
+// small breakpoint
+@include breakpoint(small) {
+  #page-header {
+    block-size: rem(144);
+  }
+}
+
+// medium breakpoint
+@include breakpoint(medium) {
+  #page-header {
+    block-size: rem(165);
+    .header {
+      &__logo {
+        inline-size: rem(50);
+        .waa-logo {
+          inline-size: rem(45);
+          block-size: rem(70.68);
+          top: rem(42);
+        }
+      }
+    }
+    a.store-name {
+      inline-size: rem(243);
+      block-size: rem(40);
+      bottom: rem(-20);
+
+      font-size: rem(24);
+    }
+  }
+}
+
+// large breakpoint
+@include breakpoint(large) {
+  #page-header {
+    block-size: rem(174);
+    .header {
+      &__logo {
+        .waa-logo {
+          inline-size: rem(50);
+          block-size: rem(78.54);
+          top: rem(37);
+        }
+      }
+    }
+    a.store-name {
+      inline-size: rem(306);
+      block-size: rem(48);
+      bottom: rem(-24);
+
+      font-size: rem(30);
+    }
+  }
+}
