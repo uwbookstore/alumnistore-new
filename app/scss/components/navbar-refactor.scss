@@ -47,7 +47,7 @@
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      left: rem(30);
+      left: rem(15);
 
       .line {
         transition:
@@ -65,7 +65,7 @@
     }
 
     &__toggle[aria-expanded='true'] :is(.top, .bottom) {
-      y: 45;
+      y: 13.5;
     }
 
     &__toggle[aria-expanded='true'] .line {
@@ -93,20 +93,32 @@
       display: flex;
       justify-content: space-between;
       gap: rem(16);
-      padding: rem(15);
+      padding-block: rem(15);
       list-style: none;
       margin: 0;
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      right: rem(30);
+      right: rem(20);
 
       &--link {
-        block-size: rem(30);
-        aspect-ratio: 1 / 1;
+        --button-color: var(--bs-secondary);
 
-        &.toggle {
-          margin-inline-end: auto;
+        svg {
+          block-size: rem(20);
+          aspect-ratio: 1 / 1;
+          stroke-miterlimit: 10;
+          stroke-width: 3px;
+
+          &.cart-icon {
+            block-size: rem(24);
+          }
+        }
+
+        &:hover,
+        &:focus-visible,
+        &:active {
+          --button-color: var(--bs-primary);
         }
       }
     }
@@ -233,6 +245,8 @@
         display: flex;
         top: 50%;
         transform: translateY(-50%);
+        left: 0;
+        right: auto;
         opacity: 1;
         box-shadow: none;
         background: transparent;
