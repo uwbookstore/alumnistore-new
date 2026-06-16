@@ -60,6 +60,10 @@
 
       li {
         display: inline-block;
+
+        &:first-child {
+          margin-inline-end: auto;
+        }
       }
     }
 
@@ -140,13 +144,79 @@
       }
     }
 
+    .search {
+      &-form {
+        display: none;
+      }
+
+      &-toggle {
+        padding: rem(10);
+        svg {
+          inline-size: rem(20);
+          block-size: rem(20);
+
+          circle,
+          line {
+            fill: none;
+            stroke: hsl(from var(--bs-secondary) h s l);
+            stroke-width: 3px;
+            transition: var(--transition);
+          }
+
+          line {
+            stroke-linecap: round;
+          }
+        }
+
+        &:hover {
+          circle,
+          line {
+            stroke: hsl(from var(--bs-primary) h s l);
+          }
+        }
+      }
+    }
+
+    .account {
+      button {
+        background: transparent;
+        border: 0;
+        padding: rem(10);
+
+        svg {
+          inline-size: rem(21);
+          block-size: rem(24);
+
+          circle {
+            stroke-miterlimit: 10;
+          }
+
+          circle,
+          polyline {
+            fill: none;
+            stroke: hsl(from var(--bs-secondary) h s l);
+            stroke-width: 3px;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            transition: var(--transition);
+          }
+        }
+
+        &:hover {
+          svg {
+            circle,
+            polyline {
+              stroke: hsl(from var(--bs-primary) h s l);
+            }
+          }
+        }
+      }
+    }
+
     .cart {
       a {
-        padding: rem(10) rem(20);
-
-        img {
-          block-size: rem(20);
-        }
+        padding: rem(10);
+        display: block;
 
         svg {
           inline-size: rem(26.5);
@@ -154,6 +224,8 @@
           transition: var(--transition);
           stroke: hsl(from var(--bs-secondary) h s l);
           fill: hsl(from var(--bs-secondary) h s l);
+          stroke-linecap: round;
+          stroke-linejoin: round;
         }
 
         &:hover {
@@ -368,6 +440,7 @@
           top: rem(42);
         }
       }
+
       &-toggler {
         display: none;
       }
@@ -436,6 +509,57 @@
         padding-inline-start: 0;
         .nav-item a {
           font-size: rem(14);
+        }
+      }
+
+      .search {
+        &-toggle {
+          display: none;
+        }
+
+        &-form {
+          display: block;
+          position: relative;
+          padding-inline: rem(10);
+        }
+
+        &-field {
+          inline-size: rem(330);
+          border-color: hsl(from var(--bs-secondary) h s l);
+        }
+
+        &-submit {
+          position: absolute;
+          top: 50%;
+          right: rem(20);
+          transform: translateY(-50%);
+          z-index: 100;
+
+          svg {
+            inline-size: rem(20);
+            block-size: rem(20);
+
+            circle,
+            line {
+              fill: none;
+              stroke: hsl(from var(--bs-secondary) h s l);
+              stroke-width: 3px;
+              transition: var(--transition);
+            }
+
+            line {
+              stroke-linecap: round;
+            }
+          }
+
+          &:hover {
+            svg {
+              circle,
+              line {
+                stroke: hsl(from var(--bs-primary) h s l);
+              }
+            }
+          }
         }
       }
 

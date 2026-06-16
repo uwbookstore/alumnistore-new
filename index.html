@@ -46,34 +46,41 @@
                 <span class="sr-only">Toggle navigation</span>
                 <svg class="hamburger" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 31 31"
                   aria-hidden="true">
-                  <line class="st0" x1="1.95" y1="6.03" x2="29.05" y2="6.03" />
-                  <line class="st0" x1="1.95" y1="15.5" x2="29.05" y2="15.5" />
-                  <line class="st0" x1="1.95" y1="24.97" x2="29.05" y2="24.97" />
+                  <line x1="1.95" y1="6.03" x2="29.05" y2="6.03" />
+                  <line x1="1.95" y1="15.5" x2="29.05" y2="15.5" />
+                  <line x1="1.95" y1="24.97" x2="29.05" y2="24.97" />
                 </svg>
               </button>
             </li>
 
-            <!-- <li class="search">
-              <input id="searchinput" type="search" class="search-field form-control" placeholder="Search">
-              <button class="btn search-submit">
-                <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 31 31">
-                  <circle class="st1" cx="13.1" cy="13.13" r="11.12" />
-                  <line class="st0" x1="20.95" y1="21" x2="29.01" y2="28.96" />
+            <li class="search">
+              <button class="btn search-toggle">
+                <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 31 31">
+                  <circle cx="13.1" cy="13.13" r="11.12" />
+                  <line x1="20.95" y1="21" x2="29.01" y2="28.96" />
                 </svg>
               </button>
-            </li> -->
 
-            <!-- <li class="dropdown account-toggle">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"
-                title="My Account">
-                <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 31 31"
-                  class="account-img">
-                  <circle class="st1" cx="15.5" cy="8.77" r="6.73" />
-                  <polyline class="st0" points="26.65 28.97 22.71 20.41 8.29 20.41 4.35 28.97" />
+              <div class="search-form">
+                <input id="searchinput" type="search" class="search-field form-control" placeholder="Search">
+                <button class="btn search-submit">
+                  <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 31 31">
+                    <circle class="st1" cx="13.1" cy="13.13" r="11.12" />
+                    <line class="st0" x1="20.95" y1="21" x2="29.01" y2="28.96" />
+                  </svg>
+                </button>
+              </div>
+            </li>
+
+            <li class="account">
+              <button class="btn" type="button">
+                <svg class="account-icon" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 31 31">
+                  <circle cx="15.5" cy="8.77" r="6.73" />
+                  <polyline points="26.65 28.97 22.71 20.41 8.29 20.41 4.35 28.97" />
                 </svg>
-                <span>My Account</span>
-              </a>
-              <div id="login" class="dropdown-menu my-account">
+                <span class="sr-only">Your Account</span>
+              </button>
+              <!-- <div id="login" class="dropdown-menu my-account">
                 <div class="row">
                   <div class="col">
                     <ul>
@@ -83,8 +90,8 @@
                     </ul>
                   </div>
                 </div>
-              </div>
-            </li> -->
+              </div> -->
+            </li>
 
             <li class="cart">
               <a href="https://www.uwalumnistore.com/shoppingcart" title="Shopping Cart">
