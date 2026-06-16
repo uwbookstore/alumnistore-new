@@ -71,10 +71,12 @@ if (backToTopBtn) {
 const menuToggle = document.querySelector('.nav__toggle');
 const siteNavigation = document.getElementById('primary-navigation');
 
-menuToggle.addEventListener('click', () => {
-  const isOpened = menuToggle.getAttribute('aria-expanded') === 'true';
-  isOpened ? closeMenu() : openMenu();
-});
+if (menuToggle) {
+  menuToggle.addEventListener('click', () => {
+    const isOpened = menuToggle.getAttribute('aria-expanded') === 'true';
+    isOpened ? closeMenu() : openMenu();
+  });
+}
 
 function openMenu() {
   menuToggle.setAttribute('aria-expanded', 'true');
@@ -86,14 +88,16 @@ function closeMenu() {
   siteNavigation.setAttribute('data-state', 'closed');
 }
 
-const navbarToggle = document.querySelector('[data-bs-toggle="collapse"]');
-const toggleIcon = document.querySelector('[data-bs-toggle="collapse"] img');
+// const navbarToggle = document.querySelector('[data-bs-toggle="collapse"]');
+// const toggleIcon = document.querySelector('[data-bs-toggle="collapse"] img');
 
-navbarToggle.addEventListener('click', () => {
-  navbarToggle.classList.contains('collapsed')
-    ? toggleIcon.setAttribute('src', './img/OS_icons_menu.png')
-    : toggleIcon.setAttribute('src', './img/OS_icons_close.png');
-});
+// if (navbarToggle) {
+//   navbarToggle.addEventListener('click', () => {
+//     navbarToggle.classList.contains('collapsed')
+//       ? toggleIcon.setAttribute('src', './img/OS_icons_menu.png')
+//       : toggleIcon.setAttribute('src', './img/OS_icons_close.png');
+//   });
+// }
 
 // Footer copyright info
 const d = new Date();

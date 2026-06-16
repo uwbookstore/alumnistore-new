@@ -48,19 +48,70 @@
     block-size: rem(130);
     padding: 0;
 
+    &-links {
+      order: 1;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      li {
+        display: inline-block;
+      }
+    }
+
     &-toggler {
-      border-color: #ddd;
       padding: rem(20) rem(20);
       margin: 0;
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
       border: none;
       background: transparent;
 
-      img {
+      .hamburger {
         block-size: rem(20);
         inline-size: rem(20);
+
+        line {
+          fill: none;
+          stroke: hsl(from var(--bs-secondary) h s l);
+          stroke-linecap: round;
+          stroke-linejoin: round;
+          stroke-width: 3px;
+          transition: stroke 0.25s ease-in-out;
+
+          @media (prefers-reduced-motion: reduce) {
+            transition: none;
+          }
+        }
+      }
+
+      &:hover,
+      &:active,
+      &:focus-visible {
+        .hamburger line {
+          stroke: hsl(from var(--bs-primary) h s l);
+        }
+      }
+
+      &[aria-expanded='true'] {
+        .hamburger {
+          line {
+            stroke: hsl(from var(--bs-primary) h s l);
+            &:first-child {
+              rotate: 45deg;
+              transform-origin: 4px 10px;
+            }
+            &:nth-child(2) {
+              opacity: 0;
+            }
+            &:last-child {
+              rotate: -45deg;
+              transform-origin: 3px 20px;
+            }
+          }
+        }
       }
     }
 
@@ -90,47 +141,27 @@
     }
 
     .cart {
-      &-mobile {
-        position: absolute;
-        right: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+      a {
+        padding: rem(10) rem(20);
 
-        a {
-          padding: rem(10) rem(20);
+        img {
+          block-size: rem(20);
+        }
 
-          img {
-            block-size: rem(20);
-          }
+        svg {
+          inline-size: rem(26.5);
+          block-size: rem(20);
+          transition: var(--transition);
+          stroke: hsl(from var(--bs-secondary) h s l);
+          fill: hsl(from var(--bs-secondary) h s l);
+        }
 
+        &:hover {
           svg {
-            .st0 {
-              fill: none;
-              stroke: var(--bs-secondary);
-              stroke-linecap: round;
-              stroke-linejoin: round;
-              stroke-width: 3px;
-            }
-
-            .st1 {
-              fill: var(--bs-secondary);
-            }
-            inline-size: rem(26.5);
-            block-size: rem(20);
-            transition: var(--transition);
-          }
-
-          &:hover {
-            svg {
-              fill: var(--bs-primary);
-            }
+            stroke: var(--bs-primary);
+            fill: var(--bs-primary);
           }
         }
-      }
-
-      &-toggle {
-        display: none;
       }
     }
 
@@ -141,119 +172,12 @@
       z-index: 10;
     }
 
-    &-left,
-    &-right {
+    &-left {
       display: flex;
       flex-direction: column;
-
-      li a {
-        justify-content: flex-start;
-        letter-spacing: 2%;
-      }
     }
 
-    &-right {
-      .search {
-        position: relative;
-        border-top: 1px solid var(--clr-gray-200);
-
-        &-field {
-          display: block;
-          text-transform: uppercase;
-          background: transparent;
-          border-radius: 0;
-          font-weight: 400;
-          font-size: rem(14);
-          font-family: inherit;
-          padding-inline-start: rem(40);
-          border: none;
-
-          &::placeholder {
-            font-size: rem(14);
-            font-family: inherit;
-            font-weight: 400;
-          }
-        }
-
-        &-submit {
-          position: absolute;
-          top: 50%;
-          transform: translateY(-50%);
-          left: 0;
-
-          cursor: pointer;
-          transition: var(--transition);
-
-          svg {
-            fill: var(--bs-secondary);
-            block-size: rem(20);
-            inline-size: rem(20);
-            transition: var(--transition);
-            .st0 {
-              stroke-linecap: round;
-            }
-
-            .st0,
-            .st1 {
-              fill: none;
-              stroke: var(--bs-secondary);
-              stroke-miterlimit: 10;
-              stroke-width: rem(3);
-              transition: var(--transition);
-            }
-          }
-
-          &:hover,
-          &:focus-visible {
-            svg {
-              fill: var(--bs-primary);
-
-              .st0,
-              .st1 {
-                stroke: var(--bs-primary);
-              }
-            }
-          }
-        }
-      }
-
-      .account {
-        &-toggle {
-          position: static;
-
-          a {
-            display: flex;
-            align-items: center;
-            gap: rem(16);
-          }
-        }
-
-        &-img {
-          block-size: rem(20);
-          inline-size: auto;
-          transition: var(--transition);
-          .st0 {
-            stroke-linecap: round;
-            stroke-linejoin: round;
-          }
-
-          .st0,
-          .st1 {
-            fill: none;
-            stroke: var(--bs-secondary);
-            stroke-width: rem(3);
-            transition: var(--transition);
-          }
-
-          .st1 {
-            stroke-miterlimit: 10;
-            transition: var(--transition);
-          }
-        }
-      }
-    }
-
-    li {
+    .navbar-nav li {
       position: static;
       background-color: var(--clr-gray-50);
       font-style: inherit;
@@ -262,26 +186,28 @@
       &:last-child {
         border-bottom: none;
       }
-    }
 
-    li a {
-      padding: rem(14);
-      font-size: rem(14);
-      color: var(--bs-secondary);
-      text-decoration: none;
-      display: block;
-      inline-size: 100%;
-      font-weight: 100;
-      position: relative;
-
-      &.show-all {
-        text-align: center;
-        font-weight: 500;
-        font-size: rem(20);
+      a {
+        justify-content: flex-start;
+        letter-spacing: 2%;
         padding: rem(14);
-        line-height: 1;
-        border-top: rem(1) solid var(--clr-light-gray-2);
-        transition: var(--transition);
+        font-size: rem(14);
+        color: var(--bs-secondary);
+        text-decoration: none;
+        display: block;
+        inline-size: 100%;
+        font-weight: 100;
+        position: relative;
+
+        &.show-all {
+          text-align: center;
+          font-weight: 500;
+          font-size: rem(20);
+          padding: rem(14);
+          line-height: 1;
+          border-top: rem(1) solid var(--clr-light-gray-2);
+          transition: var(--transition);
+        }
       }
     }
   } //end .navbar
@@ -402,10 +328,6 @@
           }
         }
       }
-
-      // li {
-      //   border-bottom: none;
-      // }
     }
 
     .dropdown {
@@ -463,15 +385,20 @@
         }
       }
 
-      &-left,
-      &-right {
+      &-left {
         flex-direction: row;
         align-items: center;
       }
 
       &-left {
         padding-inline-start: rem(15);
-        .nav-item {
+      }
+
+      .navbar-nav li {
+        background-color: transparent;
+        border-bottom: none;
+
+        &.nav-item {
           margin-inline-end: rem(16);
 
           a {
@@ -494,7 +421,7 @@
             }
           }
         }
-        .nav-item:not(:last-child) {
+        &.nav-item:not(:last-child) {
           > a::after {
             content: '/';
             position: absolute;
@@ -505,122 +432,10 @@
         }
       }
 
-      &-right {
-        padding-inline-start: rem(20);
-
-        .search {
-          block-size: rem(40);
-          border-top: none;
-
-          &-field {
-            inline-size: rem(200);
-            margin-inline-end: rem(15);
-            background-color: var(--bs-white);
-            font-size: rem(12);
-            font: inherit;
-
-            &::placeholder {
-              font-size: rem(12);
-              text-transform: uppercase;
-            }
-          }
-        }
-
-        .cart-toggle {
-          display: block;
-        }
-
-        .account-toggle,
-        .cart-toggle {
-          a {
-            padding: rem(8);
-            border-bottom: none;
-
-            span {
-              display: none;
-            }
-
-            &::after {
-              border: none;
-            }
-          }
-        }
-
-        .account-toggle {
-          a:hover,
-          a:focus-visible {
-            svg {
-              .st0,
-              .st1 {
-                stroke: var(--bs-primary);
-              }
-            }
-          }
-        }
-
-        .cart-toggle {
-          a {
-            padding-inline-end: 0;
-            &:hover,
-            &:focus-visible {
-              svg {
-                fill: var(--bs-primary);
-
-                .st0,
-                .st1 {
-                  stroke: var(--bs-primary);
-                }
-              }
-            }
-          }
-        }
-
-        .cart--icon {
-          .st0 {
-            fill: none;
-            stroke: var(--bs-secondary);
-            stroke-linecap: round;
-            stroke-linejoin: round;
-            stroke-width: 3px;
-          }
-
-          .st1 {
-            fill: var(--bs-secondary);
-          }
-          inline-size: rem(26.5);
-          block-size: rem(20);
-          transition: var(--transition);
-        }
-      }
-
-      li {
-        background-color: transparent;
-        border-bottom: none;
-      }
-
       &-left {
         padding-inline-start: 0;
         .nav-item a {
           font-size: rem(14);
-        }
-      }
-
-      &-right {
-        .search {
-          &-field {
-            inline-size: rem(332);
-            border: rem(1) solid var(--bs-secondary);
-            padding-inline-start: rem(10);
-            margin-inline-end: rem(5);
-          }
-
-          &-submit {
-            left: initial;
-            right: rem(10);
-
-            cursor: pointer;
-            transition: var(--transition);
-          }
         }
       }
 
