@@ -58,7 +58,7 @@
       padding: 0;
       list-style: none;
 
-      li {
+      > li {
         display: inline-block;
 
         &:first-child {
@@ -145,11 +145,80 @@
     }
 
     .search {
-      &-form {
+      &-overlay {
         display: none;
+
+        &.open {
+          position: absolute;
+          inset: 0;
+          display: block;
+          background-color: white;
+          z-index: 99999;
+        }
       }
 
-      &-toggle {
+      &-close {
+        position: absolute;
+        top: rem(10);
+        right: rem(10);
+        display: inline-block;
+        margin-inline-start: auto;
+        padding: rem(10);
+
+        svg {
+          inline-size: rem(20);
+          block-size: rem(20);
+        }
+      }
+
+      &-form {
+        display: block;
+        position: relative;
+        padding-inline: rem(10);
+        max-inline-size: rem(330);
+        margin-inline: auto;
+        margin-block-start: rem(45);
+      }
+
+      &-field {
+        border-color: hsl(from var(--bs-secondary) h s l);
+      }
+
+      &-submit {
+        position: absolute;
+        top: 50%;
+        right: rem(20);
+        transform: translateY(-50%);
+        z-index: 100;
+
+        svg {
+          inline-size: rem(20);
+          block-size: rem(20);
+
+          circle,
+          line {
+            fill: none;
+            stroke: hsl(from var(--bs-secondary) h s l);
+            stroke-width: 3px;
+            transition: var(--transition);
+          }
+
+          line {
+            stroke-linecap: round;
+          }
+        }
+
+        &:hover {
+          svg {
+            circle,
+            line {
+              stroke: hsl(from var(--bs-primary) h s l);
+            }
+          }
+        }
+      }
+
+      &-open {
         padding: rem(10);
         svg {
           inline-size: rem(20);
@@ -178,7 +247,7 @@
     }
 
     .account {
-      button {
+      a {
         background: transparent;
         border: 0;
         padding: rem(10);
@@ -213,6 +282,14 @@
       }
     }
 
+    #login {
+      position: absolute;
+      z-index: 200;
+      right: 0;
+      width: 100%;
+      border: 0;
+    }
+
     .cart {
       a {
         padding: rem(10);
@@ -241,7 +318,7 @@
       position: absolute;
       top: rem(130);
       inline-size: 100%;
-      z-index: 10;
+      z-index: 100;
     }
 
     &-left {
@@ -445,8 +522,8 @@
         display: none;
       }
 
-      .cart-mobile {
-        display: none;
+      &-links {
+        justify-content: flex-end;
       }
 
       &-expand-lg {
@@ -513,53 +590,33 @@
       }
 
       .search {
-        &-toggle {
+        &-open {
           display: none;
         }
 
-        &-form {
+        &-close {
+          display: none;
+        }
+
+        &-overlay {
           display: block;
-          position: relative;
-          padding-inline: rem(10);
+          position: initial;
+          inline-size: 100%;
+        }
+
+        &-form {
+          margin: 0;
+          padding: 0;
+          margin-inline-end: rem(10);
         }
 
         &-field {
           inline-size: rem(330);
-          border-color: hsl(from var(--bs-secondary) h s l);
+          padding-inline-end: rem(40);
         }
 
         &-submit {
-          position: absolute;
-          top: 50%;
-          right: rem(20);
-          transform: translateY(-50%);
-          z-index: 100;
-
-          svg {
-            inline-size: rem(20);
-            block-size: rem(20);
-
-            circle,
-            line {
-              fill: none;
-              stroke: hsl(from var(--bs-secondary) h s l);
-              stroke-width: 3px;
-              transition: var(--transition);
-            }
-
-            line {
-              stroke-linecap: round;
-            }
-          }
-
-          &:hover {
-            svg {
-              circle,
-              line {
-                stroke: hsl(from var(--bs-primary) h s l);
-              }
-            }
-          }
+          right: 0;
         }
       }
 
