@@ -56,6 +56,7 @@
       width: 100%;
       margin: 0;
       padding: 0;
+      padding-inline-end: rem(10);
       list-style: none;
 
       > li {
@@ -152,8 +153,11 @@
           position: absolute;
           inset: 0;
           display: block;
-          background-color: white;
+          background-color: var(--clr-gray-50);
           z-index: 99999;
+          top: rem(131);
+          border-top: 1px solid #000;
+          block-size: rem(150);
         }
       }
 
@@ -350,8 +354,8 @@
 
         &.show-all {
           text-align: center;
-          font-weight: 500;
-          font-size: rem(20);
+          font-weight: 500 !important;
+          font-size: rem(16) !important;
           padding: rem(14);
           line-height: 1;
           border-top: rem(1) solid var(--clr-light-gray-2);
@@ -440,6 +444,11 @@
     .navbar {
       block-size: rem(126);
 
+      &-links {
+        padding-inline: rem(22) rem(32);
+        padding-block-start: rem(16);
+      }
+
       &-toggler {
         left: rem(22);
       }
@@ -523,6 +532,7 @@
       }
 
       &-links {
+        padding: 0;
         justify-content: flex-end;
       }
 
@@ -538,10 +548,11 @@
       &-left {
         flex-direction: row;
         align-items: center;
-      }
+        padding-inline-start: rem(10);
 
-      &-left {
-        padding-inline-start: rem(15);
+        .nav-item a {
+          font-size: rem(14);
+        }
       }
 
       .navbar-nav li {
@@ -582,13 +593,6 @@
         }
       }
 
-      &-left {
-        padding-inline-start: 0;
-        .nav-item a {
-          font-size: rem(14);
-        }
-      }
-
       .search {
         &-open {
           display: none;
@@ -622,7 +626,8 @@
 
       .dropdown {
         &-menu {
-          padding: rem(25) rem(10) 0;
+          padding: rem(25) rem(40);
+          padding-block-end: 0;
           top: rem(145) !important;
 
           [class^='col'] {
@@ -641,6 +646,10 @@
             max-inline-size: rem(300);
             left: initial;
             padding-block-end: rem(15);
+          }
+
+          div:first-child {
+            padding-block-end: rem(25);
           }
         }
 
@@ -699,11 +708,12 @@
         }
       }
 
-      padding-inline: rem(72);
+      padding-inline: rem(62);
 
       .dropdown {
         &-menu {
           top: rem(150) !important;
+          padding-inline: rem(80);
         }
       }
     }

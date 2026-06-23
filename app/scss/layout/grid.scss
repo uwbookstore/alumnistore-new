@@ -81,44 +81,49 @@
         }
       }
     }
+  }
+  @include breakpoint(small) {
+    grid-template-columns: repeat(2, 1fr);
 
-    @include breakpoint(small) {
-      grid-template-columns: repeat(2, 1fr);
+    &.home {
+      padding-inline: rem(42);
+      gap: rem(14);
 
-      &.home {
-        padding-inline: rem(42);
-        gap: rem(14);
-
-        &.feature {
-          gap: rem(24);
-        }
+      &.feature {
+        gap: rem(24);
       }
     }
+  }
 
-    @include breakpoint(medium) {
-      &.home {
-        padding-inline: rem(72);
-        gap: rem(24);
+  @include breakpoint(medium) {
+    &--navbar {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
 
-        .feature {
-          font-size: rem(16);
-          .feature-body {
-            h3 {
-              font-size: rem(24);
-            }
+    &.home {
+      padding-inline: rem(72);
+      gap: rem(24);
+
+      .feature {
+        font-size: rem(16);
+        .feature-body {
+          font-size: inherit;
+          h3 {
+            font-size: rem(24);
           }
         }
       }
     }
+  }
 
-    @include breakpoint(large) {
-      &.home {
-        .feature {
-          font-size: rem(20);
-          .feature-body {
-            h3 {
-              font-size: rem(32);
-            }
+  @include breakpoint(large) {
+    &.home {
+      .feature {
+        font-size: rem(20);
+        .feature-body {
+          font-size: inherit;
+          h3 {
+            font-size: rem(32);
           }
         }
       }
