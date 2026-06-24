@@ -149,21 +149,18 @@
       &-overlay {
         display: none;
 
-        &.open {
+        &[data-state='opened'] {
           position: absolute;
           inset: 0;
           display: block;
-          background-color: var(--clr-gray-50);
           z-index: 99999;
-          top: rem(131);
-          border-top: 1px solid #000;
-          block-size: rem(150);
+          height: 100vh;
         }
       }
 
       &-close {
         position: absolute;
-        top: rem(10);
+        top: 0;
         right: rem(10);
         display: inline-block;
         margin-inline-start: auto;
@@ -172,16 +169,24 @@
         svg {
           inline-size: rem(20);
           block-size: rem(20);
+
+          line {
+            fill: none;
+            stroke: hsl(from var(--bs-secondary) h s l);
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-width: 3px;
+          }
         }
       }
 
       &-form {
         display: block;
         position: relative;
-        padding-inline: rem(10);
-        max-inline-size: rem(330);
-        margin-inline: auto;
-        margin-block-start: rem(45);
+        padding: rem(50) rem(10);
+        inline-size: 100%;
+        top: rem(130);
+        background: var(--clr-gray-50);
       }
 
       &-field {
@@ -212,13 +217,20 @@
           }
         }
 
-        &:hover {
+        &:hover,
+        &:focus-visible {
           svg {
             circle,
             line {
               stroke: hsl(from var(--bs-primary) h s l);
             }
           }
+        }
+
+        &:focus-visible {
+          outline: rem(4) solid hsl(from var(--bs-secondary) h s l);
+          outline-offset: rem(4);
+          border-radius: rem(4);
         }
       }
 
@@ -251,7 +263,8 @@
     }
 
     .account {
-      a {
+      a,
+      button {
         background: transparent;
         border: 0;
         padding: rem(10);
@@ -275,7 +288,12 @@
           }
         }
 
-        &:hover {
+        &:hover,
+        &:focus-visible {
+          // outline: rem(4) solid hsl(from var(--bs-secondary) h s l);
+          // outline-offset: rem(4);
+          // border-radius: rem(4);
+
           svg {
             circle,
             polyline {
@@ -292,6 +310,39 @@
       right: 0;
       width: 100%;
       border: 0;
+      padding: 0;
+
+      max-inline-size: rem(400);
+      left: initial;
+
+      &[data-state='opened'] {
+        display: block;
+      }
+
+      .row,
+      .col {
+        padding: 0;
+      }
+
+      li {
+        background: var(--clr-gray-50);
+
+        &:not(:last-child) {
+          border-bottom: 1px solid var(--clr-gray-200);
+        }
+      }
+
+      a {
+        display: block;
+        text-align: right;
+        color: hsl(from var(--bs-secondary) h s l);
+        transition: var(--transition);
+
+        &:hover,
+        &:focus-visible {
+          color: hsl(from var(--bs-primary) h s l);
+        }
+      }
     }
 
     .cart {
@@ -309,7 +360,12 @@
           stroke-linejoin: round;
         }
 
-        &:hover {
+        &:hover,
+        &:focus-visible {
+          outline: rem(4) solid hsl(from var(--bs-secondary) h s l);
+          outline-offset: rem(4);
+          border-radius: rem(4);
+
           svg {
             stroke: var(--bs-primary);
             fill: var(--bs-primary);
@@ -612,6 +668,10 @@
           margin: 0;
           padding: 0;
           margin-inline-end: rem(10);
+          background: none;
+          top: initial;
+          padding-block: 0;
+          inline-size: auto;
         }
 
         &-field {
@@ -621,6 +681,15 @@
 
         &-submit {
           right: 0;
+        }
+      }
+
+      #login {
+        padding: rem(15);
+        background: var(--clr-gray-50);
+
+        li:not(:last-child) {
+          border-bottom: none;
         }
       }
 
@@ -643,9 +712,7 @@
           }
 
           &.my-account {
-            max-inline-size: rem(300);
             left: initial;
-            padding-block-end: rem(15);
           }
 
           div:first-child {

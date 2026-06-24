@@ -61,12 +61,33 @@ const searchForm = document.getElementById('search-form');
 
 const searchOverlay = document.getElementById('search-overlay');
 
+// Account toggle
+const accountToggle = document.getElementById('account-toggle');
+const accountDropdown = document.getElementById('login');
+
+const toggleAccount = () => {
+  if (accountToggle.getAttribute('aria-expanded') === 'false') {
+    accountToggle.setAttribute('aria-expanded', 'true');
+    accountDropdown.setAttribute('data-state', 'opened');
+  } else {
+    accountToggle.setAttribute('aria-expanded', 'false');
+    accountDropdown.setAttribute('data-state', 'closed');
+  }
+};
+
+const closeAccount = () => {
+  accountToggle.setAttribute('aria-expanded', 'false');
+  accountDropdown.setAttribute('data-state', 'closed');
+};
+
 const openSearchOverlay = () => {
-  searchOverlay.classList.add('open');
+  searchOpen.setAttribute('aria-expanded', 'true');
+  searchOverlay.setAttribute('data-state', 'opened');
 };
 
 const closeSearchOverlay = () => {
-  searchOverlay.classList.remove('open');
+  searchOpen.setAttribute('aria-expanded', 'false');
+  searchOverlay.setAttribute('data-state', 'closed');
 };
 
 searchOpen.addEventListener('click', () => {
@@ -86,15 +107,19 @@ searchOverlay.addEventListener('click', (e) => {
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {
     closeSearchOverlay();
+    closeAccount();
   }
 });
 
-// Account toggle
-const accountToggle = document.getElementById('account-toggle');
-const accountDropdown = document.getElementById('login');
-
 accountToggle.addEventListener('click', (e) => {
   e.preventDefault();
-  accountToggle.classList.toggle('show');
-  accountDropdown.classList.toggle('show');
+  toggleAccount();
+});
+
+// Listen for clicks anywhere on the page
+window.addEventListener('click', function (e) {
+  // Check if the clicked element is NOT the box and NOT inside the box
+  if (!accountDropdown.contains(e.target) && !e.target.closest(accountToggle)) {
+    closeAccount();
+  }
 });
