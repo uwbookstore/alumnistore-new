@@ -46,6 +46,7 @@
         h3 {
           font-family: var(--ff-primary);
           margin: 0;
+          margin-block-start: rem(4);
           margin-block-end: rem(8);
           font-weight: 700;
           font-size: rem(20);
@@ -112,6 +113,8 @@
 
       .feature {
         font-size: rem(16);
+        gap: rem(32);
+
         .feature-body {
           font-size: inherit;
           h3 {
@@ -126,9 +129,11 @@
     &.home {
       .feature {
         font-size: rem(20);
+
         .feature-body {
           font-size: inherit;
           h3 {
+            margin-block-start: 0;
             font-size: rem(32);
           }
         }

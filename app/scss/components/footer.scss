@@ -306,6 +306,7 @@
       --inline-padding: #{rem(144)};
 
       padding-block: rem(24);
+      margin-block: rem(100);
 
       &-link {
         font-size: rem(14);
@@ -345,6 +346,7 @@
   @include breakpoint(large) {
     &__banner {
       --inline-padding: 0px;
+      margin-block: rem(128);
 
       &-link {
         font-size: rem(16);
