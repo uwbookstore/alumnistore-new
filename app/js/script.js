@@ -117,9 +117,9 @@ accountToggle.addEventListener('click', (e) => {
 });
 
 // Listen for clicks anywhere on the page
-window.addEventListener('click', function (e) {
-  // Check if the clicked element is NOT the box and NOT inside the box
-  if (!accountDropdown.contains(e.target) && !e.target.closest(accountToggle)) {
-    closeAccount();
-  }
-});
+// window.addEventListener('click', function (e) {
+//   // Check if the clicked element is NOT the box and NOT inside the box
+//   if (!accountDropdown.contains(e.target) && !e.target.closest(accountToggle)) {
+//     closeAccount();
+//   }
+// });

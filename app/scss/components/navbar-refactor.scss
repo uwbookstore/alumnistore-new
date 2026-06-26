@@ -47,20 +47,25 @@
     padding: 0;
 
     &-nav {
-      background-color: var(--bs-white);
       margin: 0;
 
-      li {
-        a {
-          border-bottom: rem(1) solid #ccc;
-          padding: rem(14);
-          font-size: rem(13);
-          color: var(--bs-gray-dark);
-          text-decoration: none;
-          display: block;
-          width: 100%;
-          font-weight: 100;
-          position: relative;
+      .nav-link {
+        border-bottom: 1px solid var(--clr-gray-200);
+        padding: rem(14);
+        font-size: rem(13);
+        color: var(--bs-gray-dark);
+        text-decoration: none;
+        display: block;
+        width: 100%;
+        font-weight: 100;
+        position: relative;
+
+        background: var(--clr-gray-50);
+        transition: var(--transition);
+
+        &:hover {
+          background: var(--clr-gray-100);
+          color: var(--bs-primary);
         }
       }
 
@@ -191,10 +196,12 @@
     }
   }
 
-  .dropdown {
+  .nav-item {
     position: static;
-    background-color: var(--clr-light-gray-3);
+    text-transform: uppercase;
+  }
 
+  .dropdown {
     &-toggle {
       &::after {
         display: none;

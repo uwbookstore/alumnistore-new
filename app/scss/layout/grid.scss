@@ -3,6 +3,12 @@
 .grid {
   display: grid;
 
+  &--navbar {
+    ul {
+      text-transform: uppercase;
+    }
+  }
+
   &.home {
     margin-block-end: rem(30);
     padding-inline: rem(20);

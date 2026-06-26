@@ -311,8 +311,6 @@
       width: 100%;
       border: 0;
       padding: 0;
-
-      max-inline-size: rem(400);
       left: initial;
 
       &[data-state='opened'] {
@@ -334,7 +332,6 @@
 
       a {
         display: block;
-        text-align: right;
         color: hsl(from var(--bs-secondary) h s l);
         transition: var(--transition);
 
@@ -687,6 +684,7 @@
       #login {
         padding: rem(15);
         background: var(--clr-gray-50);
+        max-inline-size: rem(400);
 
         li:not(:last-child) {
           border-bottom: none;
