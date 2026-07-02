@@ -4,21 +4,22 @@
   display: block;
   block-size: rem(130);
   position: relative;
+  box-sizing: content-box;
   inline-size: min(1440px, 100%);
   margin-inline: auto;
   margin-block-end: rem(34);
 
   @include breakpoint(small) {
-    block-size: rem(144);
+    block-size: rem(127);
   }
 
   @include breakpoint(medium) {
-    block-size: rem(165);
+    block-size: rem(144);
     margin-block-end: rem(40);
   }
 
   @include breakpoint(large) {
-    block-size: rem(174);
+    block-size: rem(147);
     margin-block-end: rem(48);
   }
 }
@@ -29,15 +30,56 @@
   align-items: center;
   block-size: 100%;
   padding: 0;
+
+  @include breakpoint(small) {
+    padding-inline: rem(23);
+  }
+
+  @include breakpoint(medium) {
+    padding-inline: rem(10);
+    .navbar-left {
+      > li {
+        > a.nav-link {
+          font-weight: normal;
+          transition: var(--transition);
+          gap: rem(8);
+
+          &::after {
+            content: '/';
+            color: var(--bs-primary);
+            margin-inline-end: rem(-8);
+            margin-block-start: rem(-1);
+          }
+
+          &:hover,
+          &:focus-visible {
+            color: var(--bs-primary);
+          }
+        }
+
+        &:last-child {
+          > a.nav-link {
+            &::after {
+              content: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @include breakpoint(large) {
+    padding-inline: 0;
+  }
 }
 
 .cart-mobile {
   padding: rem(20) rem(20);
   margin: 0;
   display: block;
-  block-size: rem(30);
+  block-size: rem(20);
+  inline-size: rem(26);
   box-sizing: content-box;
-  aspect-ratio: 1;
 
   @include breakpoint(medium) {
     display: none;
@@ -58,7 +100,7 @@
 }
 
 .navbar-brand {
-  inline-size: rem(40);
+  inline-size: rem(41);
   block-size: auto;
   text-align: center;
   position: absolute;
@@ -74,6 +116,18 @@
     display: block;
     max-inline-size: 100%;
     block-size: auto;
+  }
+
+  @include breakpoint(medium) {
+    inline-size: rem(45);
+    // block-size: rem(70.68);
+    top: rem(42);
+  }
+
+  @include breakpoint(large) {
+    inline-size: rem(50);
+    block-size: rem(78.54);
+    top: rem(37);
   }
 }
 
@@ -142,6 +196,142 @@
 
 .navbar-nav {
   background: var(--clr-gray-50);
+
+  > li {
+    &:not(:last-child) {
+      border-bottom: 1px solid var(--clr-gray-200);
+    }
+
+    > a {
+      text-transform: uppercase;
+      font-weight: 500;
+      justify-content: space-between;
+      gap: rem(10);
+    }
+  }
+
+  @include breakpoint(medium) {
+    background: transparent;
+    align-items: center;
+
+    > li {
+      &:not(:last-child) {
+        border-bottom: none;
+      }
+    }
+  }
+}
+
+// Search Bar
+.search {
+  position: relative;
+  border-bottom: none !important;
+
+  .search-field {
+    text-transform: uppercase;
+    background: #fafafa;
+  }
+
+  @include breakpoint(medium) {
+    margin-inline-end: rem(8);
+    .search-field {
+      background: transparent;
+      border-color: var(--bs-secondary);
+      block-size: rem(41);
+      inline-size: rem(332);
+    }
+  }
+}
+
+.search--icon {
+  line,
+  circle {
+    fill: none;
+    stroke: var(--bs-secondary);
+    stroke-miterlimit: 10;
+    stroke-width: rem(3);
+  }
+
+  line {
+    stroke-linecap: round;
+  }
+}
+
+.search-field {
+  padding-inline-end: rem(50);
+}
+
+.search-submit {
+  padding: rem(12.5);
+  box-sizing: content-box;
+  position: absolute;
+  right: rem(0);
+  top: 0;
+  block-size: rem(20);
+  aspect-ratio: 1;
+  border: 0;
+  background: transparent;
+
+  @include breakpoint(medium) {
+    padding: rem(10);
+    top: rem(-2);
+  }
+}
+
+// Account toggle
+.account-toggle a {
+  justify-content: flex-start;
+
+  &::after {
+    margin-inline-start: auto;
+  }
+  svg {
+    block-size: rem(20);
+    aspect-ratio: 1;
+  }
+
+  @include breakpoint(medium) {
+    span {
+      clip: rect(0 0 0 0);
+      clip-path: inset(50%);
+      block-size: 1px;
+      overflow: hidden;
+      position: absolute;
+      white-space: nowrap;
+      inline-size: 1px;
+    }
+  }
+}
+
+.account--icon {
+  circle,
+  polyline {
+    fill: none;
+    stroke: var(--bs-secondary);
+    stroke-width: rem(3);
+  }
+
+  circle {
+    stroke-miterlimit: 10;
+  }
+
+  polyline {
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+}
+
+// Cart - Desktop
+.cart-toggle {
+  display: none;
+
+  @include breakpoint(medium) {
+    display: block;
+    a svg {
+      block-size: rem(20);
+      inline-size: rem(26);
+    }
+  }
 }
 
 h2.store-name {
@@ -194,6 +384,46 @@ h2.store-name {
 
     a {
       font-size: rem(30);
+    }
+  }
+}
+
+@include breakpoint(bootstrap) {
+  .navbar-expand-lg .navbar-toggler {
+    display: block;
+  }
+
+  .navbar-expand-lg {
+    .navbar-collapse {
+      display: none !important;
+
+      &.show {
+        display: block !important;
+      }
+    }
+  }
+
+  .dropdown {
+    &-menu.show {
+      border-top: none;
+    }
+  }
+}
+
+@include breakpoint(medium) {
+  .navbar-expand-lg .navbar-toggler {
+    display: none;
+  }
+
+  .navbar-expand-lg {
+    .navbar-collapse {
+      display: flex !important;
+      justify-content: space-between;
+      align-items: center;
+      position: initial;
+      z-index: initial;
+      max-inline-size: min(1312px, 100%);
+      margin-inline: auto;
     }
   }
 }
@@ -677,32 +907,6 @@ h2.store-name {
 //   }
 // }
 
-// @include breakpoint(bootstrap) {
-//   #waa-nav {
-//     .navbar {
-//       &-toggler {
-//         display: block;
-//       }
-
-//       &-expand-lg {
-//         .navbar-collapse {
-//           display: none !important;
-
-//           &.show {
-//             display: block !important;
-//           }
-//         }
-//       }
-//     }
-
-//     .dropdown {
-//       &-menu.show {
-//         border-top: none;
-//       }
-//     }
-//   }
-// }
-
 // @include breakpoint(medium) {
 //   #waa-nav {
 //     block-size: rem(165);
@@ -743,14 +947,7 @@ h2.store-name {
 //         justify-content: flex-end;
 //       }
 
-//       &-expand-lg {
-//         .navbar-collapse {
-//           display: flex !important;
-//           align-items: center;
-//           position: initial;
-//           z-index: initial;
-//         }
-//       }
+//       &
 
 //       &-left {
 //         flex-direction: row;

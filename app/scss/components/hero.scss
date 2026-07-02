@@ -4,7 +4,7 @@
   position: relative;
   inline-size: 100%;
   margin-inline: auto;
-  margin-block-start: rem(-53);
+  margin-block-start: rem(-50);
   max-inline-size: var(--default-page-width);
 
   &__image {
@@ -44,6 +44,8 @@
   }
 
   @include breakpoint(small) {
+    margin-block-start: rem(-54);
+
     &__image {
       img {
         box-shadow: none;
@@ -67,7 +69,7 @@
   }
 
   @include breakpoint(medium) {
-    border-top: rem(1) solid var(--clr-gray-200);
+    // border-top: rem(1) solid var(--clr-gray-200);
 
     &__body {
       left: rem(72);
@@ -86,6 +88,7 @@
   }
 
   @include breakpoint(large) {
+    margin-block-start: rem(-56);
     &__body {
       max-inline-size: rem(450);
 
