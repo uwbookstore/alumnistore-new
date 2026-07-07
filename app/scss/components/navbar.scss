@@ -1,5 +1,10 @@
 @use '../util' as *;
 
+// prettier-ignore
+.dropdown, .dropdown-center, .dropend, .dropstart, .dropup, .dropup-center {
+  position: static;
+}
+
 #waa-nav {
   display: block;
   block-size: rem(130);
@@ -388,12 +393,146 @@ h2.store-name {
   }
 }
 
+.dropdown:hover > .dropdown-menu {
+  display: none;
+}
+.dropdown:hover > .dropdown-menu.show {
+  display: block;
+}
+
+.dropdown {
+  &-menu {
+    border-radius: 0;
+    padding: 0;
+    background-color: var(--clr-light-gray-2);
+    border: none;
+    box-shadow: 0 rem(3) rem(4) rem(1) rgb(0 0 0 / 0.25);
+
+    &[data-bs-popper] {
+      margin: 0;
+    }
+  }
+
+  &-header {
+    border-bottom: rem(1) solid var(--clr-medium-gray-3);
+    font-weight: 600;
+    color: var(--bs-secondary);
+    font-family: var(--ff-secondary);
+    font-size: rem(14);
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      text-transform: uppercase;
+      padding: rem(14);
+
+      a {
+        padding-inline-start: rem(20);
+        color: var(--bs-secondary);
+      }
+    }
+  }
+
+  @include breakpoint(medium) {
+    background-color: transparent;
+
+    &:last-child {
+      .dropdown-toggle {
+        &::after {
+          content: '';
+        }
+      }
+    }
+
+    &-toggle {
+      &::after {
+        content: none;
+        border: none;
+        vertical-align: initial;
+        margin-left: 0;
+      }
+    }
+
+    &-header {
+      border: none;
+      padding: rem(5) 0;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+
+      li {
+        padding: 8px;
+
+        a {
+          padding: 0;
+          color: var(--bs-secondary);
+        }
+      }
+    }
+
+    &-menu {
+      a {
+        text-decoration: none;
+        transition: var(--transition);
+
+        &:hover,
+        &:focus-visible {
+          color: var(--bs-primary);
+        }
+      }
+
+      &.my-account {
+        right: 0;
+        left: auto;
+        inline-size: rem(300);
+        padding: rem(25) 0;
+
+        a {
+          text-align: right;
+          padding: rem(10) rem(15) !important;
+        }
+      }
+
+      inline-size: 100%;
+      background-color: var(--clr-light-gray-3);
+      padding: rem(25) rem(10) rem(40);
+
+      [class^='col-'] {
+        padding-inline-start: rem(20);
+      }
+
+      top: rem(147) !important;
+      &[data-bs-popper] {
+        top: rem(147);
+      }
+
+      .nav-link {
+        padding: rem(5) 0 !important;
+        font-size: rem(14);
+
+        &.show-all {
+          border-top: rem(1) solid var(--clr-gray-200);
+          padding: rem(14) 0 !important;
+        }
+      }
+    }
+  }
+}
+
 @include breakpoint(bootstrap) {
   .navbar-expand-lg .navbar-toggler {
     display: block;
   }
 
   .navbar-expand-lg {
+    .navbar-nav {
+      flex-direction: column;
+    }
     .navbar-collapse {
       display: none !important;
 
@@ -416,6 +555,9 @@ h2.store-name {
   }
 
   .navbar-expand-lg {
+    .navbar-nav {
+      flex-direction: row;
+    }
     .navbar-collapse {
       display: flex !important;
       justify-content: space-between;
