@@ -4,11 +4,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="Description"
+    content="The University Book Store serving the University of Wisconsin and Madison since 1894" />
   <title>UW Alumni Store</title>
   <link rel="stylesheet" href="./dist/libraries/bootstrap_v5_2.css">
   <link rel="stylesheet" href="./dist/libraries/bootstrap_v5_2_custom.css">
   <link rel="stylesheet" href="./dist/libraries/MasterCSS.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
   <link rel="stylesheet" href="./dist/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,7 +28,7 @@
       </a>
     </div>
 
-    <div id='cyberMondayBanner' class='promo-banner'>
+    <div role="alert" id='cyberMondayBanner' class='promo-banner'>
       <div class='container-fluid'>
         Save **% on your entire purchase — today only! Use promo code:
         <strong>somecode</strong>
@@ -36,7 +37,7 @@
 
     <header id="waa-nav">
 
-      <nav class="navbar navbar-expand-lg">
+      <nav class="navbar navbar-expand-lg" aria-label="primary-navigation">
         <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-uwfaa"
           aria-controls="navbar-uwfaa" aria-expanded="false" aria-label="Toggle navigation">
           <span class="sr-only">Toggle navigation</span>
@@ -63,6 +64,7 @@
         <a class="navbar-brand" href="https://www.uwalumnistore.com/home">
           <img src="https://i.univbkstr.com/uwalumnistore/img/logos/logo.svg" alt="" role="presentation"
             class="waa-logo">
+          <span class="sr-only">UW Alumni Store</span>
         </a>
 
 
@@ -711,8 +713,8 @@
             </li>
 
             <li class="nav-item dropdown account-toggle">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"
-                title="My Account">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
                 <svg class="account--icon" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 31 31">
                   <circle cx="15.5" cy="8.77" r="6.73" />
                   <polyline points="26.65 28.97 22.71 20.41 8.29 20.41 4.35 28.97" />
@@ -720,15 +722,11 @@
                 <span>My Account</span>
               </a>
               <div id="login" class="dropdown-menu my-account">
-                <div class="row">
-                  <div class="col">
-                    <ul>
-                      <li><a href="https://secure2.mbsbooks.com//CustomerRegister?s=www.uwalumnistore.com">Register</a>
-                      </li>
-                      <li><a href="https://www.uwalumnistore.com/login">Login</a></li>
-                    </ul>
-                  </div>
-                </div>
+                <ul>
+                  <li><a href="https://secure2.mbsbooks.com//CustomerRegister?s=www.uwalumnistore.com">Register</a>
+                  </li>
+                  <li><a href="https://www.uwalumnistore.com/login">Login</a></li>
+                </ul>
               </div>
             </li>
 
@@ -747,16 +745,16 @@
 
 
       </nav>
-      <h2 class="store-name">
+      <span class="store-name">
         <a href="https://www.uwalumnistore.com/home">
           UW Alumni Store
         </a>
-      </h2>
+      </span>
 
     </header>
   </div>
 
-  <div id='ContainDiv' class='contain container clear'>
+  <main id='ContainDiv' class='contain container clear'>
 
     <div class="container">
       <div id='merch-main' class='merch'>
@@ -769,8 +767,8 @@
                     class='merch__detail-img' />
                 </li>
                 <li id='thumbnail_1' data-thumb="./img/items/2079612-A.png">
-                  <img src='./img/items/2079612-A-lg.png' role='presentation' alt='./img/items/2079612-A.png'
-                    id='fullsize_1' class='merch__detail-img' />
+                  <img src='./img/items/2079612-A-lg.png' role='presentation' alt='' id='fullsize_1'
+                    class='merch__detail-img' />
                 </li>
               </ul>
               <!-- <ol class='flex-control-nav flex-control-thumbs'>
@@ -784,15 +782,15 @@
             </div>
           </div>
           <div id='merch-info' class='merch__detail-info'>
-            <h2 class='merch__detail-title'>
+            <h1 class='merch__detail-title'>
               Comfort Wash Wisconsin Badgers T-Shirt (Gray)
-            </h2>
+            </h1>
             <div id='priceBlock' class='merch__detail-price'>
               <span class='original'>$34.99</span>
               <span class='sale'>$20.00</span>
             </div>
             <div id='description-block' class='merch__detail-description'>
-              <h3 class='merch__detail-title-small'>The Details</h3>A
+              <h2 class='merch__detail-title-small'>The Details</h2>A
               Wisconsin Badgers shirt with a one-of-a-kind vintage look!
               <ul>
                 <li>
@@ -1052,7 +1050,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </main>
 
   <footer class='footer'>
     <div class="footer__banner">
@@ -1139,7 +1137,7 @@
       </div>
       <div class='footer__inner'>
         <div class='footer__column'>
-          <nav class='footer-menu'>
+          <nav class='footer-menu' aria-label="Our Store Menu">
             <h2>Our Store</h2>
             <ul>
               <li>
@@ -1156,7 +1154,7 @@
           </nav>
         </div>
         <div class='footer__column'>
-          <nav class='footer-menu'>
+          <nav class='footer-menu' aria-label="Customer Help Menu">
             <h2>Help</h2>
             <ul>
               <li>
@@ -1173,7 +1171,7 @@
           </nav>
         </div>
         <div class='footer__column'>
-          <nav class='footer-menu'>
+          <nav class='footer-menu' aria-label="Shipping and Returns menu">
             <h2>Shipping &amp; Returns</h2>
             <ul>
               <li>
@@ -1197,9 +1195,10 @@
       </div>
 
       <div class='footer__bottom'>
-        <ul class='footer__social'>
+        <ul class='footer__social' role="list" aria-label="social links">
           <li>
-            <a class='fb' href='https://www.facebook.com/wisalumni' target='_blank' rel='noreferrer'>
+            <a class='fb' aria-label="facebook" href='https://www.facebook.com/wisalumni' target='_blank'
+              rel='noreferrer'>
               <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink">
                 <rect width="7.57647" height="14" fill="url(#pattern0_390_335)" />
@@ -1211,12 +1210,11 @@
                     xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAArCAYAAABimUj7AAAACXBIWXMAABcRAAAXEQHKJvM/AAAA8UlEQVRYhe2X3Q2CMBRGD8Z32UA20A1kBEZxBEboCI7gCI7gBpYNcILrQ21MlP4GYkj6JU1I2n4HuLe9bSUiLKlt5rwOOAKto38E7kCPiKS0TkS0xIsUc5VgnAw4Z5iLiFBJOMgN8MiMVbWJGNRnmhtCxBeMwC7XP5SmTYT5AChMWv4oBuDTE7MeRteAmBj4dPGZzwHwms8BCKoAgrILTWHS7Vs1cPDMHwDt6LsCyq6DI3DKeMH9u03pBsv+Il0AfwUM9sFm0eRWS36afvwCtbgN1Nw+VM/Xv1UUQAEUQAEUwCoAoStUzfSJz0rjPtkB8AJylHcJRhzDYAAAAABJRU5ErkJggg==" />
                 </defs>
               </svg>
-
-              <span class="sr-only">Follow us on Facebook</span>
             </a>
           </li>
           <li>
-            <a class='ig' href='https://www.instagram.com/wisalumni' target='_blank' rel='noreferrer'>
+            <a class='ig' aria-label="instagram" href='https://www.instagram.com/wisalumni' target='_blank'
+              rel='noreferrer'>
               <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink">
                 <rect width="15" height="15" fill="url(#pattern0_390_336)" />
@@ -1228,8 +1226,6 @@
                     xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACsAAAArCAYAAADhXXHAAAAACXBIWXMAABcRAAAXEQHKJvM/AAADRUlEQVRYhdWZQU7cMBSGP1CXSGTJjlS0a3KDpjeYnoDhBtMbhBvACQgn6PQG4QSEPUjDDnaDxIJFpdeFbSbzYidO0AztL1kZ2+85f+z3nu03OyLC/4JPkXIHQGafAF+BPSVzbJ9PwKPtP7Jt98CLkr+xzxfgDqh7WYhIqCQiMhORWraDpYiUIpKGOIWITqzyR+Hcx8tHdPpRDBUqUdx2ZN3BJsCvgMX8tnZVNdpqYNlra+vIG79TW8+BQ4/sFTB9q8m6jfqWvhaRTH/lBkoRmOGJk2kKzzyC5RZINkvmmbDaR3YREtpQSexkVLIeBXw+kzXJfgkJbLBUHZOj+woRYdeabhZwpk3im6ofN3iUqi+H1Q52oDqHEk0xkSQHEtVXAfPIMV1kmQOXavw3M7hQ054PtLsYVMq0tPfrjUDjXWR9nhuDqRqjEL9/tMjGHmQ0Mru8+yN03fKWGNOINrndQHvXAAl+orfAKfAZ2LHlO2YX0rjE2HgXrlV9L2QGXcvvs9FihMksenR0+EpCMxtCCpyotp9A0aNXYyLFc6PtkOa+HwFH9rhTagW9dNfAeaRu7ZGdReoCYZsNIVf1cqC+Jhs7ScCK7FOkvC/gD8GStuPkscqO7OPAlzosRuqNgiOrL3//JBzZo06pMPIROqmqv3tTCKFS9elA/Zz168sDA65Fjux9pPxc1U9oHy9DSGhHAz1eJxxZnYBIA/I1bW+u6CfsiOpQFRujAV5DZpB2KOlAvo8hXNAObWCWvqK9850xLJq8jj0i+u5JDlWjLAIyMfc7fTYYfUQs7fPS06evKxq3xEWRVDc4M7jRHREogR8Yj47FGca+YyJAK+kxxmabmFvZU8yM+fAAXGDOuUXkuF44M9DRIGfYIaVsyOeN9jHpJT0G2AjkyN71CA9B9Q5dB30UNbtcw/v0SX4W4bGbKKmHy0RkPX3ku65sIyHXLIm0k9dL16+/SGMp61fnTc+oL8te+MgiJtHgQ2VJJxsgmdv3htKtb+/UyWTnIH2BHdpnhFik+BPHGs8YR18dIQNf67PfbcKbwO5anols758ah6UYG/Wam88MNDJWGcLYJRyCa1b/VXSeb2PIdsF3JOzDC/BnzMv+ArKHRAC83YORAAAAAElFTkSuQmCC" />
                 </defs>
               </svg>
-
-              <span class="sr-only">Follow us on Instagram</span>
             </a>
           </li>
         </ul>

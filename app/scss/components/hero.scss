@@ -6,6 +6,7 @@
   margin-inline: auto;
   margin-block-start: rem(-50);
   max-inline-size: var(--default-page-width);
+  background: #000;
 
   &__image {
     img {
@@ -23,7 +24,7 @@
     left: 50%;
     transform: translateX(-50%);
 
-    h2 {
+    h1 {
       font-family: var(--ff-primary);
       margin-bottom: rem(24);
       color: var(--bs-white);
@@ -59,7 +60,7 @@
       max-inline-size: rem(345);
       transform: translateX(0);
 
-      h2 {
+      h1 {
         font-size: rem(24);
         inline-size: 100%;
         margin-inline-start: initial;
@@ -75,7 +76,7 @@
       left: rem(72);
       bottom: rem(72);
       max-inline-size: rem(400);
-      h2 {
+      h1 {
         font-size: rem(36);
         text-wrap: initial;
       }
@@ -92,7 +93,7 @@
     &__body {
       max-inline-size: rem(450);
 
-      h2 {
+      h1 {
         font-size: rem(40);
       }
 

@@ -28,93 +28,93 @@ if (backToTopBtn) {
 }
 // END BACK TO TOP BTN/FUNCTION
 
-const menuToggle = document.querySelector('.nav__toggle');
-const siteNavigation = document.getElementById('primary-navigation');
+// const menuToggle = document.querySelector('.nav__toggle');
+// const siteNavigation = document.getElementById('primary-navigation');
 
-if (menuToggle) {
-  menuToggle.addEventListener('click', () => {
-    const isOpened = menuToggle.getAttribute('aria-expanded') === 'true';
-    isOpened ? closeMenu() : openMenu();
-  });
-}
+// if (menuToggle) {
+//   menuToggle.addEventListener('click', () => {
+//     const isOpened = menuToggle.getAttribute('aria-expanded') === 'true';
+//     isOpened ? closeMenu() : openMenu();
+//   });
+// }
 
-function openMenu() {
-  menuToggle.setAttribute('aria-expanded', 'true');
-  siteNavigation.setAttribute('data-state', 'opened');
-}
+// function openMenu() {
+//   menuToggle.setAttribute('aria-expanded', 'true');
+//   siteNavigation.setAttribute('data-state', 'opened');
+// }
 
-function closeMenu() {
-  menuToggle.setAttribute('aria-expanded', 'false');
-  siteNavigation.setAttribute('data-state', 'closed');
-}
+// function closeMenu() {
+//   menuToggle.setAttribute('aria-expanded', 'false');
+//   siteNavigation.setAttribute('data-state', 'closed');
+// }
 
-// Footer copyright info
-const d = new Date();
-const copyYear = d.getFullYear();
-const footerCopyright = document.getElementById('footer-copyright');
-footerCopyright.innerHTML = `&copy; Copyright ${copyYear}`;
+// // Footer copyright info
+// const d = new Date();
+// const copyYear = d.getFullYear();
+// const footerCopyright = document.getElementById('footer-copyright');
+// footerCopyright.innerHTML = `&copy; Copyright ${copyYear}`;
 
-// Search bar
-const searchOpen = document.getElementById('search-open');
-const searchClose = document.getElementById('search-close');
-const searchForm = document.getElementById('search-form');
+// // Search bar
+// const searchOpen = document.getElementById('search-open');
+// const searchClose = document.getElementById('search-close');
+// const searchForm = document.getElementById('search-form');
 
-const searchOverlay = document.getElementById('search-overlay');
+// const searchOverlay = document.getElementById('search-overlay');
 
-// Account toggle
-const accountToggle = document.getElementById('account-toggle');
-const accountDropdown = document.getElementById('login');
+// // Account toggle
+// const accountToggle = document.getElementById('account-toggle');
+// const accountDropdown = document.getElementById('login');
 
-const toggleAccount = () => {
-  if (accountToggle.getAttribute('aria-expanded') === 'false') {
-    accountToggle.setAttribute('aria-expanded', 'true');
-    accountDropdown.setAttribute('data-state', 'opened');
-  } else {
-    accountToggle.setAttribute('aria-expanded', 'false');
-    accountDropdown.setAttribute('data-state', 'closed');
-  }
-};
+// const toggleAccount = () => {
+//   if (accountToggle.getAttribute('aria-expanded') === 'false') {
+//     accountToggle.setAttribute('aria-expanded', 'true');
+//     accountDropdown.setAttribute('data-state', 'opened');
+//   } else {
+//     accountToggle.setAttribute('aria-expanded', 'false');
+//     accountDropdown.setAttribute('data-state', 'closed');
+//   }
+// };
 
-const closeAccount = () => {
-  accountToggle.setAttribute('aria-expanded', 'false');
-  accountDropdown.setAttribute('data-state', 'closed');
-};
+// const closeAccount = () => {
+//   accountToggle.setAttribute('aria-expanded', 'false');
+//   accountDropdown.setAttribute('data-state', 'closed');
+// };
 
-const openSearchOverlay = () => {
-  searchOpen.setAttribute('aria-expanded', 'true');
-  searchOverlay.setAttribute('data-state', 'opened');
-};
+// const openSearchOverlay = () => {
+//   searchOpen.setAttribute('aria-expanded', 'true');
+//   searchOverlay.setAttribute('data-state', 'opened');
+// };
 
-const closeSearchOverlay = () => {
-  searchOpen.setAttribute('aria-expanded', 'false');
-  searchOverlay.setAttribute('data-state', 'closed');
-};
+// const closeSearchOverlay = () => {
+//   searchOpen.setAttribute('aria-expanded', 'false');
+//   searchOverlay.setAttribute('data-state', 'closed');
+// };
 
-searchOpen.addEventListener('click', () => {
-  openSearchOverlay();
-});
+// searchOpen.addEventListener('click', () => {
+//   openSearchOverlay();
+// });
 
-searchClose.addEventListener('click', () => {
-  closeSearchOverlay();
-});
+// searchClose.addEventListener('click', () => {
+//   closeSearchOverlay();
+// });
 
-searchOverlay.addEventListener('click', (e) => {
-  if (e.target === searchOverlay) {
-    closeSearchOverlay();
-  }
-});
+// searchOverlay.addEventListener('click', (e) => {
+//   if (e.target === searchOverlay) {
+//     closeSearchOverlay();
+//   }
+// });
 
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') {
-    closeSearchOverlay();
-    closeAccount();
-  }
-});
+// document.addEventListener('keydown', (e) => {
+//   if (e.key === 'Escape') {
+//     closeSearchOverlay();
+//     closeAccount();
+//   }
+// });
 
-accountToggle.addEventListener('click', (e) => {
-  e.preventDefault();
-  toggleAccount();
-});
+// accountToggle.addEventListener('click', (e) => {
+//   e.preventDefault();
+//   toggleAccount();
+// });
 
 // Listen for clicks anywhere on the page
 // window.addEventListener('click', function (e) {
