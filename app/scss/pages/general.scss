@@ -1,0 +1,30 @@
+@use '../util' as *;
+
+.prose {
+  max-inline-size: 60ch;
+  margin-inline: auto;
+
+  & > * + * {
+    margin-block-start: rem(15);
+  }
+}
+
+.page-title {
+  color: var(--bs-primary);
+  font-style: normal;
+  font-weight: 200;
+  font-size: rem(24);
+  margin-bottom: rem(20);
+  line-height: 1;
+}
+
+em {
+  font-style: italic;
+}
+
+blockquote {
+  border-left: rem(8) solid var(--clr-medium-gray);
+  margin-inline: rem(20);
+  padding: rem(5) rem(10);
+  font-size: inherit;
+}
