@@ -18,6 +18,12 @@ a {
   }
 }
 
+// prettier-ignore
+h1 { font-size: rem(24); }
+
+// prettier-ignore
+h2 { font-size: rem(20); font-weight: 400; }
+
 .heading {
   &__line,
   &__line-center {

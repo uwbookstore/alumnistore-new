@@ -619,8 +619,14 @@
   }
 
   em {
-    @include absCenter;
-    // color: var(--bs-secondary);
-    font-size: rem(20);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: solid currentColor;
+    border-width: 0 3px 3px 0;
+    block-size: rem(10);
+    aspect-ratio: 1;
+    pointer-events: none;
+    transform: translate(-50%, -50%) rotate(-135deg);
   }
 }

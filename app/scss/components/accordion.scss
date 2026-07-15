@@ -1,0 +1,109 @@
+@use '../util' as *;
+
+.accordion {
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--bs-gray-300);
+
+  h3 {
+    margin: 0;
+    padding: 0;
+  }
+
+  &:focus-within {
+    border-color: hsl(216deg 94% 43%);
+
+    h3 {
+      background-color: hsl(0deg 0% 97%);
+    }
+  }
+
+  > * + * {
+    border-top: 1px solid var(--bs-gray-300);
+  }
+
+  &-trigger {
+    background-color: var(--bs-gray-100);
+    color: var(--bs-secondary);
+    display: block;
+    font-size: rem(16);
+    font-weight: normal;
+    margin: 0;
+    padding: rem(10);
+    padding-inline: rem(30);
+    position: relative;
+    text-align: left;
+    width: 100%;
+    outline: none;
+
+    &:focus-visible,
+    &:hover {
+      background: hsl(216deg 94% 94%);
+    }
+
+    &:focus-visible {
+      outline: 4px solid transparent;
+    }
+  }
+
+  button {
+    border-style: none;
+    &::-moz-focus-inner {
+      border: 0;
+    }
+  }
+
+  &-title {
+    display: block;
+    pointer-events: none;
+    border: 2px solid transparent;
+    outline: none;
+
+    &::before {
+      content: 'Q: ';
+      font-weight: 600;
+      position: absolute;
+      left: rem(10);
+      top: rem(12);
+    }
+  }
+
+  &-trigger:focus-visible .accordion-title {
+    border-color: hsl(216deg 94% 43%);
+  }
+
+  &-icon {
+    border: solid currentColor;
+    border-width: 0 2px 2px 0;
+    height: 0.5rem;
+    pointer-events: none;
+    position: absolute;
+    right: rem(10);
+    top: rem(10);
+    transform: rotate(45deg);
+    width: 0.5rem;
+  }
+
+  &-trigger:focus-visible .accordion-icon,
+  &-trigger:hover .accordion-icon {
+    border-color: hsl(216deg 94% 43%);
+  }
+
+  &-trigger[aria-expanded='true'] .accordion-icon {
+    transform: rotate(-135deg);
+  }
+
+  &-panel {
+    margin: 0;
+    padding: 1em 1.5em;
+
+    > * + * {
+      margin-block-start: rem(15);
+    }
+  }
+
+  /* For Edge bug https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/4806035/ */
+  &-panel[hidden] {
+    display: none;
+  }
+}
