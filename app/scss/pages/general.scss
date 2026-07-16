@@ -1,11 +1,31 @@
 @use '../util' as *;
 
+.customer {
+  section {
+    padding-block: rem(20);
+    margin-block-start: 0;
+
+    h2 {
+      margin-block: 0 rem(15);
+    }
+  }
+
+  & > * + * {
+    border-bottom: 1px solid var(--clr-gray-200);
+  }
+}
+
 .prose {
   max-inline-size: 60ch;
   margin-inline: auto;
+  padding-inline: rem(15);
 
   & > * + * {
     margin-block-start: rem(15);
+  }
+
+  @include breakpoint(medium) {
+    padding: 0;
   }
 }
 
@@ -27,4 +47,14 @@ blockquote {
   margin-inline: rem(20);
   padding: rem(5) rem(10);
   font-size: inherit;
+}
+
+.flex-td {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  span:nth-child(odd) {
+    font-weight: 500;
+  }
 }

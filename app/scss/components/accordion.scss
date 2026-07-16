@@ -79,7 +79,7 @@
     pointer-events: none;
     position: absolute;
     right: rem(10);
-    top: rem(10);
+    top: rem(12);
     transform: rotate(45deg);
     width: 0.5rem;
   }
@@ -99,6 +99,10 @@
 
     > * + * {
       margin-block-start: rem(15);
+    }
+
+    table {
+      margin: 0 auto;
     }
   }
 

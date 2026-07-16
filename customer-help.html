@@ -758,8 +758,8 @@
   <main id="ContainDiv" class="contain container clear">
     <div class="prose customer">
       <h1 class="page-title">Customer Help</h1>
-      <a name="return"></a>
-      <div class="customer__returns-merch prose">
+      <section class="customer__returns-merch prose">
+        <a name="return"></a>
         <h2>Non-Tech Return Policy</h2>
         <p>
           If you are not completely satisfied with any product, we will gladly replace it or refund the purchase price
@@ -805,9 +805,9 @@
             the University Book Store will ship the replacement item(s) Ground Shipping at no additional cost.</span>
           Credit
           card purchases will be credited to the charge card used for the initial purchase. </p>
-      </div>
+      </section>
 
-      <div id="clearance" class="customer__clearance prose">
+      <section id="clearance" class="customer__clearance prose">
         <h2>Clearance Item Policy</h2>
         <p>You will not be charged for your order until the order ships.<br>
           We search for clearance items at each of our 5 locations so it may take longer for those items to be pulled.
@@ -818,11 +818,11 @@
           If we don't find the item, your order packing slip will show it as "Discontinued" and you will not receive
           that
           item.</p>
-      </div>
+      </section>
 
-      <a name="faq"></a>
 
-      <div class="customer__faq">
+      <section class="customer__faq">
+        <a name="faq"></a>
         <h2>Online Catalog FAQ</h2>
 
         <div id="faqAccordion" class="accordion" data-allow-toggle="true">
@@ -1043,124 +1043,308 @@
             </p>
           </div>
           <!-- End of 8th accordion section -->
+
+          <h3>
+            <button type="button" class="accordion-trigger" id="accordion9id" aria-controls="sect9"
+              aria-expanded="false">
+              <span class="accordion-title">
+                Are there any restrictions when I have a free shipping code?
+                <em class="accordion-icon" aria-hidden="true"></em>
+              </span>
+            </button>
+          </h3>
+
+          <div id="sect9" class="accordion-panel" role="region" aria-labelledby="accordion9id" hidden="">
+            <p>
+              Free ground shipping is valid to a contiguous U.S. delivery address on online orders. You must enter your
+              promo code in the "Apply a promo code" box to receive offer. Excludes previous purchases, textbooks,
+              wooden chairs/rockers, framed artwork, drop-ship items, and custom direct-ship items. Diploma frames,
+              Framed prints and some larger items will receive free ground shipping but any handling charge will still
+              apply. The offer cannot be combined with other offers. Only one use of free shipping promo code per
+              household. Contact the Online Sales Department with any questions: <a
+                href="mailto:onlinesales@uwbookstore.com">onlinesales@uwbookstore.com</a> or 1-800-993-2665 x5997.
+              Expiration date will vary.
+            </p>
+          </div>
+          <!-- End of 9th accordion section -->
+
+          <h3>
+            <button type="button" class="accordion-trigger" id="accordion10id" aria-controls="sect10"
+              aria-expanded="false">
+              <span class="accordion-title">
+                What if I am shipping outside the United States?
+                <em class="accordion-icon" aria-hidden="true"></em>
+              </span>
+            </button>
+          </h3>
+
+          <div id="sect10" class="accordion-panel" role="region" aria-labelledby="accordion10id" hidden="">
+            <p>
+              <strong class="red">International Shipping unavailable at this time</strong>
+            </p>
+          </div>
+          <!-- End of 10th accordion section -->
+
+          <h3>
+            <button type="button" class="accordion-trigger" id="accordion11id" aria-controls="sect11"
+              aria-expanded="false">
+              <span class="accordion-title">
+                What if I am shipping my order to a military address?
+                <em class="accordion-icon" aria-hidden="true"></em>
+              </span>
+            </button>
+          </h3>
+
+          <div id="sect11" class="accordion-panel" role="region" aria-labelledby="accordion11id" hidden="">
+            <p>
+              The proper format to enter a military address in our shipment information is:<br>
+              Address Line 1: Enter the Unit number and the Box number on this line.<br>
+              City: Enter either APO, FPO or DPO on this line.<br>
+              State: Enter either AA, AE or AP on this line.<br>
+              Zip Code: The five-digit zip code is entered on this line.
+            </p>
+          </div>
+          <!-- End of 11th accordion section -->
+
+          <h3>
+            <button type="button" class="accordion-trigger" id="accordion12id" aria-controls="sect12"
+              aria-expanded="false">
+              <span class="accordion-title">
+                Where is my tracking number?
+                <em class="accordion-icon" aria-hidden="true"></em>
+              </span>
+            </button>
+          </h3>
+
+          <div id="sect12" class="accordion-panel" role="region" aria-labelledby="accordion12id" hidden="">
+            <p>
+              If you don't see a tracking number listed then your order has not shipped yet. If you wish to check up on
+              an order please send an email to <a href="mailto:catalog@uwbookstore.com">onlinesales@uwbookstore.com</a>.
+              Please include your order number in the email
+            </p>
+          </div>
+          <!-- End of 12th accordion section -->
+
+          <h3>
+            <button type="button" class="accordion-trigger" id="accordion13id" aria-controls="sect13"
+              aria-expanded="false">
+              <span class="accordion-title">
+                What does shipping cost?
+                <em class="accordion-icon" aria-hidden="true"></em>
+              </span>
+            </button>
+          </h3>
+
+          <div id="sect13" class="accordion-panel" role="region" aria-labelledby="accordion13id" hidden="">
+            <p>
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>Ground Shipping (5-7 days)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>$7.00 + $0.50 for each item</td>
+                </tr>
+                <tr>
+                  <td><strong>Gift Card Only</strong> — $3.99</td>
+                </tr>
+              </tbody>
+            </table>
+            <br>
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>2<sup>nd</sup> Day Air</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>$21.00 + $1.00 for each item</td>
+                </tr>
+                <tr>
+                  <td><strong>Gift Card Only</strong> — $20.00</td>
+                </tr>
+              </tbody>
+            </table>
+            <br>
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>Next Day Air</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>$45.00 + $2.00 for each item</td>
+                </tr>
+                <tr>
+                  <td><strong>Gift Card Only</strong> — $30.00</td>
+                </tr>
+              </tbody>
+            </table>
+            </p>
+          </div>
+          <!-- End of 13th accordion section -->
         </div>
         <!-- END ONLINE CATALOG FAQ -->
+      </section>
 
-        <hr>
+      <section class="customer__sizes text-center">
         <a name="size"></a>
-        <div class="customer__sizes text-center">
-          <h2>Sizing Chart</h2>
-          <p>Please allow for shrinkage in high cotton content items.</p>
-          <table class="table table-bordered table-striped">
-            <thead>
-              <tr>
-                <th>Shirts</th>
-                <th>Shorts &amp; Pants</th>
-                <th>Women's</th>
-                <th>Youth</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>S..........32-34</td>
-                <td>S..........28-30</td>
-                <td>S..........4-6</td>
-                <td>S..........6-8</td>
-              </tr>
-              <tr>
-                <td>M.........36-38</td>
-                <td>M.........32-34</td>
-                <td>M.........8-10</td>
-                <td>M.........10-12</td>
-              </tr>
-              <tr>
-                <td>L..........40-42</td>
-                <td>L..........36-38</td>
-                <td>L..........12-14</td>
-                <td>L..........14-16</td>
-              </tr>
-              <tr>
-                <td>XL........44-46</td>
-                <td>XL........40-42</td>
-                <td>XL........16-18</td>
-                <td>XL........18-20<strong>*</strong></td>
-              </tr>
-              <tr>
-                <td>XXL......48-50</td>
-                <td>XXL......44-48</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-              </tr>
-            </tbody>
-          </table>
-          <p>*This is similar to adult small - adult is 3<span class="inches"></span> longer - same width.</p>
-          <table class="table table-bordered table-striped">
-            <thead>
-              <tr>
-                <th colspan="2">Infant</th>
-                <th colspan="2">Toddler</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><span class="red">Age</span></td>
-                <td><span class="red">Purchase</span></td>
-                <td><span class="red">Age</span></td>
-                <td><span class="red">Purchase</span></td>
-              </tr>
-              <tr>
-                <td>Newborn</td>
-                <td>6M</td>
-                <td>2 years</td>
-                <td>3T</td>
-              </tr>
-              <tr>
-                <td>6 Month</td>
-                <td>12M</td>
-                <td>3 years</td>
-                <td>4T</td>
-              </tr>
-              <tr>
-                <td>12 Month</td>
-                <td>18M-2T</td>
-                <td>4 years</td>
-                <td>Youth S</td>
-              </tr>
-              <tr>
-                <td>18 Month</td>
-                <td>2T-3T</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-              </tr>
-            </tbody>
-          </table>
-          <p>A general guideline is to go one year more than the child's age.</p>
-          <p>The charts above are general guidelines. For vendor specific sizing you may select from the following
-            vendors:
-          </p>
-          <div>
-            <a href="https://i.univbkstr.com/sizeChart/47Brand/" class="sizeCharts" title="'47 Brand Size Guide">'47
-              Brand</a> | <a href="https://i.univbkstr.com/sizeChart/blue84/" class="sizeCharts"
-              title="Blue 84 Size Guide">Blue
-              84</a> | <a href="https://i.univbkstr.com/sizeChart/jansport/chart.html" class="sizeCharts"
-              title="JanSport Size Guide">JanSport</a> | <a href="https://i.univbkstr.com/sizeChart/boxercraft/"
-              class="sizeCharts" title="Boxercraft Size Guide">Boxercraft</a> | <a
-              href="https://i.univbkstr.com/sizeChart/champion/" class="sizeCharts"
-              title="Champion Size Guide">Champion</a>
-            |
-            <a href="https://i.univbkstr.com/sizeChart/cllgKids/" class="sizeCharts"
-              title="College Kids Size Guide">College
-              Kids</a> | <a href="https://i.univbkstr.com/sizeChart/columbia/" class="sizeCharts"
-              title="Columbia Size Guide">Columbia</a> | <a href="https://i.univbkstr.com/sizeChart/fbf/"
-              class="sizeCharts" title="For Bare Feet Size Guide">For Bare Feet</a> | <a
-              href="https://i.univbkstr.com/sizeChart/gameBibs/" class="sizeCharts" title="Game Bibs Size Guide">Game
-              Bibs</a> | <a href="https://i.univbkstr.com/sizeChart/landsEnd/" class="sizeCharts"
-              title="Lands' End Size Guide">Lands' End</a> | <a href="https://i.univbkstr.com/sizeChart/ua/"
-              class="sizeCharts" title="Under Armour Size Guide">Under Armour</a> | <a
-              href="https://i.univbkstr.com/sizeChart/vantage/" class="sizeCharts"
-              title="Vantage Size Guide">Vantage</a>
-          </div>
+        <h2>Sizing Chart</h2>
+        <p>Please allow for shrinkage in high cotton content items.</p>
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>Shirts</th>
+              <th>Shorts &amp; Pants</th>
+              <th>Women's</th>
+              <th>Youth</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div class="flex-td"><span>Small</span><span>-</span><span>32-34</span></div>
+              </td>
+              <td>
+                <div class="flex-td"><span>Small</span><span>-</span><span>28-30</span></div>
+              </td>
+              <td>
+                <div class="flex-td"><span>Small</span><span>-</span><span>4-6</span></div>
+              </td>
+              <td>
+                <div class="flex-td"><span>Small</span><span>-</span><span>6-8</span></div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="flex-td"><span>Medium</span><span>-</span><span>36-38</span></div>
+              </td>
+              <td>
+                <div class="flex-td"><span>Medium</span><span>-</span><span>32-34</span></div>
+              </td>
+              <td>
+                <div class="flex-td"><span>Medium</span><span>-</span><span>8-10</span></div>
+              </td>
+              <td>
+                <div class="flex-td"><span>Medium</span><span>-</span><span>10-12</span></div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="flex-td"><span>Large</span><span>-</span><span>40-42</span></div>
+              </td>
+              <td>
+                <div class="flex-td"><span>Large</span><span>-</span><span>36-38</span></div>
+              </td>
+              <td>
+                <div class="flex-td"><span>Large</span><span>-</span><span>12-14</span></div>
+              </td>
+              <td>
+                <div class="flex-td"><span>Large</span><span>-</span><span>14-16</span></div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="flex-td"><span>X-Large</span><span>-</span><span>44-46</span></div>
+              </td>
+              <td>
+                <div class="flex-td"><span>X-Large</span><span>-</span><span>40-42</span></div>
+              </td>
+              <td>
+                <div class="flex-td"><span>X-Large</span><span>-</span><span>16-18</span></div>
+              </td>
+              <td>
+                <div class="flex-td"><span>X-Large</span><span>-</span><span>18-20<sup>*</sup></span></div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="flex-td"><span>XX-Large</span><span>-</span><span>48-50</span></div>
+              </td>
+              <td>
+                <div class="flex-td"><span>XX-Large</span><span>-</span><span>44-48</span></div>
+              </td>
+              <td>
+                &nbsp;
+              </td>
+              <td>
+                &nbsp;
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="mb-5"><sup>*</sup>This is similar to adult small - adult is 3<span class="inches"></span> longer -
+          same width.</p>
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th colspan="2">Infant</th>
+              <th colspan="2">Toddler</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="red">Age</span></td>
+              <td><span class="red">Purchase</span></td>
+              <td><span class="red">Age</span></td>
+              <td><span class="red">Purchase</span></td>
+            </tr>
+            <tr>
+              <td>Newborn</td>
+              <td>6M</td>
+              <td>2 years</td>
+              <td>3T</td>
+            </tr>
+            <tr>
+              <td>6 Month</td>
+              <td>12M</td>
+              <td>3 years</td>
+              <td>4T</td>
+            </tr>
+            <tr>
+              <td>12 Month</td>
+              <td>18M-2T</td>
+              <td>4 years</td>
+              <td>Youth S</td>
+            </tr>
+            <tr>
+              <td>18 Month</td>
+              <td>2T-3T</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>A general guideline is to go one year more than the child's age.</p>
+        <p>The charts above are general guidelines. For vendor specific sizing you may select from the following
+          vendors:
+        </p>
+        <div>
+          <a href="https://i.univbkstr.com/sizeChart/47Brand/" class="sizeCharts" title="'47 Brand Size Guide">'47
+            Brand</a> | <a href="https://i.univbkstr.com/sizeChart/blue84/" class="sizeCharts"
+            title="Blue 84 Size Guide">Blue
+            84</a> | <a href="https://i.univbkstr.com/sizeChart/jansport/chart.html" class="sizeCharts"
+            title="JanSport Size Guide">JanSport</a> | <a href="https://i.univbkstr.com/sizeChart/boxercraft/"
+            class="sizeCharts" title="Boxercraft Size Guide">Boxercraft</a> | <a
+            href="https://i.univbkstr.com/sizeChart/champion/" class="sizeCharts"
+            title="Champion Size Guide">Champion</a>
+          |
+          <a href="https://i.univbkstr.com/sizeChart/cllgKids/" class="sizeCharts"
+            title="College Kids Size Guide">College
+            Kids</a> | <a href="https://i.univbkstr.com/sizeChart/columbia/" class="sizeCharts"
+            title="Columbia Size Guide">Columbia</a> | <a href="https://i.univbkstr.com/sizeChart/fbf/"
+            class="sizeCharts" title="For Bare Feet Size Guide">For Bare Feet</a> | <a
+            href="https://i.univbkstr.com/sizeChart/gameBibs/" class="sizeCharts" title="Game Bibs Size Guide">Game
+            Bibs</a> | <a href="https://i.univbkstr.com/sizeChart/landsEnd/" class="sizeCharts"
+            title="Lands' End Size Guide">Lands' End</a> | <a href="https://i.univbkstr.com/sizeChart/ua/"
+            class="sizeCharts" title="Under Armour Size Guide">Under Armour</a> | <a
+            href="https://i.univbkstr.com/sizeChart/vantage/" class="sizeCharts" title="Vantage Size Guide">Vantage</a>
         </div>
+      </section>
   </main>
   </div>
 
