@@ -60,55 +60,6 @@ body header:first-of-type,
   inline-size: 100%;
 }
 
-.promo {
-  &-hidden {
-    display: none !important;
-  }
-
-  &-banner {
-    line-height: rem(45);
-    min-block-size: rem(45);
-    background: var(--bs-primary);
-    color: #fff;
-    text-align: center;
-    font-style: italic;
-    font-size: rem(18);
-    display: block;
-
-    span {
-      font-size: rem(14);
-    }
-
-    a {
-      &:link {
-        color: #fff;
-        text-decoration: underline;
-        font-weight: 500;
-        text-underline-offset: rem(4);
-        font-style: normal;
-      }
-
-      &:hover {
-        opacity: 0.85;
-      }
-    }
-
-    &:hover,
-    &:visited {
-      text-decoration: none;
-    }
-
-    strong {
-      font-weight: 600;
-    }
-  }
-}
-
-a.promo-banner {
-  text-decoration: none;
-  color: #fff;
-}
-
 // HIDE ALL UNNECESSARY MBS ELEMENTS
 #h_nav,
 #Cart,

@@ -170,6 +170,27 @@ if (backToTopBtn) {
 }
 // END BACK TO TOP BTN/FUNCTION
 
+// Copy text to clipboard
+function updateClipboard(newClip) {
+  navigator.clipboard.writeText(newClip).then(
+    () => {
+      console.log(`"${newClip}" copied to clipboard`);
+    },
+    () => {
+      console.error('Failed to copy text');
+    },
+  );
+}
+
+const promoCodeBtn = document.getElementById('promo-code');
+const promoCodeText = document
+  .querySelector('.promo-code > span')
+  .textContent.toUpperCase();
+
+promoCodeBtn.addEventListener('click', () => {
+  updateClipboard(promoCodeText);
+});
+
 // Footer copyright info
 const d = new Date();
 const copyYear = d.getFullYear();
