@@ -334,7 +334,7 @@
   }
 }
 
-.store-name {
+a.store-name {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -352,19 +352,13 @@
   color: var(--bs-white);
   transition: var(--transition);
 
+  font-size: rem(20);
+  font-weight: 600;
+  text-transform: uppercase;
+
   &:hover {
     background: hsl(from var(--bs-primary) h s 35%);
-  }
-
-  a {
-    font-size: rem(20);
-    font-weight: 600;
-    text-transform: uppercase;
-    color: inherit;
-
-    &:hover {
-      text-decoration: none;
-    }
+    text-decoration: none;
   }
 
   @include breakpoint(medium) {
@@ -372,9 +366,7 @@
     block-size: rem(40);
     bottom: rem(-40);
 
-    a {
-      font-size: rem(24);
-    }
+    font-size: rem(24);
   }
 
   @include breakpoint(large) {
@@ -382,9 +374,7 @@
     block-size: rem(48);
     bottom: rem(-48);
 
-    a {
-      font-size: rem(30);
-    }
+    font-size: rem(30);
   }
 }
 
