@@ -458,8 +458,8 @@
   &-header {
     border-bottom: rem(1) solid var(--clr-medium-gray-3);
     font-weight: 600;
-    color: var(--bs-secondary);
-    font-family: var(--ff-secondary);
+    color: var(--bs-primary);
+    font-family: var(--ff-primary);
     font-size: rem(14);
   }
 
@@ -474,6 +474,7 @@
       a {
         padding-inline-start: rem(20);
         color: var(--bs-secondary);
+        font-size: rem(14);
       }
     }
   }
