@@ -137,12 +137,6 @@
         border-radius: rem(4);
         block-size: rem(50);
         font-weight: 700;
-
-        &::before {
-          font-family: 'FontAwesome';
-          content: '\f095';
-          padding-inline-end: rem(8);
-        }
       }
     }
   }

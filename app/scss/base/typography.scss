@@ -16,6 +16,44 @@ a {
   &:hover {
     text-decoration: underline;
   }
+
+  &.phone {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding-inline: rem(16);
+    block-size: rem(50);
+    font-weight: 700;
+    border-radius: rem(4);
+    background: hsl(from var(--bs-success) h s 35%);
+    color: var(--bs-white);
+
+    span {
+      display: inline-block;
+      margin-inline-end: rem(10);
+    }
+    svg {
+      block-size: rem(18);
+    }
+
+    @include breakpoint(small) {
+      padding: 0;
+      display: inline-block;
+      background: transparent;
+      cursor: text;
+      block-size: auto;
+      color: var(--bs-secondary);
+      font-weight: normal;
+
+      span {
+        display: none;
+      }
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
 }
 
 // prettier-ignore
