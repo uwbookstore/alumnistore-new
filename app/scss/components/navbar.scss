@@ -80,6 +80,8 @@
   block-size: rem(20);
   inline-size: rem(26);
   box-sizing: content-box;
+  border: none;
+  background: transparent;
 
   @include breakpoint(medium) {
     display: none;
@@ -322,12 +324,15 @@
 }
 
 // Cart - Desktop
-.cart-toggle {
+.cart-toggle button {
   display: none;
+  border: none;
+  background: transparent;
 
   @include breakpoint(medium) {
     display: block;
-    a svg {
+
+    svg {
       block-size: rem(20);
       inline-size: rem(26);
     }
