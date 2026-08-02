@@ -281,7 +281,9 @@
 }
 
 // Account toggle
-.account-toggle a {
+.account-toggle button {
+  border: none;
+  background: transparent;
   justify-content: flex-start;
 
   &::after {
@@ -453,8 +455,8 @@ a.store-name {
   &-header {
     border-bottom: rem(1) solid var(--clr-medium-gray-3);
     font-weight: 600;
-    color: var(--bs-primary);
-    font-family: var(--ff-primary);
+    color: var(--bs-secondary);
+    font-family: var(--ff-secondary);
     font-size: rem(14);
   }
 
