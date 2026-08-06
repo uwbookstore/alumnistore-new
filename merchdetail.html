@@ -779,33 +779,7 @@
           <div Class="center">
             <h2 Class="page_header bottom10 displayn">Product Detail</h2>
           </div>
-          <style>
-            .merchTitle {
-              line-height: 0.8;
-            }
 
-            .merchPriceCurrent {
-              font-weight: bold;
-              font-size: 18px;
-            }
-
-            .merchPrice strong {
-              display: none;
-            }
-
-            .merchPriceCurrent {
-              font-weight: bold;
-              font-size: 18px;
-            }
-
-            .gmPromo {
-              color: #c10000;
-            }
-
-            #merchQTY {
-              border-radius: 0px;
-            }
-          </style>
           <div class="mainItem">
             <!--Mobile-->
             <div class="center no_show_large">
@@ -960,60 +934,6 @@
 
                       </div>
 
-                      <style>
-                        .hexColorOption {
-                          width: 36px;
-                          height: 36px;
-                        }
-
-                        .merch-typecodes {
-                          display: flex;
-                          flex-direction: column;
-                          gap: 0.6rem;
-                        }
-
-                        .merch-typecode-label {
-                          font-size: 0.8rem;
-                          letter-spacing: 0.04em;
-                          text-transform: uppercase;
-                        }
-
-                        .merch-typecode-buttons {
-                          display: flex;
-                          flex-wrap: wrap;
-                          gap: 0.3rem;
-                        }
-
-                        .merch-typecode-option {
-                          border-radius: 8px;
-                          background: transparent;
-                          border: 0.15rem solid;
-                          border-color: var(--c-gray-25);
-                          transition: all 0.3s ease-in-out;
-                        }
-
-                        .merch-typecode-option.selected {
-                          border-color: var(--c-green);
-                          background: var(--c-gray-50);
-                        }
-
-                        .merch-typecode-option.typeDisabled {
-                          position: relative;
-                          overflow: hidden;
-                        }
-
-                        .merch-typecode-option.typeDisabled::after {
-                          content: '';
-                          position: absolute;
-                          top: 0;
-                          right: 0;
-                          width: 120%;
-                          height: 1px;
-                          background-color: var(--c-black);
-                          transform-origin: top right;
-                          transform: rotate(var(--slash-angle));
-                        }
-                      </style>
                       <p data-merch-type-error class="merchSelectError red display-none" role="alert">
                         Please select a valid option(s).
                       </p>
