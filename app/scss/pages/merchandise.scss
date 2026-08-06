@@ -16,6 +16,12 @@
   }
 }
 
+.merchRank,
+ul.breadcrumb,
+.pageHelp {
+  display: none;
+}
+
 #itemRanking {
   a {
     display: inline-block !important;
