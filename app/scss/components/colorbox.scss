@@ -1,0 +1,241 @@
+@use '../util' as *;
+
+/*------------------------------------*\
+  COLORBOX
+\*------------------------------------*/
+/*
+    ColorBox Core Style:
+    The following CSS is consistent between example themes and should not be altered.
+*/
+#colorbox,
+#cboxOverlay,
+#cboxWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  overflow: hidden;
+  box-shadow: rem(5) rem(5) rem(10) rgba(0, 0, 0, 0.5);
+}
+
+#cboxOverlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+#cboxMiddleLeft,
+#cboxBottomLeft {
+  clear: left;
+}
+
+#cboxContent {
+  position: relative;
+}
+
+#cboxLoadedContent {
+  overflow: auto;
+}
+
+#cboxTitle {
+  margin: 0;
+}
+
+#cboxLoadingOverlay,
+#cboxLoadingGraphic {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#cboxPrevious,
+#cboxNext,
+#cboxClose,
+#cboxSlideshow {
+  cursor: pointer;
+}
+
+.cboxPhoto {
+  float: left;
+  margin: auto;
+  border: 0;
+  display: block;
+  max-width: none;
+}
+
+.cboxIframe {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: 0;
+}
+
+#colorbox,
+#cboxContent,
+#cboxLoadedContent {
+  box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+}
+
+// User Style:
+// Change the following styles to modify the appearance of ColorBox.  They are
+// ordered & tabbed in a way that represents the nesting of the generated HTML.
+
+#cboxOverlay {
+  background: var(--bs-white);
+}
+
+div#colorbox button {
+  border: none;
+  margin: 0;
+}
+
+#cboxTopLeft {
+  width: rem(14);
+  height: rem(14);
+  background: var(--bs-white);
+}
+
+#cboxTopCenter {
+  height: rem(14);
+  background: var(--bs-white);
+}
+
+#cboxTopRight {
+  width: rem(14);
+  height: rem(14);
+  background: var(--bs-white);
+}
+
+#cboxBottomLeft {
+  width: rem(14);
+  height: rem(43);
+  background: var(--bs-white);
+}
+
+#cboxBottomCenter {
+  height: rem(43);
+  background: var(--bs-white);
+}
+
+#cboxBottomRight {
+  width: rem(14);
+  height: rem(43);
+  background: var(--bs-white);
+}
+
+#cboxMiddleLeft {
+  width: rem(14);
+  background: var(--bs-white);
+}
+
+#cboxMiddleRight {
+  width: rem(14);
+  background: var(--bs-white);
+}
+
+#cboxContent {
+  background: var(--bs-white);
+  overflow: visible;
+}
+
+.cboxIframe {
+  background: var(--bs-white);
+}
+
+#cboxError {
+  padding: rem(50);
+  border: rem(1) solid var(--bs-gray-400);
+}
+
+#cboxLoadedContent {
+  margin-block-end: rem(5);
+}
+
+// #cboxLoadingOverlay {
+//     background:url(https://i.univbkstr.com/img/css/cbox/loading_background.png) no-repeat center center;
+// }
+
+#cboxLoadingGraphic {
+  background: url(https://i.univbkstr.com/img/css/cbox/loading.gif) no-repeat
+    center center;
+}
+
+#cboxTitle {
+  position: absolute;
+  bottom: rem(-25);
+  left: 0;
+  text-align: center;
+  width: 100%;
+  font-weight: 700;
+  color: var(--bs-secondary);
+}
+
+#cboxCurrent {
+  position: absolute;
+  bottom: rem(-25);
+  left: rem(58);
+  font-weight: 700;
+  color: var(--bs-secondary);
+}
+
+#cboxPrevious,
+#cboxNext,
+#cboxClose,
+#cboxSlideshow {
+  position: absolute;
+  bottom: rem(-29);
+  background: url(https://i.univbkstr.com/img/css/cbox/controls.png) no-repeat 0
+    0;
+  width: rem(23);
+  height: rem(23);
+  text-indent: rem(-9999);
+}
+
+#cboxPrevious {
+  left: 0;
+  background-position: rem(-51) rem(-25);
+}
+
+#cboxPrevious:hover {
+  background-position: rem(-51) 0;
+}
+
+#cboxNext {
+  left: rem(27);
+  background-position: rem(-75) rem(-25);
+}
+
+#cboxNext:hover {
+  background-position: rem(-75) 0;
+}
+
+#cboxClose {
+  right: 0;
+  background-position: rem(-100) rem(-25);
+}
+
+#cboxClose:hover {
+  background-position: rem(-100) 0;
+}
+
+.cboxSlideshow_on #cboxSlideshow {
+  background-position: rem(-125) 0;
+  right: rem(27);
+}
+
+.cboxSlideshow_on #cboxSlideshow:hover {
+  background-position: rem(-15) 0;
+}
+
+.cboxSlideshow_off #cboxSlideshow {
+  background-position: rem(-15) rem(-25);
+  right: rem(27);
+}
+
+.cboxSlideshow_off #cboxSlideshow:hover {
+  background-position: rem(-125) 0;
+}
