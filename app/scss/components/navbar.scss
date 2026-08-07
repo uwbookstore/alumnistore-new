@@ -36,18 +36,20 @@
   }
 
   @include breakpoint(medium) {
-    padding-inline: rem(10);
+    padding-inline: 0;
+
     .navbar-left {
       > li {
         > a.nav-link {
           font-weight: normal;
           transition: var(--transition);
-          gap: rem(8);
+          gap: rem(4);
+          padding-inline: rem(4);
 
           &::after {
             content: '/';
             color: var(--bs-primary);
-            margin-inline-end: rem(-8);
+            margin-inline-end: rem(-2);
             margin-block-start: rem(-1);
           }
 
@@ -69,7 +71,19 @@
   }
 
   @include breakpoint(large) {
-    padding-inline: 0;
+    // padding-inline: 0;
+    .navbar-left {
+      > li {
+        > a.nav-link {
+          gap: rem(8);
+          padding-inline: rem(8);
+
+          &::after {
+            margin-inline-end: rem(-8);
+          }
+        }
+      }
+    }
   }
 }
 
