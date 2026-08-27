@@ -5,7 +5,7 @@ button:not(:disabled),
 [type='button']:not(:disabled),
 .form-control {
   &:is(:focus, :focus-visible) {
-    box-shadow: 0 0 0 0.25rem var(--clr-gray-400);
+    box-shadow: 0 0 0 rem(3) var(--clr-gray-400);
     outline: none;
     border-radius: 0;
   }

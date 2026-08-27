@@ -99,3 +99,10 @@ h2 { font-size: rem(20); font-weight: 400; }
   font-weight: 500;
   font-size: rem(16);
 }
+
+// Font-Weight Utilities
+.fw {
+  &-500 {
+    font-weight: 500;
+  }
+}

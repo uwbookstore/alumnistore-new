@@ -433,8 +433,17 @@ a.store-name {
       align-items: center;
       position: initial;
       z-index: initial;
+      padding-inline: rem(20);
       max-inline-size: min(1312px, 100%);
       margin-inline: auto;
+    }
+  }
+}
+
+@include breakpoint(large) {
+  .navbar-expand-lg {
+    .navbar-collapse {
+      padding-inline: 0;
     }
   }
 }
@@ -470,7 +479,7 @@ a.store-name {
     border-bottom: rem(1) solid var(--clr-medium-gray-3);
     font-weight: 600;
     color: var(--bs-secondary);
-    font-family: var(--ff-secondary);
+    font-family: var(--ff-primary);
     font-size: rem(14);
   }
 

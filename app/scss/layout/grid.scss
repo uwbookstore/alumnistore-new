@@ -89,8 +89,12 @@
       }
     }
   }
+
   @include breakpoint(small) {
     grid-template-columns: repeat(2, 1fr);
+    &--navbar {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
 
     &.home {
       padding-inline: rem(42);
@@ -103,10 +107,6 @@
   }
 
   @include breakpoint(medium) {
-    &--navbar {
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    }
-
     &.home {
       padding-inline: rem(72);
       gap: rem(24);

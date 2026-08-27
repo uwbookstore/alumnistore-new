@@ -2,13 +2,12 @@
 
 .promo {
   &-banner {
-    display: flex;
     align-items: center;
-    justify-content: center;
-    gap: rem(10);
+
     position: relative;
     text-align: center;
-    min-block-size: rem(45);
+    padding: rem(12);
+
     background-color: var(--bs-primary);
     color: var(--bs-white);
     text-align: center;
@@ -22,7 +21,7 @@
       align-items: flex-end;
       gap: rem(5);
       text-transform: uppercase;
-      font-weight: 700;
+      font-weight: 600;
       cursor: pointer;
 
       svg {
