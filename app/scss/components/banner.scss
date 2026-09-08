@@ -17,6 +17,9 @@
     overflow: clip;
 
     .promo-code {
+      border: none;
+      background: transparent;
+      color: inherit;
       display: inline-flex;
       align-items: flex-end;
       gap: rem(5);

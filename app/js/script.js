@@ -1,3 +1,117 @@
+(function WAAKit() {
+  ('use strict');
+
+  /* ======================================================================
+  UTILITIES
+  ====================================================================== */
+
+  function emit(el, name, detail) {
+    el.dispatchEvent(
+      new CustomEvent('waa:' + name, { bubbles: true, detail: detail || {} }),
+    );
+  }
+
+  function getFocusable(container) {
+    return Array.from(
+      container.querySelector(`
+        a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]) [tabindex]:not([tabindex="-1"])  
+      `),
+    );
+  }
+
+  function trapFocus(container, evt) {
+    const focusable = getFocusable(container);
+    if (!focusable.length) return;
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (evt.key === 'Tab') {
+      if (evt.shiftKey && document.activeElement === first) {
+        evt.preventDefault();
+        last.focus();
+      } else if (!evt.shiftKey && document.activeElement === last) {
+        evt.preventDefault();
+        first.focus();
+      }
+    }
+  }
+
+  /* ======================================================================
+  TOAST
+  ====================================================================== */
+  const Toast = {
+    ICONS: { success: '✔', error: '✕', warning: '⚠', info: 'ℹ' },
+    LABELS: {
+      success: 'Success',
+      error: 'Error',
+      warning: 'Warning',
+      info: 'Info',
+    },
+
+    show: function (type, title, desc, duration) {
+      const region = document.getElementById('toast-region');
+      if (!region) return;
+
+      const toast = document.createElement('div');
+      toast.className = `ubs-toast ubs-toast--${type}`;
+      toast.setAttribute('role', 'status');
+      toast.setAttribute('aria-live', 'polite');
+      toast.innerHTML =
+        '<span class="ubs-toast__icon" aria-hidden="true">' +
+        (this.ICONS[type] || 'ℹ') +
+        '</span>' +
+        '<div class="ubs-toast__body">' +
+        '<div class="ubs-toast__title">' +
+        (title || this.LABELS[type]) +
+        '</div>' +
+        (desc ? '<div class="ubs-toast__desc">' + desc + '</div>' : '') +
+        '</div>' +
+        '<span class="ubs-toast__close" aria-label="Dismiss">✕</span>';
+
+      region.appendChild(toast);
+      emit(region, 'toast:show', { type: type, title: title });
+
+      let dismiss = function () {
+        toast.classList.add('is-exiting');
+        toast.addEventListener(
+          'animationend',
+          function () {
+            toast.remove();
+          },
+          { once: true },
+        );
+      };
+
+      toast
+        .querySelector('.ubs-toast__close')
+        .addEventListener('click', dismiss);
+      toast.addEventListener('click', dismiss);
+      if (duration !== 0) setTimeout(dismiss, duration || 4000);
+    },
+
+    init: function () {
+      document.addEventListener('click', function (evt) {
+        const btn = evt.target.closest('[data-toast]');
+        if (!btn) return;
+        Toast.show(
+          btn.dataset.toast,
+          btn.dataset.toastTitle,
+          btn.dataset.toastDesc,
+        );
+      });
+    },
+  };
+
+  function boot() {
+    Toast.init();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', boot);
+  } else {
+    boot();
+  }
+})();
+
 /*
  *   This content is licensed according to the W3C Software License at
  *   https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document
@@ -196,93 +310,3 @@ const d = new Date();
 const copyYear = d.getFullYear();
 const footerCopyright = document.getElementById('footer-copyright');
 footerCopyright.innerHTML = `&copy; Copyright ${copyYear}`;
-
-// const menuToggle = document.querySelector('.nav__toggle');
-// const siteNavigation = document.getElementById('primary-navigation');
-
-// if (menuToggle) {
-//   menuToggle.addEventListener('click', () => {
-//     const isOpened = menuToggle.getAttribute('aria-expanded') === 'true';
-//     isOpened ? closeMenu() : openMenu();
-//   });
-// }
-
-// function openMenu() {
-//   menuToggle.setAttribute('aria-expanded', 'true');
-//   siteNavigation.setAttribute('data-state', 'opened');
-// }
-
-// function closeMenu() {
-//   menuToggle.setAttribute('aria-expanded', 'false');
-//   siteNavigation.setAttribute('data-state', 'closed');
-// }
-
-// // Search bar
-// const searchOpen = document.getElementById('search-open');
-// const searchClose = document.getElementById('search-close');
-// const searchForm = document.getElementById('search-form');
-
-// const searchOverlay = document.getElementById('search-overlay');
-
-// // Account toggle
-// const accountToggle = document.getElementById('account-toggle');
-// const accountDropdown = document.getElementById('login');
-
-// const toggleAccount = () => {
-//   if (accountToggle.getAttribute('aria-expanded') === 'false') {
-//     accountToggle.setAttribute('aria-expanded', 'true');
-//     accountDropdown.setAttribute('data-state', 'opened');
-//   } else {
-//     accountToggle.setAttribute('aria-expanded', 'false');
-//     accountDropdown.setAttribute('data-state', 'closed');
-//   }
-// };
-
-// const closeAccount = () => {
-//   accountToggle.setAttribute('aria-expanded', 'false');
-//   accountDropdown.setAttribute('data-state', 'closed');
-// };
-
-// const openSearchOverlay = () => {
-//   searchOpen.setAttribute('aria-expanded', 'true');
-//   searchOverlay.setAttribute('data-state', 'opened');
-// };
-
-// const closeSearchOverlay = () => {
-//   searchOpen.setAttribute('aria-expanded', 'false');
-//   searchOverlay.setAttribute('data-state', 'closed');
-// };
-
-// searchOpen.addEventListener('click', () => {
-//   openSearchOverlay();
-// });
-
-// searchClose.addEventListener('click', () => {
-//   closeSearchOverlay();
-// });
-
-// searchOverlay.addEventListener('click', (e) => {
-//   if (e.target === searchOverlay) {
-//     closeSearchOverlay();
-//   }
-// });
-
-// document.addEventListener('keydown', (e) => {
-//   if (e.key === 'Escape') {
-//     closeSearchOverlay();
-//     closeAccount();
-//   }
-// });
-
-// accountToggle.addEventListener('click', (e) => {
-//   e.preventDefault();
-//   toggleAccount();
-// });
-
-// Listen for clicks anywhere on the page
-// window.addEventListener('click', function (e) {
-//   // Check if the clicked element is NOT the box and NOT inside the box
-//   if (!accountDropdown.contains(e.target) && !e.target.closest(accountToggle)) {
-//     closeAccount();
-//   }
-// });
