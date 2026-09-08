@@ -172,3 +172,10 @@ input[class^='radio'] {
 #waa-header {
   display: block;
 }
+
+.form-control:is(:focus, :focus-visible),
+[type='button']:not(:disabled):is(:focus, :focus-visible),
+button:not(:disabled):is(:focus, :focus-visible),
+input:is(:focus, :focus-visible) {
+  box-shadow: 0 0 0 rem(2) var(--clr-gray-400);
+}
