@@ -375,8 +375,9 @@ a.store-name {
   color: var(--bs-white);
   transition: var(--transition);
 
+  font-family: var(--ff-secondary);
   font-size: rem(20);
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
 
   &:hover {

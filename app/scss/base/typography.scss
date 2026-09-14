@@ -59,13 +59,14 @@ a {
 // prettier-ignore
 h1, h2, h3, h4, h5 {
   font-family: var(--ff-primary);
+  font-weight: 600;
 }
 
 // prettier-ignore
 h1 { font-size: rem(24); }
 
 // prettier-ignore
-h2 { font-size: rem(20); font-weight: 400; }
+h2 { font-size: rem(20); }
 
 .heading {
   &__line,

@@ -1,0 +1,12 @@
+@use '../util' as *;
+
+.visaImage,
+.masterImage,
+.discoverImage,
+.amexImage {
+  border: rem(1) solid var(--bs-black);
+  display: inline-block;
+  box-sizing: border-box;
+  border-radius: rem(2);
+  padding: rem(1);
+}

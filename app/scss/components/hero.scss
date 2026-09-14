@@ -25,11 +25,12 @@
     transform: translateX(-50%);
 
     h1 {
-      font-family: var(--ff-primary);
+      font-family: var(--ff-secondary);
       margin-bottom: rem(24);
       color: var(--bs-white);
       text-transform: uppercase;
       font-size: rem(20);
+      font-weight: 700;
       line-height: 130%;
       letter-spacing: 2%;
       margin-inline: auto;
@@ -39,6 +40,7 @@
       text-transform: uppercase;
       block-size: rem(36);
       letter-spacing: 2%;
+      font-family: var(--ff-primary);
       font-weight: 700;
       font-size: rem(12);
     }
@@ -111,7 +113,7 @@
   justify-content: center;
   gap: rem(5);
 
-  font-family: inherit;
+  font-family: var(--ff-secondary);
   text-align: center;
   text-transform: uppercase;
   font-size: rem(14);
