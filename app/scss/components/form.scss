@@ -7,6 +7,13 @@
     padding: 0 rem(15);
     block-size: rem(50);
     border-radius: 0;
+    // &:user-valid {
+    //   outline: 2px solid var(--bs-success);
+    // }
+    // &:user-invalid {
+    //   outline: 2px solid var(--bs-danger);
+    // }
+    // https://youtube.com/shorts/3hVffhSpldo?si=iWKCgQ7wqtEftzXj
   }
 
   &-floating {
