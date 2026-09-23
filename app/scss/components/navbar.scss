@@ -467,7 +467,7 @@ a.store-name {
   &-menu {
     border-radius: 0;
     padding: 0;
-    background-color: var(--clr-light-gray-2);
+    background-color: var(--clr-gray-50-2);
     border: none;
     box-shadow: 0 rem(3) rem(4) rem(1) rgb(0 0 0 / 0.25);
 
@@ -479,7 +479,7 @@ a.store-name {
   }
 
   &-header {
-    border-bottom: rem(1) solid var(--clr-medium-gray-3);
+    border-bottom: rem(1) solid var(--clr-gray-200-3);
     font-weight: 600;
     color: var(--bs-secondary);
     font-family: var(--ff-primary);
@@ -549,7 +549,7 @@ a.store-name {
 
     &-menu {
       inline-size: 100%;
-      background-color: var(--clr-light-gray-3);
+      background-color: var(--clr-gray-50-3);
       padding: rem(25) rem(15) rem(40);
 
       [class^='col-'] {
