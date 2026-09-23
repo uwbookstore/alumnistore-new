@@ -1,8 +1,20 @@
 @use '../util' as *;
 
+@property --clr-white {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #fefefe;
+}
+
+@property --clr-primary {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #c5050c;
+}
+
 :root {
-  --bs-white: #fefefe;
-  --bs-primary: #c5050c;
+  --bs-primary: var(--clr-primary);
+  --bs-white: var(--clr-white);
   --bs-secondary: #4d4d4d;
   --bs-warning: #ffae00;
   --bs-success: #5cb85c;
@@ -18,16 +30,6 @@
   --clr-gray-800: #4e4e4e;
   --clr-gray-900: #393939;
 
-  --clr-dark-gray-100: #5b646b;
-  --clr-dark-gray: #818181;
-
-  --clr-light-gray: #f3f3f3;
-  --clr-light-gray-2: #dddddd;
-  --clr-light-gray-3: #f1f1f1;
-  --clr-medium-gray: #cacaca;
-  --clr-medium-gray-2: #e1e1e1;
-  --clr-medium-gray-3: #b7b7b7;
-  // --clr-dark-gray: #818181;
   --clr-disabled: #969696;
 
   // Font-family
