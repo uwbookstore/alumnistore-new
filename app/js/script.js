@@ -36,8 +36,8 @@
   }
 
   /* ======================================================================
-  TOAST
-  ====================================================================== */
+      TOAST
+      ====================================================================== */
   const Toast = {
     ICONS: { success: '✔', error: '✕', warning: '⚠', info: 'ℹ' },
     LABELS: {
@@ -101,8 +101,34 @@
     },
   };
 
+  /* ======================================================================
+      Accordion
+      ====================================================================== */
+  function WaaAccordion(containerEl) {
+    this.container = containerEl;
+    this._bind();
+  }
+
+  WaaAccordion.prototype._bind = function () {
+    var self = this;
+    this.container
+      .querySelectorAll('.waa-accordion-trigger')
+      .forEach(function (trigger) {
+        trigger.addEventListener('click', function (e) {
+          console.log(e.target);
+        });
+      });
+  };
+
+  WaaAccordion.init = function () {
+    document.querySelectorAll('.waa-accordion').forEach(function (el) {
+      new WaaAccordion(el);
+    });
+  };
+
   function boot() {
     Toast.init();
+    WaaAccordion.init();
   }
 
   if (document.readyState === 'loading') {
