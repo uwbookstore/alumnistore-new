@@ -284,6 +284,59 @@ if (backToTopBtn) {
 }
 // END BACK TO TOP BTN/FUNCTION
 
+// SEARCH FUNCTION
+const searchInput = document.getElementById('searchinput');
+const searchSubmit = document.querySelector('.search-submit');
+function search() {
+  document.location.href = `https://www.uwalumnistore.com/merchlist?searchtype=all&txtSearch=${searchInput.value}`;
+}
+
+/**
+ * Check if search button exists
+ * if so, run custom search function
+ */
+if (searchSubmit && searchInput) {
+  searchInput.addEventListener('keyup', (e) => {
+    if (searchInput.value !== '' && e.keyCode === 13) {
+      e.preventDefault();
+      search();
+    }
+  });
+
+  searchSubmit.addEventListener('click', () => {
+    console.log('click');
+    searchInput.value !== '' ? search() : false;
+  });
+}
+
+// HIDE UNUSED REGISTRATION COMPONENTS
+[
+  '#degreesGoalSelect',
+  '#custAddInfoWrap',
+  '#custAdditionalDegreeGoalR',
+  '#custAdditionalDegreeGoalL',
+  '#custAddInfoStudentL',
+  '#custAddInfoColR',
+].forEach(function (selector) {
+  const el = document.querySelector(selector);
+  if (el) {
+    el.style.display = 'none';
+  }
+});
+
+// REMOVE MBS CLASSES THAT MESS WITH LAYOUT
+const addCustomerType = document.getElementById('addCusotmerType');
+addCustomerType
+  ? addCustomerType.classList.remove('col-sm-6', 'col-12', 'padding-sm-left0')
+  : null;
+
+// MODIFY CUSTOMERTYPESELECT
+const customerTypeSelect = document.getElementById('customerTypeSelect');
+if (customerTypeSelect) {
+  customerTypeSelect.classList.remove('wauto', 'displayib');
+  customerTypeSelect.style.width = '100%';
+}
+
 // Copy text to clipboard
 function updateClipboard(newClip) {
   navigator.clipboard.writeText(newClip).then(
