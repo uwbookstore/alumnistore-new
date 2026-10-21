@@ -25,9 +25,10 @@
     transform: translateX(-50%);
 
     h1 {
+      --text-color: var(--bs-white);
       font-family: var(--ff-secondary);
       margin-bottom: rem(24);
-      color: var(--bs-white);
+      color: var(--text-color);
       text-transform: uppercase;
       font-size: rem(20);
       font-weight: 700;
