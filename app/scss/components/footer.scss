@@ -212,7 +212,7 @@
 
     nav.footer-menu {
       text-align: left;
-      inline-size: rem(179);
+      inline-size: rem(185);
 
       .footer-menu__link {
         position: relative;
@@ -326,11 +326,10 @@
     }
 
     &__inner {
-      gap: rem(50);
+      gap: rem(47);
     }
 
     nav.footer-menu {
-      inline-size: rem(179);
       font-size: rem(14);
     }
 
