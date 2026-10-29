@@ -1,6 +1,9 @@
 @use '../util' as *;
 
-/* prettier-ignore */
+.past {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
 
 a {
   color: var(--bs-primary);
