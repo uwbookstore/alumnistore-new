@@ -39,6 +39,8 @@
   --fs-default: #{rem(16)};
   --default-page-width: #{rem(1440)};
 
+  // interpolate-size: allow-keywords;
+
   @media (prefers-reduced-motion: no-preference) {
     --transition: all 0.3s ease-in-out;
   }

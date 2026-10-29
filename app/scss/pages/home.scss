@@ -1,14 +1,10 @@
 @use '../util' as *;
 
-#toggle-target {
-  display: none;
-}
-
-.holiday__shipping h2 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: rem(20);
+.holiday__shipping summary {
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+  // gap: rem(20);
   margin: 0;
   padding: rem(10);
   background: var(--bs-gray-300);
@@ -34,6 +30,7 @@
 .holiday__shipping {
   margin-block-end: rem(30);
   padding-inline: rem(20);
+  overflow: hidden;
 
   @include breakpoint(small) {
     padding-inline: rem(42);
@@ -137,4 +134,17 @@
       }
     }
   }
+}
+
+.holiday__shipping::details-content {
+  block-size: 0;
+  overflow: hidden;
+  transition:
+    block-size 0.5s,
+    content-visibility 0.5s;
+  transition-behavior: allow-discrete !important;
+}
+
+.holiday__shipping:open::details-content {
+  block-size: auto;
 }

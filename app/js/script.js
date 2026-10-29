@@ -389,11 +389,3 @@ const d = new Date();
 const copyYear = d.getFullYear();
 const footerCopyright = document.getElementById('footer-copyright');
 footerCopyright.innerHTML = `&copy; Copyright ${copyYear}`;
-
-const deadlinesHeader = document.getElementById('toggle-control');
-if (deadlinesHeader) {
-  deadlinesHeader.addEventListener('click', function () {
-    const exclusions = document.getElementById('toggle-target');
-    slideToggle(exclusions, 500);
-  });
-}
