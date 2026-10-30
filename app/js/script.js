@@ -2,8 +2,8 @@
   ('use strict');
 
   /* ======================================================================
-  UTILITIES
-  ====================================================================== */
+       UTILITIES
+       ====================================================================== */
 
   function emit(el, name, detail) {
     el.dispatchEvent(
@@ -13,17 +13,19 @@
 
   function getFocusable(container) {
     return Array.from(
-      container.querySelector(`
-        a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]) [tabindex]:not([tabindex="-1"])  
-      `),
+      container.querySelectorAll(
+        'a[href], button:not([disabled]), input:not([disabled]), ' +
+          'select:not([disabled]), textarea:not([disabled]) ' +
+          '[tabindex]:not([tabindex="-1"])',
+      ),
     );
   }
 
   function trapFocus(container, evt) {
-    const focusable = getFocusable(container);
+    let focusable = getFocusable(container);
     if (!focusable.length) return;
-    const first = focusable[0];
-    const last = focusable[focusable.length - 1];
+    let first = focusable[0];
+    let last = focusable[focusable.length - 1];
     if (evt.key === 'Tab') {
       if (evt.shiftKey && document.activeElement === first) {
         evt.preventDefault();
@@ -126,9 +128,85 @@
     });
   };
 
+  /* ======================================================================
+       WaaModal
+       ====================================================================== */
+  function WaaModal(backdropEl) {
+    this.backdrop = backdropEl;
+    this.modal = backdropEl.querySelector('.waa-modal');
+    this._onKey = this._handleKey.bind(this);
+    this._bindTriggers();
+  }
+
+  WaaModal.prototype._bindTriggers = function () {
+    let self = this;
+
+    /* Open triggers - any [data-modal-open] or #modal-open */
+    document
+      .querySelectorAll('[data-modal-open], #modal-open')
+      .forEach(function (el) {
+        el.addEventListener('click', function () {
+          self.open();
+        });
+      });
+
+    /* Close triggers */
+    this.backdrop
+      .querySelectorAll(
+        '[id^="modal-close"], [id^="modal-confirm"], [id^="modal-cancel"]',
+      )
+      .forEach(function (el) {
+        el.addEventListener('click', function () {
+          self.close();
+        });
+      });
+
+    /* Backdrop click */
+    this.backdrop.addEventListener('click', function (evt) {
+      if (evt.target === self.backdrop) self.close();
+    });
+  };
+
+  WaaModal.prototype.open = function () {
+    this._lastFocus = document.activeElement;
+    this.backdrop.removeAttribute('inert');
+    this.backdrop.classList.add('is-open');
+    document.addEventListener('keydown', this._onKey);
+
+    /* Focus first focusable after animation */
+    let self = this;
+    setTimeout(function () {
+      let focusable = getFocusable(self.modal);
+      if (focusable.length) focusable[0].focus();
+    }, 50);
+
+    emit(this.backdrop, 'modal:open');
+  };
+
+  WaaModal.prototype.close = function () {
+    this.backdrop.classList.remove('is-open');
+    this.backdrop.setAttribute('inert', '');
+    document.removeEventListener('keydown', this._onKey);
+    if (this._lastFocus) this._lastFocus.focus();
+    emit(this.backdrop, 'modal:close');
+  };
+
+  WaaModal.prototype._handleKey = function (evt) {
+    if (evt.key === 'Escape') {
+      this.close();
+      return;
+    }
+    trapFocus(this.modal, evt);
+  };
+
+  WaaModal.init = function () {
+    let backdrop = document.getElementById('modal-backdrop');
+    if (backdrop) new WaaModal(backdrop);
+  };
   function boot() {
     Toast.init();
     WaaAccordion.init();
+    WaaModal.init();
   }
 
   if (document.readyState === 'loading') {
