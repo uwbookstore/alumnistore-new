@@ -199,10 +199,31 @@
     trapFocus(this.modal, evt);
   };
 
+  /* Automatically open sales popup only if it hasn't been shown */
+  WaaModal.prototype.openIfNotShown = function () {
+    const storageKey = 'salesPopupShown';
+    console.log('Open if not shown...');
+    console.log(sessionStorage.getItem(storageKey));
+    if (!sessionStorage.getItem(storageKey)) {
+      console.log('Has storage key');
+      this.open();
+      sessionStorage.setItem(storageKey, 'true');
+    }
+  };
+
   WaaModal.init = function () {
     let backdrop = document.getElementById('modal-backdrop');
-    if (backdrop) new WaaModal(backdrop);
+
+    if (backdrop) {
+      let modal = new WaaModal(backdrop);
+
+      /* Check whether salesPop exists inside modal-backdrop */
+      if (backdrop.querySelector('#salesPop')) {
+        modal.openIfNotShown();
+      }
+    }
   };
+
   function boot() {
     Toast.init();
     WaaAccordion.init();
