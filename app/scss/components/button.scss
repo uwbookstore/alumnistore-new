@@ -145,4 +145,16 @@
     border-width: rem(1);
     block-size: rem(40);
   }
+
+  &-copy {
+    block-size: auto;
+    padding: 0;
+    font-weight: 600;
+
+    svg {
+      block-size: 1rem;
+      aspect-ratio: 1;
+      margin-block-start: -4px;
+    }
+  }
 }

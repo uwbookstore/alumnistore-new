@@ -87,7 +87,7 @@
         .querySelector('.ubs-toast__close')
         .addEventListener('click', dismiss);
       toast.addEventListener('click', dismiss);
-      if (duration !== 0) setTimeout(dismiss, duration || 4000);
+      if (duration !== 0) setTimeout(dismiss, duration || 2500);
     },
 
     init: function () {
@@ -117,7 +117,7 @@
       .querySelectorAll('.waa-accordion-trigger')
       .forEach(function (trigger) {
         trigger.addEventListener('click', function (e) {
-          console.log(e.target);
+          // console.log(e.target);
         });
       });
   };
@@ -202,10 +202,7 @@
   /* Automatically open sales popup only if it hasn't been shown */
   WaaModal.prototype.openIfNotShown = function () {
     const storageKey = 'salesPopupShown';
-    console.log('Open if not shown...');
-    console.log(sessionStorage.getItem(storageKey));
     if (!sessionStorage.getItem(storageKey)) {
-      console.log('Has storage key');
       this.open();
       sessionStorage.setItem(storageKey, 'true');
     }
@@ -474,47 +471,25 @@ function updateClipboard(newClip) {
   );
 }
 
-const promoCodeBtn = document.getElementById('promo-code');
-const promoCodeText = document
-  .querySelector('.promo-code > span')
-  .textContent.toUpperCase();
+const promoCodeBtn = document.querySelectorAll('.btn-copy');
+promoCodeBtn.forEach((btn) => {
+  const promoCodeText = btn.querySelector('span').textContent;
 
-promoCodeBtn.addEventListener('click', () => {
-  updateClipboard(promoCodeText);
+  btn.addEventListener('click', () => {
+    updateClipboard(promoCodeText);
+  });
 });
+
+// const promoCodeText = document
+//   .querySelector('.promo-code > span')
+//   .textContent.toUpperCase();
+
+// promoCodeBtn.addEventListener('click', () => {
+//   updateClipboard(promoCodeText);
+// });
 
 // Footer copyright info
 const d = new Date();
 const copyYear = d.getFullYear();
 const footerCopyright = document.getElementById('footer-copyright');
 footerCopyright.innerHTML = `&copy; Copyright ${copyYear}`;
-
-// // Get the modal
-// let modal = document.getElementById('augustShippingPopup');
-
-// if (typeof Storage !== 'undefined') {
-//   if (!sessionStorage.getItem('augustShipping26')) {
-//     // When the page loads, open the modal
-//     window.addEventListener('load', function () {
-//       modal.style.display = 'block';
-//       sessionStorage.setItem('augustShipping26', 'opened');
-//     });
-//   } else {
-//     sessionStorage.setItem('augustShipping26', 'opened');
-//   }
-
-//   // Get the <span> element that closes the modal
-//   let span = document.getElementsByClassName('popup-close')[0];
-
-//   // When the user clicks on <span> (x), close the modal
-//   span.onclick = function () {
-//     modal.style.display = 'none';
-//   };
-
-//   // When the user clicks anywhere outside of the modal, close it
-//   window.onclick = function (event) {
-//     if (event.target == modal) {
-//       modal.style.display = 'none';
-//     }
-//   };
-// }
