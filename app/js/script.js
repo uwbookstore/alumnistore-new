@@ -202,9 +202,9 @@
   /* Automatically open sales popup only if it hasn't been shown */
   WaaModal.prototype.openIfNotShown = function () {
     const storageKey = 'salesPopupShown';
-    if (!sessionStorage.getItem(storageKey)) {
+    if (!localStorage.getItem(storageKey)) {
       this.open();
-      sessionStorage.setItem(storageKey, 'true');
+      localStorage.setItem(storageKey, 'true');
     }
   };
 
